@@ -39,6 +39,7 @@ import EditSection from "./components/ExamSchemas/EditSection/EditSection.jsx";
 import AddNewSection from "./components/ExamSchemas/AddNewSection/AddNewSection.jsx";
 
 import DemoPage from "./components/Table/page.tsx"
+import ExamSchemasTesting from "./components/ExamSchemas Testing/ExamSchemas.jsx";
 
 
 
@@ -92,7 +93,7 @@ export const router = createBrowserRouter(
         <Route path="organisation" element={<Organisation />} />
         <Route path="analytics" element={<Analytics />} />
 
-        <Route path="testing" element={<DemoPage />} />
+        <Route path="testing" element={<ExamSchemasTesting />} />
 
       </Route>
     </Route>

@@ -1,5 +1,4 @@
 import React from "react";
-
 import ExamSchemaTable from "./ExamSchemasTable/es-table"
 
 function MainContent() {

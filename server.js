@@ -118,6 +118,38 @@ let tests = [
     status: "pending",
   },
 ];
+let examschemas = [
+  {
+    id: "456def",
+    title: "React Fundamentals",
+    targetgroup: "AFCAT",
+    status: "pending",
+  },
+  {
+    id: "789ghi",
+    title: "Advanced CSS",
+    targetgroup: "CDS",
+    status: "pending",
+  },
+  {
+    id: "101jkl",
+    title: "Node.js Overview",
+    targetgroup: "NDA",
+    status: "success",
+  },
+  {
+    id: "112mno",
+    title: "Python for Beginners",
+    targetgroup: "All Groups",
+    status: "failed",
+  },
+  {
+    id: "131pqr",
+    title: "SQL Queries",
+    targetgroup: "CDS",
+    status: "pending",
+  },
+];
 let wallet = [
   { 
     id: "131pgr",
@@ -176,6 +208,9 @@ app.get("/api/payments", (req, res) => {
 });
 app.get("/api/tests", (req, res) => {
   res.json(tests);
+});
+app.get("/api/examschemas", (req, res) => {
+  res.json(examschemas);
 });
 app.get("/api/wallet", (req, res) => {
   res.json(wallet);
