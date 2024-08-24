@@ -210,7 +210,14 @@ function DataTable<TData, TValue>({
         <DataTablePagination table={table} />
       </div>
 
-      {isModalOpen && selectedExam && (
+     
+    </div>
+  );
+}
+
+export default DataTable;
+
+ {/* {isModalOpen && selectedExam && (
         <ApiModal
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
@@ -221,9 +228,4 @@ function DataTable<TData, TValue>({
             // Refresh table logic (e.g., refetch data from API)
           }}
         />
-      )}
-    </div>
-  );
-}
-
-export default DataTable;
+      )} */}
