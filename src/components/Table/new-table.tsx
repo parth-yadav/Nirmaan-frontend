@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import {
   ColumnDef,
   ColumnFiltersState,
@@ -29,7 +29,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import DataTablePagination from "./pagination";
-import ApiModal from "./ApiModal"; // Import your modal component
+import ApiModal from "./ApiModal";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -42,6 +42,7 @@ function DataTable<TData, TValue>({
   columns,
   data,
   searchcolumn,
+  onRowClick,
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
@@ -74,8 +75,9 @@ function DataTable<TData, TValue>({
     table.getColumn("status")?.setFilterValue(status);
   };
 
-  const handleRowClick = (exam: TData) => {
-    setSelectedExam(exam);
+  const handleRowClick = (row: TData) => {
+    onRowClick(row); // Use prop callback to handle row click
+    setSelectedExam(row);
     setIsModalOpen(true);
   };
 
@@ -212,7 +214,7 @@ function DataTable<TData, TValue>({
         <ApiModal
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
-          actionType=""
+          actionType="" // Set this based on context or props
           apiEndpoint={`/api/examschemas/${(selectedExam as any).id}`}
           rowData={selectedExam}
           refreshTable={() => {
