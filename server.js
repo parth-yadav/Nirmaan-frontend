@@ -47,10 +47,20 @@ app.get("/api/examschemas", (req, res) => {
 
 // POST - Create a new exam schema
 app.post("/api/examschemas", (req, res) => {
+  const { title, targetgroup, status } = req.body;
+
+  // Validate the request body
+  if (!title || !targetgroup || !status) {
+    return res.status(400).json({ message: "Missing required fields" });
+  }
+
   const newExamSchema = {
     id: Date.now().toString(),
-    ...req.body,
+    title,
+    targetgroup,
+    status,
   };
+
   examschemas.push(newExamSchema);
   res.status(201).json(newExamSchema);
 });
@@ -58,10 +68,19 @@ app.post("/api/examschemas", (req, res) => {
 // PUT - Update an existing exam schema
 app.put("/api/examschemas/:id", (req, res) => {
   const { id } = req.params;
+  const { title, targetgroup, status } = req.body;
+
   const index = examschemas.findIndex((exam) => exam.id === id);
 
   if (index !== -1) {
-    examschemas[index] = { ...examschemas[index], ...req.body };
+    // Update the exam schema
+    examschemas[index] = {
+      ...examschemas[index],
+      title: title ?? examschemas[index].title,
+      targetgroup: targetgroup ?? examschemas[index].targetgroup,
+      status: status ?? examschemas[index].status,
+    };
+
     res.json(examschemas[index]);
   } else {
     res.status(404).json({ message: "Exam schema not found" });
@@ -74,7 +93,7 @@ app.delete("/api/examschemas/:id", (req, res) => {
   const index = examschemas.findIndex((exam) => exam.id === id);
 
   if (index !== -1) {
-    const deletedExamSchema = examschemas.splice(index, 1);
+    const [deletedExamSchema] = examschemas.splice(index, 1);
     res.json(deletedExamSchema);
   } else {
     res.status(404).json({ message: "Exam schema not found" });
