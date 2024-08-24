@@ -1,5 +1,5 @@
 import React from "react";
-import ExamSchemaTable from "./ExamSchemasTable/es-table"
+import ExamSchemaTablex from "./ExamSchemasTable/new-estable"
 
 function MainContent() {
   return (
@@ -52,7 +52,7 @@ function MainContent() {
           <span>New Exam Schema</span>
         </button>
       </div>
-      <ExamSchemaTable />
+      <ExamSchemaTablex />
     </div>
   );
 }
