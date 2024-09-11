@@ -3,7 +3,7 @@
  */
 import React from "react";
 
-function TestAttempt() {
+function TestAttempt({data}) {
   return (
     <div className="flex gap-5 self-start mt-8 text-sm font-medium leading-6">
       <button className="flex gap-2 justify-center px-4 py-2 text-white bg-black rounded-md">
@@ -16,7 +16,7 @@ function TestAttempt() {
         <span>Attempt test</span>
       </button>
       <div className="flex-auto my-auto text-gray-700">
-        <span className="text-xl font-bold leading-7 text-black">2</span> / 5
+        <span className="text-xl font-bold leading-7 text-black">{data.attempts_remaining}</span> / {data.max_attempts}
         Attempts remaining
       </div>
     </div>

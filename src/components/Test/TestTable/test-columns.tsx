@@ -21,15 +21,30 @@ import {
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
-export type Test = {
-  id: string
-  title:string
-  questioncount: number
-  duration: number
-  attempts: number
-  status: "pending" | "processing" | "success" | "failed"
+// export type Test = {
+//   id: string
+//   title:string
+//   questioncount: number
+//   duration: number
+//   attempts: number
+//   status: "pending" | "processing" | "success" | "failed"
  
-}
+// }
+export type Test = {
+  id: string;
+  title: string;
+  questioncount: number;
+  duration: number;
+  attempts: number;
+  status: "pending" | "processing" | "success" | "failed";
+  total_questions: number;
+  maximum_marks: number;
+  attempts_remaining: number;
+  max_attempts: number;
+  sections: { title: string; questions: number; maximum_marks: number }[];
+  results: { previous_attempts: string; attempted_on: string; marks_obtained: number }[];
+};
+
 
 export const columns: ColumnDef<Test>[] = 
 

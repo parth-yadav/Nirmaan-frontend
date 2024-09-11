@@ -5,12 +5,12 @@ import React from "react";
 
 function TestAnswerKey() {
   return (
-    <section className="flex flex-col items-start px-7 mt-9 w-full font-medium max-md:px-5 max-md:max-w-full">
+    <section className="flex flex-col items-start  mt-9 w-full font-medium max-md:px-5 max-md:max-w-full">
       <h2 className="flex gap-1.5 text-lg font-semibold leading-7 text-black">
         <img
           loading="lazy"
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/90212d808b437940516353040aa12abbea5040d33e4b78dd9acc4f9e84f7fb93?apiKey=8a82faa9db93454483a68c973b38c7b0&&apiKey=8a82faa9db93454483a68c973b38c7b0"
-          className="shrink-0 self-start aspect-square w-[18px]"
+          className="shrink-0  aspect-square w-[18px]"
           alt=""
         />
         <span className="flex-auto">Answer Key</span>
