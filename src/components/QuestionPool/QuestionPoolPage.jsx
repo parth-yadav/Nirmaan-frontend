@@ -1,8 +1,8 @@
 import React from "react";
-import ExamList from "./ExamList";
+
 import QuestionPoolTable from "./QuestionPoolTable/qp-table";
 
-function MainContent() {
+function QuestionPool() {
   return (
     <div className="flex flex-col mt-14 max-md:mt-10 max-md:max-w-full">
       <h1 className="text-3xl font-semibold tracking-tight leading-9 text-black max-md:max-w-full dark:text-white">
@@ -59,4 +59,4 @@ function MainContent() {
   );
 }
 
-export default MainContent;
+export default QuestionPool;

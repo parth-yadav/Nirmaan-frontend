@@ -1,5 +1,4 @@
 {
- 
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
@@ -8,12 +7,15 @@
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
+    "outDir": "./dist",
+   
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "allowJs": true // <-- Add this line
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "src/store/authSlice.js" ,  "src/**/*.js","src/store/.js"]
 }
