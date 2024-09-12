@@ -22,6 +22,21 @@ export type ExamSchema = {
   title: string;
   targetgroup: string;
   status: "pending" | "processing" | "success" | "failed";
+  examtype: string;
+  duration: string;
+  total_question: number;
+  total_max_marks: number;
+  sections: {
+    name: string;
+    questions: number;
+    marking: string;
+    max_marks: number;
+  }[];
+  statistics: {
+    stocks_sold: number;
+    income: number;
+    outbond_days: number;
+  }[];
 };
 
 export const columns: ColumnDef<ExamSchema>[] = [
