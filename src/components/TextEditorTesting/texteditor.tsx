@@ -13,6 +13,8 @@ import {
 } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { PlusCircle, Trash2 } from "lucide-react";
+import SmallComponent from "./smalltxe";
+import TinyMCECustomCSS from "./custom_tiny";
 
 interface Option {
   content: string;
@@ -145,6 +147,8 @@ export default function TestQuestionEditor() {
           Submit Question
         </Button>
       </CardFooter>
+      <SmallComponent />
+      <TinyMCECustomCSS />
     </Card>
   );
 }
