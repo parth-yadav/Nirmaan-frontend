@@ -67,7 +67,8 @@ export default function TinyMCECustomCSS() {
       <Editor
         apiKey={conf.tinymce}
         initialValue="<p>This editor overrides TinyMCE's default CSS classes.</p>"
-        init={{
+        init={
+            {
           height: 300,
           menubar: false,
           plugins: [

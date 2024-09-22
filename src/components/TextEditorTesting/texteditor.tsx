@@ -75,8 +75,21 @@ export default function TestQuestionEditor() {
       "undo redo | formatselect | bold italic backcolor | " +
       "alignleft aligncenter alignright alignjustify | " +
       "bullist numlist outdent indent | removeformat | help",
-    content_style:
-      "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
+    content_style: `
+      .tox.tox-tinymce-inline .tox-editor-header {
+  background-color: #d81b1b;
+  border: 2px solid #eee;
+  border-radius: 10px;
+  box-shadow: none;
+  overflow: hidden;
+  padding: 4px;
+  position: fixed; /* Change to fixed */
+  width: 800px;
+  z-index: 100;
+  top: 0px; /* Position at the top of the viewport */
+   /* Adjust this to position horizontally */
+  }
+      `,
   };
 
   return (
