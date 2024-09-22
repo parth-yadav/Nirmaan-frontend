@@ -44,7 +44,37 @@ export default function TestQuestionEditor() {
   const handleSubmit = () => {
     console.log("Question:", question);
     console.log("Options:", options);
-    // Here you would typically send this data to your backend
+  };
+
+  const commonEditorConfig = {
+    inline: true,
+    menubar: true,
+    plugins: [
+      "advlist",
+      "autolink",
+      "lists",
+      "link",
+      "image",
+      "charmap",
+      "preview",
+      "anchor",
+      "searchreplace",
+      "visualblocks",
+      "code",
+      "fullscreen",
+      "insertdatetime",
+      "media",
+      "table",
+      "code",
+      "help",
+      "wordcount",
+    ],
+    toolbar:
+      "undo redo | formatselect | bold italic backcolor | " +
+      "alignleft aligncenter alignright alignjustify | " +
+      "bullist numlist outdent indent | removeformat | help",
+    content_style:
+      "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
   };
 
   return (
@@ -54,47 +84,30 @@ export default function TestQuestionEditor() {
       </CardHeader>
       <CardContent className="space-y-4">
         <div>
-          <Label htmlFor="question-editor" className="text-lg font-semibold">
+          <Label
+            htmlFor="question-editor"
+            className="text-lg font-semibold mb-2 block"
+          >
             Question
           </Label>
-          <Editor
-            id="question-editor"
-            apiKey={conf.tinymce}
-            init={{
-              menubar: true,
-              plugins: [
-                "advlist",
-                "autolink",
-                "lists",
-                "link",
-                "image",
-                "charmap",
-                "preview",
-                "anchor",
-                "searchreplace",
-                "visualblocks",
-                "code",
-                "fullscreen",
-                "insertdatetime",
-                "media",
-                "table",
-                "code",
-                "help",
-                "wordcount",
-              ],
-              toolbar:
-                "undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help",
-              placeholder: "Enter your question here...",
-            }}
-            value={question}
-            onEditorChange={handleQuestionChange}
-          />
+          <div className="border rounded-md p-2 min-h-[100px]">
+            <Editor
+              id="question-editor"
+              apiKey={conf.tinymce}
+              init={{
+                ...commonEditorConfig,
+                placeholder: "Enter your question here...",
+              }}
+              value={question}
+              onEditorChange={handleQuestionChange}
+            />
+          </div>
         </div>
         <div>
           <h3 className="mb-2 text-lg font-semibold">Options</h3>
           {options.map((option, index) => (
             <div key={index} className="mb-4 flex items-start space-x-2">
-              <div className="flex-grow">
+              <div className="flex-grow border rounded-md p-2 min-h-[50px]">
                 <Label htmlFor={`option-editor-${index}`} className="sr-only">
                   Option {index + 1}
                 </Label>
@@ -102,18 +115,7 @@ export default function TestQuestionEditor() {
                   id={`option-editor-${index}`}
                   apiKey={conf.tinymce}
                   init={{
-                    menubar: false,
-                    plugins: [
-                      "advlist",
-                      "autolink",
-                      "lists",
-                      "link",
-                      "image",
-                      "charmap",
-                      "preview",
-                      "anchor",
-                    ],
-                    toolbar: "bold italic | bullist numlist",
+                    ...commonEditorConfig,                 
                     placeholder: `Enter option ${index + 1} here...`,
                   }}
                   value={option.content}
