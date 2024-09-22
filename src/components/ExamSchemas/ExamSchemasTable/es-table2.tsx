@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import { ExamSchema, columns } from "./es-columns";
 import DataTable from "../../Table/data-ttable";
 import ExamModal from "./exam-modal"; // Import your modal component
+import NewExamSchema from "../NewExamSchema/NewExamSchema";
+import TabsModal from "../TabsModal/TabsModal";
+import NewExamSchemaCopy from "../NewExamSchema/NewExamSchema copy";
 
 function getData(): Promise<ExamSchema[]> {
   return Promise.resolve([
@@ -219,7 +222,7 @@ export default function ExamSchemaTable() {
         columns={columns}
         searchcolumn="title"
         data={data}
-        ModalComponent={ExamModal} // Pass the modal component
+        ModalComponent={NewExamSchemaCopy} // Pass the modal component
       />
     </div>
   );
