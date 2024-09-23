@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Calendar, Edit, Trash2 } from "lucide-react";
 import QuestionData from "./QuestionData";
+import QuestionForm from "../QuestionForm/QuestionForm";
 
 const QuestionDataa = QuestionData;
 
@@ -31,7 +32,7 @@ const ActionButtons = ({
         />
         <ActionButton
           icon={<Trash2 className="w-4 h-4" />}
-          text="Delete Question"
+          text="Deprecate"
           bgColor="bg-red-800"
           onClick={onDeleteQuestion}
         />
@@ -119,7 +120,7 @@ const QuestionPool = ({
   return (
     <div className="flex flex-col font-medium max-md:max-w-full">
       <header className="flex shrink-0 bg-gray-50 h-[50px] max-md:max-w-full" />
-      <main className="flex flex-col px-12 mt-8 w-full max-md:px-5 max-md:max-w-full">
+      <main className="flex flex-col  mt-8 w-full max-md:px-5 max-md:max-w-full">
         <h1 className="self-start text-xl font-semibold tracking-normal leading-snug text-black">
           Question Pool Editor
         </h1>
@@ -183,7 +184,7 @@ const QuestionPoolLayout = () => {
             onQuestionClick={handleQuestionClick}
           />
         </aside>
-        <main className="flex flex-col ml-5 w-4/5 max-md:ml-0 max-md:w-full">
+        <main className="flex flex-col px-8  w-4/5 max-md:ml-0 max-md:w-full">
           <QuestionPool
             currentQuestion={QuestionDataa[currentQuestionIndex]}
             questionNumber={currentQuestionIndex + 1}
@@ -193,6 +194,10 @@ const QuestionPoolLayout = () => {
             onProposeChanges={handleProposeChanges}
             onDeleteQuestion={handleDeleteQuestion}
           />
+          <hr className="w-full bg-gray-300 mt-8 mb-8 border-0 h-px max-md:max-w-full" />
+          <div className="mt-8">
+            <QuestionForm />
+          </div>
         </main>
       </div>
     </div>
