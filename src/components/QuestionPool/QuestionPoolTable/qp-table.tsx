@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { QuestionPool, columns } from "./qp-columns";
 import DataTable from "../../Table/data-ttable";
+import QuestionPoolModal from "./qp-modal";
 
 function getData(): Promise<QuestionPool[]> {
   return Promise.resolve([
@@ -58,8 +59,13 @@ export default function QuestionPoolTable() {
   }
 
   return (
-    <div className=" py-10">
-      <DataTable columns={columns} searchcolumn="title" data={data} />
+    <div className="">
+      <DataTable
+        columns={columns}
+        searchcolumn="title"
+        data={data}
+        ModalComponent={QuestionPoolModal} // Pass the modal component
+      />
     </div>
   );
 }

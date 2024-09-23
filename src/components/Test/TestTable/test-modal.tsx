@@ -13,11 +13,11 @@ const ExamModal: React.FC<TestModalProps> = ({ isOpen, onClose, data }) => {
   return (  
     <>
       <div className=" absolute inset-y-0 right-0 w-full max-w-xl overflow-auto z-50">
-        <div className=" " onClick={onClose}></div>
+        {/* <div className=" " onClick={onClose}></div> */}
         
-          <div className="">
+         
             <TestComponent data ={data} close = {onClose} />
-          </div>
+          
        
       </div>
     </>

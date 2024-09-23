@@ -49,8 +49,6 @@ import TestQuestionEditor from "./components/TextEditorTesting/texteditor.tsx";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
-    
-
     <Route path="/" element={<App />}>
       <Route index element={<HomePage />} />
       <Route
@@ -72,9 +70,7 @@ export const router = createBrowserRouter(
       <Route
         path="quiz"
         element={
-
-          <AuthLayout authentication ={false}>
-
+          <AuthLayout authentication={false}>
             <Layout />
           </AuthLayout>
         }
@@ -96,12 +92,17 @@ export const router = createBrowserRouter(
         <Route path="organisation" element={<Organisation />} />
         <Route path="analytics" element={<Analytics />} />
 
-
-        <Route path="testing" element={<TestQuestionEditor/>} />
-
-
+        <Route path="testing" element={<TestQuestionEditor />} />
       </Route>
+      <Route
+        path="exampool"
+        element={
+          <AuthLayout authentication={false}>
+            <QuestionPoolLayout />
+          </AuthLayout>
+        }
+      />
     </Route>
   )
-)
+);
 
