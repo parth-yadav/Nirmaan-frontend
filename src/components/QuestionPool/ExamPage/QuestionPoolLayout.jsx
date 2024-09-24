@@ -146,8 +146,9 @@ const QuestionPool = ({
 };
 
 const QuestionPoolLayout = () => {
+  
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-
+  const [showQuestionForm, setShowQuestionForm] = useState(false);
   const handlePreviousQuestion = () => {
     setCurrentQuestionIndex((prevIndex) =>
       prevIndex > 0 ? prevIndex - 1 : prevIndex
@@ -166,7 +167,7 @@ const QuestionPoolLayout = () => {
 
   const handleProposeChanges = () => {
     console.log("Propose changes for question:", currentQuestionIndex + 1);
-    // Implement the logic for proposing changes here
+    setShowQuestionForm(true);
   };
 
   const handleDeleteQuestion = () => {
@@ -175,6 +176,32 @@ const QuestionPoolLayout = () => {
   };
 
   return (
+    // <div className="overflow-hidden bg-white">
+    //   <div className="flex gap-5 max-md:flex-col">
+    //     <aside className="flex flex-col w-1/5 max-md:ml-0 max-md:w-full">
+    //       <QuestionTileComponent
+    //         questions={QuestionDataa}
+    //         currentQuestionIndex={currentQuestionIndex}
+    //         onQuestionClick={handleQuestionClick}
+    //       />
+    //     </aside>
+    //     <main className="flex flex-col px-8  w-4/5 max-md:ml-0 max-md:w-full">
+    //       <QuestionPool
+    //         currentQuestion={QuestionDataa[currentQuestionIndex]}
+    //         questionNumber={currentQuestionIndex + 1}
+    //         totalQuestions={QuestionDataa.length}
+    //         onPrevious={handlePreviousQuestion}
+    //         onNext={handleNextQuestion}
+    //         onProposeChanges={handleProposeChanges}
+    //         onDeleteQuestion={handleDeleteQuestion}
+    //       />
+    //       <hr className="w-full bg-gray-300 mt-8 mb-8 border-0 h-px max-md:max-w-full" />
+    //       <div className="mt-8">
+    //         <QuestionForm />
+    //       </div>
+    //     </main>
+    //   </div>
+    // </div>
     <div className="overflow-hidden bg-white">
       <div className="flex gap-5 max-md:flex-col">
         <aside className="flex flex-col w-1/5 max-md:ml-0 max-md:w-full">
@@ -184,7 +211,7 @@ const QuestionPoolLayout = () => {
             onQuestionClick={handleQuestionClick}
           />
         </aside>
-        <main className="flex flex-col px-8  w-4/5 max-md:ml-0 max-md:w-full">
+        <main className="flex flex-col px-8 w-4/5 max-md:ml-0 max-md:w-full">
           <QuestionPool
             currentQuestion={QuestionDataa[currentQuestionIndex]}
             questionNumber={currentQuestionIndex + 1}
@@ -195,9 +222,14 @@ const QuestionPoolLayout = () => {
             onDeleteQuestion={handleDeleteQuestion}
           />
           <hr className="w-full bg-gray-300 mt-8 mb-8 border-0 h-px max-md:max-w-full" />
-          <div className="mt-8">
-            <QuestionForm />
-          </div>
+          {showQuestionForm && (
+            <div className="mt-8">
+              <QuestionForm
+                question={QuestionDataa[currentQuestionIndex]}
+                onClose={() => setShowQuestionForm(false)}
+              />
+            </div>
+          )}
         </main>
       </div>
     </div>

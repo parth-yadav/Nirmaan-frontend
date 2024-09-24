@@ -1,31 +1,86 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect } from "react";
 
-function QuestionForm() {
-  const [options, setOptions] = useState([
-    { label: "Option 1", id: "option1" },
-    { label: "Option 2", id: "option2" },
-    { label: "Option 3", id: "option3" },
-    { label: "Option 4", id: "option4" },
-  ]);
+function QuestionForm({ question, onClose }) {
+  const [questionText, setQuestionText] = useState("");
+  const [options, setOptions] = useState([]);
+
+  useEffect(() => {
+    if (question) {
+      setQuestionText(question.question);
+      setOptions(
+        question.options.map((option, index) => ({
+          label: `Option ${index + 1}`,
+          id: `option${index + 1}`,
+          text: option.text,
+        }))
+      );
+    }
+  }, [question]);
+
 
   const addOption = () => {
     const newOptionNumber = options.length + 1;
     const newOption = {
       label: `Option ${newOptionNumber}`,
       id: `option${newOptionNumber}`,
+      text: "",
     };
     setOptions([...options, newOption]);
   };
 
+  const handleOptionChange = (id, value) => {
+    setOptions(
+      options.map((option) =>
+        option.id === id ? { ...option, text: value } : option
+      )
+    );
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    console.log("Submitted question:", { questionText, options });
+    onClose();
+  };
+
+
   return (
-    <form className="ml-8 flex flex-col text-sm rounded-none">
+  
+    <form
+      onSubmit={handleSubmit}
+      className="ml-8 flex flex-col text-sm rounded-none"
+    >
       <div className="flex overflow-hidden flex-col pb-10 w-full bg-white max-md:max-w-full">
         <QuestionType />
-        <QuestionInput />
+        <QuestionInput
+          value={questionText}
+          onChange={(e) => setQuestionText(e.target.value)}
+        />
         {options.map((option) => (
-          <OptionInput key={option.id} label={option.label} id={option.id} />
+          <OptionInput
+            key={option.id}
+            label={option.label}
+            id={option.id}
+            value={option.text}
+            onChange={(e) => handleOptionChange(option.id, e.target.value)}
+          />
         ))}
         <AddOptionButton onClick={addOption} />
+        <div className="flex justify-end mt-8">
+          <button
+            type="button"
+            onClick={onClose}
+            className="px-4 py-2 mr-4 text-black bg-gray-300 rounded-md"
+          >
+            Cancel
+          </button>
+          <button
+            type="submit"
+            className="px-4 py-2 text-white bg-blue-500 rounded-md"
+          >
+            Save Changes
+          </button>
+        </div>
       </div>
     </form>
   );
@@ -62,7 +117,7 @@ function QuestionType() {
   );
 }
 
-function QuestionInput() {
+function QuestionInput({ value, onChange }) {
   return (
     <div className="flex flex-col mt-7 w-full min-h-[126px] max-md:max-w-full">
       <div className="flex flex-col flex-1 w-full max-md:max-w-full">
@@ -77,6 +132,8 @@ function QuestionInput() {
             id="questionInput"
             className="gap-2.5 px-3 pt-2 pb-20 mt-3 leading-none bg-white rounded-md border border-solid border-slate-300 min-h-[101px] text-slate-400 w-[506px] max-md:max-w-full"
             placeholder="Type your message here"
+            value={value}
+            onChange={onChange}
           ></textarea>
         </div>
       </div>
@@ -84,7 +141,8 @@ function QuestionInput() {
   );
 }
 
-function OptionInput({ label, id }) {
+
+function OptionInput({ label, id, value, onChange }) {
   return (
     <div className="flex flex-col mt-5 w-full leading-none max-md:max-w-full">
       <div className="flex flex-wrap gap-4 items-center w-full max-md:max-w-full">
@@ -100,6 +158,8 @@ function OptionInput({ label, id }) {
             id={id}
             className="self-stretch py-2 pr-14 pl-3 w-full bg-white rounded-md border border-solid border-slate-300 max-md:pr-5 max-md:max-w-full"
             placeholder="Add value"
+            value={value}
+            onChange={onChange}
           />
         </div>
       </div>
