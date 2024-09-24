@@ -1,22 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 
 function QuestionForm() {
-  const options = [
+  const [options, setOptions] = useState([
     { label: "Option 1", id: "option1" },
     { label: "Option 2", id: "option2" },
     { label: "Option 3", id: "option3" },
     { label: "Option 4", id: "option4" },
-  ];
+  ]);
+
+  const addOption = () => {
+    const newOptionNumber = options.length + 1;
+    const newOption = {
+      label: `Option ${newOptionNumber}`,
+      id: `option${newOptionNumber}`,
+    };
+    setOptions([...options, newOption]);
+  };
 
   return (
-    <form className=" ml -8  flex flex-col text-sm rounded-none">
+    <form className="ml-8 flex flex-col text-sm rounded-none">
       <div className="flex overflow-hidden flex-col pb-10 w-full bg-white max-md:max-w-full">
         <QuestionType />
         <QuestionInput />
         {options.map((option) => (
           <OptionInput key={option.id} label={option.label} id={option.id} />
         ))}
-        <AddOptionButton />
+        <AddOptionButton onClick={addOption} />
       </div>
     </form>
   );
@@ -98,9 +107,13 @@ function OptionInput({ label, id }) {
   );
 }
 
-function AddOptionButton() {
+function AddOptionButton({ onClick }) {
   return (
-    <button className="flex gap-2 justify-center items-center self-start px-4 py-2 mt-8 font-medium leading-6 text-black bg-gray-300 rounded-md">
+    <button
+      type="button"
+      onClick={onClick}
+      className="flex gap-2 justify-center items-center self-start px-4 py-2 mt-8 font-medium leading-6 text-black bg-gray-300 rounded-md"
+    >
       <img
         loading="lazy"
         src="https://cdn.builder.io/api/v1/image/assets/TEMP/4e67780b15f327e409d60ce48aa25b1e7643442e3925beb62c391feb610d70b2?placeholderIfAbsent=true&apiKey=8a82faa9db93454483a68c973b38c7b0"
