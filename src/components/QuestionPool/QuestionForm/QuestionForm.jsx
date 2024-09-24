@@ -1,4 +1,6 @@
-import React, { useState ,useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { Editor } from "@tinymce/tinymce-react";
+import conf from "@/conf/conf";
 
 function QuestionForm({ question, onClose }) {
   const [questionText, setQuestionText] = useState("");
@@ -16,7 +18,6 @@ function QuestionForm({ question, onClose }) {
       );
     }
   }, [question]);
-
 
   const addOption = () => {
     const newOptionNumber = options.length + 1;
@@ -44,25 +45,22 @@ function QuestionForm({ question, onClose }) {
   };
 
 
+
   return (
-  
     <form
       onSubmit={handleSubmit}
       className="ml-8 flex flex-col text-sm rounded-none"
     >
       <div className="flex overflow-hidden flex-col pb-10 w-full bg-white max-md:max-w-full">
         <QuestionType />
-        <QuestionInput
-          value={questionText}
-          onChange={(e) => setQuestionText(e.target.value)}
-        />
+        <QuestionInput value={questionText} onChange={setQuestionText} />
         {options.map((option) => (
           <OptionInput
             key={option.id}
             label={option.label}
             id={option.id}
             value={option.text}
-            onChange={(e) => handleOptionChange(option.id, e.target.value)}
+            onChange={(value) => handleOptionChange(option.id, value)}
           />
         ))}
         <AddOptionButton onClick={addOption} />
@@ -118,29 +116,72 @@ function QuestionType() {
 }
 
 function QuestionInput({ value, onChange }) {
+ 
   return (
     <div className="flex flex-col mt-7 w-full min-h-[126px] max-md:max-w-full">
       <div className="flex flex-col flex-1 w-full max-md:max-w-full">
         <div className="flex flex-col flex-1 w-full rounded-md max-md:max-w-full">
           <label
             htmlFor="questionInput"
-            className="self-start font-medium leading-none text-black"
+            className="self-start font-medium  leading-none text-black"
           >
             Question
           </label>
-          <textarea
-            id="questionInput"
-            className="gap-2.5 px-3 pt-2 pb-20 mt-3 leading-none bg-white rounded-md border border-solid border-slate-300 min-h-[101px] text-slate-400 w-[506px] max-md:max-w-full"
-            placeholder="Type your message here"
-            value={value}
-            onChange={onChange}
-          ></textarea>
+          <div className="text-lg">
+            <Editor
+              apiKey={conf.tinymce}
+              value={value}
+              onEditorChange={onChange}
+              init={{
+                inline: true,
+                menubar: true,
+                plugins: [
+                  "advlist",
+                  "autolink",
+                  "lists",
+                  "link",
+                  "image",
+                  "charmap",
+                  "preview",
+                  "anchor",
+                  "searchreplace",
+                  "visualblocks",
+                  "code",
+                  "fullscreen",
+                  "insertdatetime",
+                  "media",
+                  "table",
+                  "code",
+                  "help",
+                  "wordcount",
+                ],
+                toolbar:
+                  "undo redo | formatselect | bold italic backcolor | " +
+                  "alignleft aligncenter alignright alignjustify | " +
+                  "bullist numlist outdent indent | removeformat | help",
+                content_style: `
+                  .tox.tox-tinymce-inline .tox-editor-header {
+                    background-color: #d81b1b;
+                    border: 2px solid #eee;
+                    border-radius: 10px;
+                    box-shadow: none;
+                    overflow: hidden;
+                    padding: 4px;
+                    position: fixed; /* Change to fixed */
+                    width: 800px;
+                    z-index: 100;
+                    top: 0px;
+                    
+                  }
+      `,
+              }}
+            />
+          </div>
         </div>
       </div>
     </div>
   );
 }
-
 
 function OptionInput({ label, id, value, onChange }) {
   return (
@@ -152,15 +193,57 @@ function OptionInput({ label, id, value, onChange }) {
         >
           {label}
         </label>
-        <div className="flex flex-col flex-1 shrink self-stretch my-auto basis-0 min-w-[240px] text-slate-400 max-md:max-w-full">
-          <input
-            type="text"
-            id={id}
-            className="self-stretch py-2 pr-14 pl-3 w-full bg-white rounded-md border border-solid border-slate-300 max-md:pr-5 max-md:max-w-full"
-            placeholder="Add value"
-            value={value}
-            onChange={onChange}
-          />
+        <div className="flex flex-col flex-1  shrink self-stretch my-auto basis-0 min-w-[240px] text-slate-400 max-md:max-w-full">
+          <div className="text-lg">
+            <Editor
+              apiKey={conf.tinymce}
+              value={value}
+              onEditorChange={onChange}
+              init={{
+                inline: true,
+                menubar: true,
+                plugins: [
+                  "advlist",
+                  "autolink",
+                  "lists",
+                  "link",
+                  "image",
+                  "charmap",
+                  "preview",
+                  "anchor",
+                  "searchreplace",
+                  "visualblocks",
+                  "code",
+                  "fullscreen",
+                  "insertdatetime",
+                  "media",
+                  "table",
+                  "code",
+                  "help",
+                  "wordcount",
+                ],
+                toolbar:
+                  "undo redo | formatselect | bold italic backcolor | " +
+                  "alignleft aligncenter alignright alignjustify | " +
+                  "bullist numlist outdent indent | removeformat | help",
+                content_style: `
+                  .tox.tox-tinymce-inline .tox-editor-header {
+                    background-color: #d81b1b;
+                    border: 2px solid #eee;
+                    border-radius: 10px;
+                    box-shadow: none;
+                    overflow: hidden;
+                    padding: 4px;
+                    position: fixed; /* Change to fixed */
+                    width: 800px;
+                    z-index: 100;
+                    top: 0px;
+                    
+                  }
+      `,
+              }}
+            />
+          </div>
         </div>
       </div>
     </div>

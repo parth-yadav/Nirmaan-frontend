@@ -77,18 +77,18 @@ export default function TestQuestionEditor() {
       "bullist numlist outdent indent | removeformat | help",
     content_style: `
       .tox.tox-tinymce-inline .tox-editor-header {
-  background-color: #d81b1b;
-  border: 2px solid #eee;
-  border-radius: 10px;
-  box-shadow: none;
-  overflow: hidden;
-  padding: 4px;
-  position: fixed; /* Change to fixed */
-  width: 800px;
-  z-index: 100;
-  top: 0px; /* Position at the top of the viewport */
-   /* Adjust this to position horizontally */
-  }
+        background-color: #d81b1b;
+        border: 2px solid #eee;
+        border-radius: 10px;
+        box-shadow: none;
+        overflow: hidden;
+        padding: 4px;
+        position: fixed; /* Change to fixed */
+        width: 800px;
+        z-index: 100;
+        top: 0px; /* Position at the top of the viewport */
+        /* Adjust this to position horizontally */
+      }
       `,
   };
 
@@ -130,7 +130,7 @@ export default function TestQuestionEditor() {
                   id={`option-editor-${index}`}
                   apiKey={conf.tinymce}
                   init={{
-                    ...commonEditorConfig,                 
+                    ...commonEditorConfig,
                     placeholder: `Enter option ${index + 1} here...`,
                   }}
                   value={option.content}
