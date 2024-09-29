@@ -7,7 +7,7 @@ const QuestionDataa = QuestionData;
 
 const ActionButton = ({ icon, text, bgColor, onClick }) => (
   <button
-    className={`flex gap-2 justify-center items-center px-4 py-2 rounded-md ${bgColor}`}
+    className={`flex gap-2 justify-center items-center px-4 py-2 rounded-md  ${bgColor}`}
     onClick={onClick}
   >
     {icon}

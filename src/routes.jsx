@@ -42,6 +42,7 @@ import DemoPage from "./components/Table/page.tsx"
 
 import QuestionPoolLayout from "./components/QuestionPool/ExamPage/QuestionPoolLayout.jsx";
 import TestQuestionEditor from "./components/TextEditorTesting/texteditor.tsx";
+import BlogEditorPage from "./components/BlogEditor/BlogEditor.tsx";
 
 
 
@@ -99,6 +100,14 @@ export const router = createBrowserRouter(
         element={
           <AuthLayout authentication={false}>
             <QuestionPoolLayout />
+          </AuthLayout>
+        }
+      />
+      <Route
+        path="blogeditor"
+        element={
+          <AuthLayout authentication={false}>
+            <BlogEditorPage />
           </AuthLayout>
         }
       />
