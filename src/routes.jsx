@@ -29,7 +29,7 @@ import Team from "./components/Team/Team.jsx";
 import Students from "./components/Students/Students.jsx";
 // import Organisation from "./components/Orgnaisation/Organisation.jsx";
 import Analytics from "./components/Analytics/Analytics.jsx";
-import BlogForm from "./components/BlogCord/BlogComponentsNew/BlogForm.jsx";
+import BlogForm from "./components/BlogCord/BlogComponentsNew/NewBlogForm.jsx";
 import Organisation from "./components/Orgnaisation/Organisation.jsx";
 import Testing from "./components/Testing/Testing.jsx";
 import ExamSchema from "./components/ExamSchemas/NewExamSchema/NewExamSchema.jsx";
@@ -38,17 +38,13 @@ import MarketPlace from "./components/ExamSchemas/MarketPlace/MarketPlace.jsx";
 import EditSection from "./components/ExamSchemas/EditSection/EditSection.jsx";
 import AddNewSection from "./components/ExamSchemas/AddNewSection/AddNewSection.jsx";
 
-import DemoPage from "./components/Table/page.tsx"
+import DemoPage from "./components/Table/page.tsx";
 
 import QuestionPoolLayout from "./components/QuestionPool/ExamPage/QuestionPoolLayout.jsx";
 import TestQuestionEditor from "./components/TextEditorTesting/texteditor.tsx";
 import BlogEditorPage from "./components/BlogEditor/BlogEditor.tsx";
 import SingleBlog from "./components/SingleBlog/SingleBlog.tsx";
 import Timeline from "./components/QuestionPool/Timeline/Timeline.jsx";
-
-
-
-
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -124,4 +120,3 @@ export const router = createBrowserRouter(
     </Route>
   )
 );
-
