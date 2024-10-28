@@ -43,6 +43,8 @@ import DemoPage from "./components/Table/page.tsx"
 import QuestionPoolLayout from "./components/QuestionPool/ExamPage/QuestionPoolLayout.jsx";
 import TestQuestionEditor from "./components/TextEditorTesting/texteditor.tsx";
 import BlogEditorPage from "./components/BlogEditor/BlogEditor.tsx";
+import SingleBlog from "./components/SingleBlog/SingleBlog.tsx";
+import Timeline from "./components/QuestionPool/Timeline/Timeline.jsx";
 
 
 
@@ -93,7 +95,7 @@ export const router = createBrowserRouter(
         <Route path="organisation" element={<Organisation />} />
         <Route path="analytics" element={<Analytics />} />
 
-        <Route path="testing" element={<TestQuestionEditor />} />
+        <Route path="testing" element={<Timeline />} />
       </Route>
       <Route
         path="exampool"
@@ -108,6 +110,14 @@ export const router = createBrowserRouter(
         element={
           <AuthLayout authentication={false}>
             <BlogEditorPage />
+          </AuthLayout>
+        }
+      />
+      <Route
+        path="singleblog"
+        element={
+          <AuthLayout authentication={false}>
+            <SingleBlog />
           </AuthLayout>
         }
       />

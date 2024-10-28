@@ -1,4 +1,5 @@
 import React from "react";
+import TabsModal from "../TabsModal/TabsModal";
 
 function Header() {
   return (
@@ -28,6 +29,7 @@ function Header() {
         <button className="flex-1 flex items-center justify-center gap-2.5 px-3 py-1.5 rounded text-slate-700">
           Marketplace info
         </button>
+       
       </nav>
     </header>
   );
