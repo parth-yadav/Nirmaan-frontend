@@ -11,13 +11,17 @@ interface EditSectionTableProps {
 
 export default function EditSectionTable({ data }: EditSectionTableProps) {
   return (
-    <div className="py-10">
+    
       <DataTable
         columns={columns}
-        searchcolumn="name"
+        searchcolumn=""
         data={data.sections}
         ModalComponent={EditSectionModal}
+        hideSearch={true}
+        hideFilter={true}
+        hideViewOptions={true}
+        hidePagination={true}
       />
-    </div>
+   
   );
 }

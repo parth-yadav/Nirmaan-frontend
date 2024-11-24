@@ -2,11 +2,10 @@ import React from "react";
 import EditSectionTable from "./EditSection/EditSectionTable/editsectiontable";
 function Sections({ data }) {
   return (
-    <section className="mt-10 max-md:mt-10 bg-red-300">
+    <section className="mt-10 max-md:mt-10 ">
       <div className="flex flex-wrap gap-5 justify-between mx-5 w-full max-w-[500px] max-md:mr-2.5 max-md:max-w-full">
         <div className="flex flex-col  text-black whitespace-nowrap">
-          <h2 className="text-lg font-semibold leading-loose">Sections</h2>
-         
+          <h2 className="text-lg font-semibold leading-loose">Sections</h2>         
         </div>
         <div className="flex flex-col self-start text-sm font-medium">
           <div className="flex gap-5 self-end max-w-full w-[165px]">
@@ -33,7 +32,7 @@ function Sections({ data }) {
           </div> */}
         </div>
       </div>
-      <div className="shrink-0 mt-1 h-px bg-gray-300 border border-gray-300 border-solid max-md:max-w-full" />
+      <div className="shrink-0   max-md:max-w-full" />
             <EditSectionTable data = {data} />
       {/* {data.sections.map((section, index) => (
         <React.Fragment key={index}>
