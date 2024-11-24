@@ -20,7 +20,7 @@ function Sections({data}) {
         <div className="flex flex-col text-black whitespace-nowrap">
           <h2 className="text-lg font-semibold leading-loose">Sections</h2>
           <div className="self-start mt-4 text-sm font-medium leading-none">
-            Nameeee
+            Name
           </div>
         </div>
         <div className="flex flex-col self-start text-sm font-medium">

@@ -1,7 +1,13 @@
+import React, { useState, useEffect } from "react";
 
-import React from "react";
+function Duration({ data }) {
+  const [duration, setDuration] = useState(data.duration);
 
-function Duration({data}) {
+  // Update the input value when `data.duration` changes
+  useEffect(() => {
+    setDuration(data.duration);
+  }, [data.duration]);
+
   return (
     <div className="flex flex-col mt-5 w-full text-sm leading-none whitespace-nowrap max-md:mr-1.5 max-md:max-w-full">
       <div className="flex flex-wrap gap-4 items-center w-full max-md:max-w-full">
@@ -16,7 +22,8 @@ function Duration({data}) {
             id="duration"
             type="number"
             className="self-stretch py-2 pr-14 pl-3 w-full bg-white rounded-md border border-solid border-slate-300 max-md:pr-5 max-md:max-w-full"
-            defaultValue= {data.duration}
+            value={duration}
+            onChange={(e) => setDuration(e.target.value)} // Update state on input change
           />
         </div>
       </div>
