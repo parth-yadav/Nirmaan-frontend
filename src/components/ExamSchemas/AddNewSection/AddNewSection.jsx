@@ -5,7 +5,7 @@ import ActionButton from "./ActionButton";
 
 function AddNewSection({ onClose, onSubmit }) {
   return (
-    <section className="flex overflow-hidden flex-col py-9 bg-white rounded-3xl max-w-[600px] shadow-[-5px_0px_20px_rgba(0,0,0,0.25)]">
+    <section className="flex overflow-hidden z-50 flex-col py-9 bg-white rounded-3xl max-w-[600px] shadow-[-5px_0px_20px_rgba(0,0,0,0.25)]">
       <header className="flex flex-col px-8 pb-2 w-full max-md:px-5 max-md:max-w-full">
         <div className="flex flex-wrap gap-5 justify-between text-xl font-semibold tracking-normal leading-snug text-black max-md:max-w-full">
           <h1>Add new section</h1>
