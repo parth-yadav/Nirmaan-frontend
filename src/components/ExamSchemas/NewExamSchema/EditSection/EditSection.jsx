@@ -4,7 +4,7 @@ import InputField from "./InputField";
 import MarkingScheme from "./MarkingScheme";
 import ActionButton from "./ActionButton";
 
-function EditSection() {
+function EditSection(props) {
   return (
     <section className="flex overflow-hidden flex-col pt-7 pb-11 bg-white max-w-[600px] shadow-[-5px_0px_20px_rgba(0,0,0,0.25)] ">
       <header className="flex flex-col px-8 pb-2 w-full max-md:px-5 max-md:max-w-full">

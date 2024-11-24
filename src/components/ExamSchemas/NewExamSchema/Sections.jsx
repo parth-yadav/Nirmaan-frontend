@@ -1,13 +1,12 @@
 import React from "react";
+import EditSectionTable from "./EditSection/EditSectionTable/editsectiontable";
 function Sections({ data }) {
   return (
-    <section className="mt-10 max-md:mt-10">
+    <section className="mt-10 max-md:mt-10 bg-red-300">
       <div className="flex flex-wrap gap-5 justify-between mx-5 w-full max-w-[500px] max-md:mr-2.5 max-md:max-w-full">
-        <div className="flex flex-col text-black whitespace-nowrap">
+        <div className="flex flex-col  text-black whitespace-nowrap">
           <h2 className="text-lg font-semibold leading-loose">Sections</h2>
-          <div className="self-start mt-4 text-sm font-medium leading-none">
-            Name
-          </div>
+         
         </div>
         <div className="flex flex-col self-start text-sm font-medium">
           <div className="flex gap-5 self-end max-w-full w-[165px]">
@@ -24,16 +23,19 @@ function Sections({ data }) {
               <span className="self-stretch my-auto">Add new</span>
             </button>
           </div>
-          <div className="flex gap-5 mt-4 leading-none text-black">
+          {/* <div className="flex gap-5 mt-4 leading-none text-black">
+            <div >
+              Name
+            </div>
             <div className="grow">Questions</div>
             <div>Marking</div>
             <div>Max Marks</div>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="shrink-0 mt-1 h-px bg-gray-300 border border-gray-300 border-solid max-md:max-w-full" />
-
-      {data.sections.map((section, index) => (
+            <EditSectionTable data = {data} />
+      {/* {data.sections.map((section, index) => (
         <React.Fragment key={index}>
           <div className="flex flex-wrap gap-5 justify-between mt-1.5 mr-5 ml-5 w-full text-sm leading-6 text-black max-w-[499px] max-md:mr-2.5 max-md:max-w-full">
             <div>{section.name}</div>
@@ -45,7 +47,7 @@ function Sections({ data }) {
           </div>
           <div className="shrink-0 mt-1.5 h-px bg-gray-300 border border-gray-300 border-solid max-md:max-w-full" />
         </React.Fragment>
-      ))}
+      ))} */}
 
       <div className="flex flex-wrap gap-5 justify-between mt-3.5 mr-5 ml-5 w-full text-sm font-medium leading-6 text-black max-w-[501px] max-md:mr-2.5 max-md:max-w-full">
         <div>Total Questions: {data.total_question}</div>

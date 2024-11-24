@@ -35,7 +35,7 @@ import Testing from "./components/Testing/Testing.jsx";
 import ExamSchema from "./components/ExamSchemas/NewExamSchema/NewExamSchema.jsx";
 import ExamSchemaE from "./components/ExamSchemas/MarketPlace/MarketPlace.jsx";
 import MarketPlace from "./components/ExamSchemas/MarketPlace/MarketPlace.jsx";
-import EditSection from "./components/ExamSchemas/EditSection/EditSection.jsx";
+//import EditSection from "./components/ExamSchemas/";
 import AddNewSection from "./components/ExamSchemas/AddNewSection/AddNewSection.jsx";
 
 import DemoPage from "./components/Table/page.tsx";
