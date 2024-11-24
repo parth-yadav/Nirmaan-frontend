@@ -7,7 +7,7 @@ import InputField from "./InputField";
 import ActionButtons from "./ActionButtons";
 import Statistics from "./Statistics";
 
-function MarketPlace() {
+function MarketPlace({data}) {
   return (
     <main className="flex flex-col rounded-none max-w-[600px] ">
       <div className="flex flex-col pt-8 pb-14 w-full bg-white max-md:max-w-full">
@@ -48,7 +48,7 @@ function MarketPlace() {
             </div>
           </section>
           <hr className="mt-8 w-full bg-gray-300 border border-gray-300 border-solid min-h-[1px] max-md:max-w-full" />
-          <Statistics />
+          <Statistics data={data} />
         </div>
       </div>
     </main>

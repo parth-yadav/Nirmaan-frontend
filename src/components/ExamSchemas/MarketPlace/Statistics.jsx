@@ -1,12 +1,7 @@
-
 import React from "react";
 
-function Statistics() {
-  const stats = [
-    { label: "Stocks sold", value: "90" },
-    { label: "Income", value: "₹4500" },
-    { label: "Outbound days", value: "32" },
-  ];
+function Statistics({ data }) {
+  const stats = data.statistics[0]; // Access the first object in the array
 
   return (
     <section className="flex flex-col px-8 mt-5 w-full max-md:px-5 max-md:max-w-full">
@@ -14,16 +9,16 @@ function Statistics() {
         Statistics
       </h2>
       <div className="flex flex-wrap gap-5 mt-4">
-        {stats.map((stat, index) => (
+        {Object.entries(stats).map(([key, value], index) => (
           <div
             key={index}
             className="flex flex-col flex-1 justify-center p-2.5 bg-gray-100 rounded-md"
           >
             <div className="text-sm font-medium leading-none text-gray-700 uppercase">
-              {stat.label}
+              {key.replace("_", " ")} {/* Format label */}
             </div>
             <div className="mt-2.5 text-3xl font-semibold tracking-tight leading-tight text-black">
-              {stat.value}
+              {value}
             </div>
           </div>
         ))}
