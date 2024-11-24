@@ -9,11 +9,11 @@ import Statistics from "./Statistics";
 
 function MarketPlace() {
   return (
-    <main className="flex flex-col rounded-none max-w-[600px] shadow-[-5px_0px_20px_rgba(0,0,0,0.25)]">
+    <main className="flex flex-col rounded-none max-w-[600px] ">
       <div className="flex flex-col pt-8 pb-14 w-full bg-white max-md:max-w-full">
         <div className="flex flex-col px-8 w-full text-sm max-md:px-5 max-md:max-w-full">
-          <Header />
-          <TabNavigation />
+        
+         
           <TargetGroups />
           <InputField label="Total Stocks :" />
           <InputField label="Max stocks per user :" />
@@ -21,7 +21,7 @@ function MarketPlace() {
           <InputField label="Price (in INR) :" />
           <InputField label="Discount (in %) :" />
           <ActionButtons />
-          <hr className="mt-7 w-full bg-gray-300 border border-gray-300 border-solid min-h-[1px] max-md:max-w-full" />
+          <hr className="mt-7 w-full bg-gray-300  min-h-[1px] max-md:max-w-full" />
           <section className="flex flex-col mt-5 ml-8 max-w-full w-[281px] max-md:ml-2.5">
             <h2 className="self-start text-lg font-semibold leading-loose text-black">
               Actions

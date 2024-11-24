@@ -6,7 +6,7 @@ function TabNavigation() {
       <button className="flex-1 flex items-center justify-center gap-2.5 px-3 py-1.5  rounded text-slate-900">
         Exam schema
       </button>
-      <button className="flex-1 flex items-center justify-center gap-2.5 px-3 py-1.5 bg-white rounded text-slate-700">
+      <button className="flex-1 flex items-center justify-center gap-2.5 px-3 py-1.5 bg-blue-100 rounded text-slate-700">
         Marketplace info
       </button>
     </nav>

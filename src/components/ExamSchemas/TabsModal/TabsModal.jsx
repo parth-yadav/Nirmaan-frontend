@@ -13,7 +13,7 @@ export default function TabsModal() {
           </TabsTrigger>
           <TabsTrigger
             value="marketplace-info"
-            className="text-lg font-semibold"
+            className="text-lg  font-semibold "
           >
             Marketplace info
           </TabsTrigger>

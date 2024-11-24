@@ -27,7 +27,7 @@ function Header() {
     Exam schema
   </button>
   <button className="flex-1 flex items-center justify-center gap-2.5 px-3 py-1.5 rounded text-slate-700">
-    Marketplace info
+    Mtplace info
   </button>
 </nav>
 

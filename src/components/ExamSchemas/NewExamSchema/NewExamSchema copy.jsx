@@ -9,9 +9,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import NewExamSchema from "../NewExamSchema/NewExamSchema";
 import MarketPlace from "../MarketPlace/MarketPlace";
 
-function NewExamSchemaCopy() {
+function NewExamSchemaCover() {
   return (
-    <div className=" absolute inset-y-0 right-0 w-full max-w-xl overflow-auto z-50 bg-white">
+    <div className=" absolute border inset-y-0 right-0 w-full max-w-xl overflow-auto z-50 bg-white">
       <main className="flex flex-col max-w-[600px]">
         <header className="flex flex-col px-8 pb-2 w-full max-md:px-5 max-md:max-w-full">
           <div className="flex flex-wrap gap-5 justify-between w-full text-sm font-medium leading-none text-yellow-800 whitespace-nowrap max-md:max-w-full">
@@ -32,14 +32,7 @@ function NewExamSchemaCopy() {
             />
           </div>
         </header>
-        <nav className="flex flex-wrap items-center p-1.5 mt-8 w-full text-sm font-medium leading-none rounded-md bg-slate-100 max-md:mr-1.5 max-md:max-w-full">
-          <button className="flex-1 flex items-center justify-center gap-2.5 px-3 py-1.5 bg-white rounded text-slate-900">
-            Exam schema
-          </button>
-          <button className="flex-1 flex items-center justify-center gap-2.5 px-3 py-1.5 rounded text-slate-700">
-            Marketplace info
-          </button>
-        </nav>
+       
         <Tabs defaultValue="account" >
           <TabsList>
             <nav className="flex flex-wrap items-center p-1.5 mt-8 w-full text-sm font-medium leading-none rounded-md bg-slate-100 max-md:mr-1.5 max-md:max-w-full">
@@ -69,6 +62,6 @@ function NewExamSchemaCopy() {
   );
 }
 
-export default NewExamSchemaCopy;
+export default NewExamSchemaCover;
 
 //absolute inset-y-0 right-0
