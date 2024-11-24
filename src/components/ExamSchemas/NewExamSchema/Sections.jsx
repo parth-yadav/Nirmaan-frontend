@@ -1,19 +1,5 @@
-
 import React from "react";
-
-const sectionData = [
-  { name: "Organic Chemistry", questions: 25, marking: "+4/-1", maxMarks: 100 },
-  { name: "Physics", questions: 45, marking: "+4/0", maxMarks: 100 },
-  { name: "Mathematics", questions: 30, marking: "+6/-1.5", maxMarks: 100 },
-  {
-    name: "Inorganic Chemistry",
-    questions: 10,
-    marking: "+5/-1",
-    maxMarks: 50,
-  },
-];
-
-function Sections() {
+function Sections({ data }) {
   return (
     <section className="mt-10 max-md:mt-10">
       <div className="flex flex-wrap gap-5 justify-between mx-5 w-full max-w-[500px] max-md:mr-2.5 max-md:max-w-full">
@@ -25,7 +11,9 @@ function Sections() {
         </div>
         <div className="flex flex-col self-start text-sm font-medium">
           <div className="flex gap-5 self-end max-w-full w-[165px]">
-            <div className="leading-6 text-black">Total: 4</div>
+            <div className="leading-6 text-black">
+              Total: {data.sections.length}
+            </div>
             <button className="flex gap-1.5 justify-center items-center px-2 py-1.5 leading-none text-black bg-gray-200 rounded-md">
               <img
                 loading="lazy"
@@ -44,22 +32,24 @@ function Sections() {
         </div>
       </div>
       <div className="shrink-0 mt-1 h-px bg-gray-300 border border-gray-300 border-solid max-md:max-w-full" />
-      {sectionData.map((section, index) => (
+
+      {data.sections.map((section, index) => (
         <React.Fragment key={index}>
           <div className="flex flex-wrap gap-5 justify-between mt-1.5 mr-5 ml-5 w-full text-sm leading-6 text-black max-w-[499px] max-md:mr-2.5 max-md:max-w-full">
             <div>{section.name}</div>
             <div className="flex gap-10 whitespace-nowrap">
               <div>{section.questions}</div>
               <div>{section.marking}</div>
-              <div>{section.maxMarks}</div>
+              <div>{section.max_marks}</div>
             </div>
           </div>
           <div className="shrink-0 mt-1.5 h-px bg-gray-300 border border-gray-300 border-solid max-md:max-w-full" />
         </React.Fragment>
       ))}
+
       <div className="flex flex-wrap gap-5 justify-between mt-3.5 mr-5 ml-5 w-full text-sm font-medium leading-6 text-black max-w-[501px] max-md:mr-2.5 max-md:max-w-full">
-        <div>Total Questions : 100</div>
-        <div>Maximum marks: 400</div>
+        <div>Total Questions: {data.total_question}</div>
+        <div>Maximum Marks: {data.total_max_marks}</div>
       </div>
     </section>
   );

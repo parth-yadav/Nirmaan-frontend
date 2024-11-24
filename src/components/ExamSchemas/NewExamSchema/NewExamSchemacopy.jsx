@@ -6,10 +6,10 @@ import Duration from "./Duration";
 import Sections from "./Sections";
 import SaveChanges from "./SaveChanges";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import NewExamSchema from "../NewExamSchema/NewExamSchema";
+import NewExamSchema from "./NewExamSchema";
 import MarketPlace from "../MarketPlace/MarketPlace";
 
-function NewExamSchemaCover() {
+function NewExamSchemaCover(props) {
   return (
     <div className=" absolute border inset-y-0 right-0 w-full max-w-xl overflow-auto z-50 bg-white">
       <main className="flex flex-col max-w-[600px]">
@@ -24,16 +24,18 @@ function NewExamSchemaCover() {
               />
               <div className="self-stretch my-auto">Draft</div>
             </div>
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/75971904da857823c437cb2eb2c6ef1b8ab27ab6db876fa727bf66c43e016bc6?placeholderIfAbsent=true&apiKey=8a82faa9db93454483a68c973b38c7b0"
-              className="object-contain shrink-0 w-6 aspect-square"
-              alt=""
-            />
+            <button onClick={props.close}>
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/75971904da857823c437cb2eb2c6ef1b8ab27ab6db876fa727bf66c43e016bc6?apiKey=8a82faa9db93454483a68c973b38c7b0&&apiKey=8a82faa9db93454483a68c973b38c7b0"
+                className="shrink-0 w-8 aspect-square"
+                alt=""
+              />
+            </button>
           </div>
         </header>
-       
-        <Tabs defaultValue="account" >
+
+        <Tabs defaultValue="account">
           <TabsList>
             <nav className="flex flex-wrap items-center p-1.5 mt-8 w-full text-sm font-medium leading-none rounded-md bg-slate-100 max-md:mr-1.5 max-md:max-w-full">
               <TabsTrigger
@@ -51,10 +53,10 @@ function NewExamSchemaCover() {
             </nav>
           </TabsList>
           <TabsContent value="account">
-            <NewExamSchema />
+            <NewExamSchema data={props.data} />
           </TabsContent>
           <TabsContent value="password">
-            <MarketPlace />
+            <MarketPlace data={props.data} />
           </TabsContent>
         </Tabs>
       </main>

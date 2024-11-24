@@ -91,7 +91,7 @@ function getData(): Promise<Test[]> {
     },
     {
       id: "131pqr",
-      title: "SQL Queries",
+      title: "Queries",
       questioncount: 10,
       duration: 30,
       attempts: 1,

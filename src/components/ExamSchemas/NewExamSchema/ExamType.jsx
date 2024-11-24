@@ -1,7 +1,7 @@
 
 import React from "react";
 
-function ExamType() {
+function ExamType({data}) {
   return (
     <div className="flex flex-col mt-5 w-full max-md:mr-1.5 max-md:max-w-full">
       <label

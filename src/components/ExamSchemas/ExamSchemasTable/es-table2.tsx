@@ -4,8 +4,8 @@ import DataTable from "../../Table/data-ttable";
 import ExamModal from "./exam-modal"; // Import your modal component
 import NewExamSchema from "../NewExamSchema/NewExamSchema";
 import TabsModal from "../TabsModal/TabsModal";
-import NewExamSchemaCopy from "../NewExamSchema/NewExamSchema copy";
-
+import NewExamSchemaCopy from "../NewExamSchema/NewExamSchemacopy";
+import ExamSchemaModal from "./es-modal"
 function getData(): Promise<ExamSchema[]> {
   return Promise.resolve([
     {
@@ -222,7 +222,7 @@ export default function ExamSchemaTable() {
         columns={columns}
         searchcolumn="title"
         data={data}
-        ModalComponent={NewExamSchemaCopy} // Pass the modal component
+        ModalComponent={ExamSchemaModal} // Pass the modal component
       />
     </div>
   );

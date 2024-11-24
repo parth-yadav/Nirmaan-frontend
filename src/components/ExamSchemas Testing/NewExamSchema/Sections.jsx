@@ -1,26 +1,26 @@
 
 import React from "react";
 
-const sectionData = [
-  { name: "Organic Chemistry", questions: 25, marking: "+4/-1", maxMarks: 100 },
-  { name: "Physics", questions: 45, marking: "+4/0", maxMarks: 100 },
-  { name: "Mathematics", questions: 30, marking: "+6/-1.5", maxMarks: 100 },
-  {
-    name: "Inorganic Chemistry",
-    questions: 10,
-    marking: "+5/-1",
-    maxMarks: 50,
-  },
-];
+// const sectionData = [
+//   { name: "Organic Chemistry", questions: 25, marking: "+4/-1", maxMarks: 100 },
+//   { name: "Physics", questions: 45, marking: "+4/0", maxMarks: 100 },
+//   { name: "Mathematics", questions: 30, marking: "+6/-1.5", maxMarks: 100 },
+//   {
+//     name: "Inorganic Chemistry",
+//     questions: 10,
+//     marking: "+5/-1",
+//     maxMarks: 50,
+//   },
+// ];
 
-function Sections() {
+function Sections({data}) {
   return (
     <section className="mt-10 max-md:mt-10">
       <div className="flex flex-wrap gap-5 justify-between mx-5 w-full max-w-[500px] max-md:mr-2.5 max-md:max-w-full">
         <div className="flex flex-col text-black whitespace-nowrap">
           <h2 className="text-lg font-semibold leading-loose">Sections</h2>
           <div className="self-start mt-4 text-sm font-medium leading-none">
-            Name
+            Nameeee
           </div>
         </div>
         <div className="flex flex-col self-start text-sm font-medium">
@@ -37,14 +37,14 @@ function Sections() {
             </button>
           </div>
           <div className="flex gap-5 mt-4 leading-none text-black">
-            <div className="grow">Questions</div>
+            <div className="grow">{ data.section.name}</div>
             <div>Marking</div>
             <div>Max Marks</div>
           </div>
         </div>
       </div>
       <div className="shrink-0 mt-1 h-px bg-gray-300 border border-gray-300 border-solid max-md:max-w-full" />
-      {sectionData.map((section, index) => (
+      {data.sections.map((section, index) => (
         <React.Fragment key={index}>
           <div className="flex flex-wrap gap-5 justify-between mt-1.5 mr-5 ml-5 w-full text-sm leading-6 text-black max-w-[499px] max-md:mr-2.5 max-md:max-w-full">
             <div>{section.name}</div>
