@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { TeamMembers, columns } from "./t-columns";
+import { TeamMembers, columns } from "./studentcolumns";
 import DataTable from "../../Table/data-ttable";
 
 function getData(): Promise<TeamMembers[]> {
