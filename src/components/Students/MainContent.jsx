@@ -1,5 +1,5 @@
 import React from "react";  
-import TeamMembersTable from "./StudentsTable/t-table"
+import TeamMembersTable from "./StudentsTable/studentstable"
 
 
 function MainContent() {
