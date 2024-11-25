@@ -21,7 +21,17 @@ export type TeamMembers = {
   id: string;
   name: string;
   status: "pending" | "processing" | "success" | "failed";
+  email: string;
+  phone: string;
+  gender: "Male" | "Female";
+  from: string;
+  birthday: string;
+  targetGroups: string[];
+  walletBalance: number;
+  examsPurchased: number;
+  lastLogin: string;
 };
+
 
 export const columns: ColumnDef<TeamMembers>[] = [
   {

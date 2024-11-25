@@ -6,9 +6,9 @@ import { ActionButtons } from "./ActionButtons";
 
 function UserProfile({data , close}) {
   return (
-    <div className="flex flex-col rounded-none max-w-[600px]">
+    <div className=" border flex flex-col rounded-none max-w-[600px]">
       
-      <div className="flex flex-col pt-8 pb-96 w-full bg-white shadow-sm max-md:pb-24 max-md:max-w-full">
+      <div className="flex flex-col pt-8 pb-8 w-full bg-white shadow-sm max-md:pb-24 max-md:max-w-full">
         <UserHeader data = {data} close = {close}  />
         <UserDetails data = {data} />
         <div className="mt-7 w-full bg-gray-300 border border-gray-300 border-solid min-h-[1px] max-md:max-w-full" />
