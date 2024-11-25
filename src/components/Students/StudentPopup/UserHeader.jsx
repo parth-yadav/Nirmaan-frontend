@@ -1,6 +1,6 @@
 import React from "react";
 
-export function UserHeader() {
+export function UserHeader({data , close}) {
   return (
     <div className="flex flex-col px-8 w-full max-md:px-5 max-md:max-w-full">
       <div className="flex flex-wrap gap-5 justify-between max-md:max-w-full">
@@ -15,7 +15,7 @@ export function UserHeader() {
             <div className="self-stretch my-auto">Active</div>
           </div>
           <div className="mt-4 text-3xl font-semibold tracking-tight leading-tight text-black">
-            Prajjawal Pandit
+            {data.name}
           </div>
         </div>
         <img

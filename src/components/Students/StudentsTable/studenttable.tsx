@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { TeamMembers, columns } from "./studentcolumns";
 import DataTable from "../../Table/data-ttable";
+import StudentModal from "./studentmodal"
 
 function getData(): Promise<TeamMembers[]> {
   return Promise.resolve([
@@ -27,7 +28,7 @@ function getData(): Promise<TeamMembers[]> {
     {
       id: "131pqr",
       name: "Prashant Kumar",
-      status: "pending",
+      status: "pending",  
     },
   ]);
   return fetch("http://localhost:5000/api/tests").then((response) =>
@@ -55,7 +56,12 @@ export default function TeamMembersTable() {
 
   return (
     <div className=" py-10">
-      <DataTable columns={columns} searchcolumn="name" data={data} />
+      <DataTable
+        columns={columns}
+        searchcolumn="title"
+        data={data}
+        ModalComponent={StudentModal} // Pass the modal component
+      />
     </div>
   );
 }
