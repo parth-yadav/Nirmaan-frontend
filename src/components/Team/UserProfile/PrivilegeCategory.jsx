@@ -10,9 +10,9 @@ function PrivilegeCategory({ name, permissions }) {
         {permissions.map((permission, index) => (
           <div
             key={index}
-            className={`gap-1.5 self-stretch px-1.5 ${
+            className={`gap-1.5 self-stretch px-1.5 py-1.5 rounded-lg  ${
               permission === "Read" ? "bg-green-200" : "bg-red-200"
-            } rounded-md`}
+            } `}
           >
             {permission}
           </div>

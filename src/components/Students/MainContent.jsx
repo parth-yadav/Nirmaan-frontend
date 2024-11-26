@@ -1,5 +1,6 @@
 import React from "react";  
-import TeamMembersTable from "./StudentsTable/studentstable"
+import TeamMembersTable from "./StudentsTable/studenttable"
+import UserProfile from "./StudentPopup/UserProfile";
 
 
 function MainContent() {
@@ -14,6 +15,7 @@ function MainContent() {
       <div className="flex gap-5 justify-between mt-2 w-full max-md:flex-wrap max-md:max-w-full">   
       </div>
       <TeamMembersTable />
+      {/* <UserProfile /> */}
     </div>
   );
 }

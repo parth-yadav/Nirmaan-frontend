@@ -22,7 +22,7 @@ function MainContent() {
             alt=""
             className="shrink-0 my-auto w-4 aspect-square"
           />
-          <span>New Exam Schema</span>
+          <span>New Examm Schema</span>
         </button>
       </div>
       <ExamSchemaTable />

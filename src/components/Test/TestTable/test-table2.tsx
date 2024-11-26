@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Test, columns } from "./test-columns";
 import DataTable from "../../Table/data-ttable";
-import ExamModal2 from "./test2-modal"; // Import your modal component
+
 import ExamModal from "./test-modal"; // Import your modal component
 
 
