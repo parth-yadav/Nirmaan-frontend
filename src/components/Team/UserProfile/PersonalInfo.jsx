@@ -1,13 +1,13 @@
 
 import React from "react";
 
-function PersonalInfo() {
+function PersonalInfo({data}) {
   const personalDetails = [
-    { label: "Email", value: "panditprajjawal@gmail.com" },
-    { label: "Phone", value: "+91 9123456789" },
-    { label: "Gender", value: "Male" },
-    { label: "From", value: "State, Country" },
-    { label: "Birthday", value: "16 April" },
+    { label: "Email",  },
+    { label: "Phone",  },
+    { label: "Gender",  },
+    { label: "From",  },
+    { label: "Birthday", },
   ];
 
   return (
@@ -20,11 +20,14 @@ function PersonalInfo() {
         ))}
       </div>
       <div className="flex flex-col items-start text-black">
-        {personalDetails.map((detail, index) => (
-          <div key={index} className={index > 0 ? "mt-2.5" : ""}>
-            {detail.value}
-          </div>
-        ))}
+        <div className="flex flex-col items-start text-black">
+          <div>{ data.email}</div>
+          <div className="mt-2.5">{ data.phone}</div>
+          <div className="mt-2.5">{data.gender}</div>
+          <div className="mt-2.5">{data.from}</div>
+          <div className="mt-2.5">{ data.birthday}</div>
+        </div>
+        
       </div>
     </section>
   );

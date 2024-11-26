@@ -1,7 +1,7 @@
 
 import React from "react";
 
-function ProfileHeader() {
+function ProfileHeader({data , close}) {
   return (
     <header className="flex flex-col px-8 w-full max-md:px-5 max-md:max-w-full">
       <div className="flex flex-wrap gap-5 justify-between max-md:max-w-full">
@@ -16,15 +16,17 @@ function ProfileHeader() {
             <div className="self-stretch my-auto">Active</div>
           </div>
           <h1 className="mt-4 text-3xl font-semibold tracking-tight leading-tight text-black">
-            Prajjawal Pandit
+            {data.name}
           </h1>
         </div>
-        <img
-          loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/75971904da857823c437cb2eb2c6ef1b8ab27ab6db876fa727bf66c43e016bc6?placeholderIfAbsent=true&apiKey=8a82faa9db93454483a68c973b38c7b0"
-          className="object-contain shrink-0 self-start w-6 aspect-square"
-          alt=""
-        />
+        <button onClick={close}>
+          <img
+            loading="lazy"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/75971904da857823c437cb2eb2c6ef1b8ab27ab6db876fa727bf66c43e016bc6?placeholderIfAbsent=true&apiKey=8a82faa9db93454483a68c973b38c7b0"
+            className="object-contain shrink-0 self-start w-6 aspect-square"
+            alt=""
+          />
+        </button>
       </div>
     </header>
   );

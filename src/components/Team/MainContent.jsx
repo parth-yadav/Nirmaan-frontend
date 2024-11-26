@@ -51,11 +51,11 @@ function MainContent() {
             alt=""
             className="shrink-0 my-auto w-4 aspect-square"
           />
-          <span>Add Questions</span>
+          <span>Add New Member</span>
         </button>
       </div>
       <TeamMembersTable />
-      <UserProfile />
+      
     </div>
   );
 }

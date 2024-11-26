@@ -19,8 +19,13 @@ import {
 // You can use a Zod schema here if you want.
 export type TeamMembers = {
   id: string;
-  name: string;  
+  name: string;
   status: "pending" | "processing" | "success" | "failed";
+  email: string;
+  phone: string;
+  gender: "Male" | "Female";
+  from: string;
+  birthday: string;
 };
 
 export const columns: ColumnDef<TeamMembers>[] = [

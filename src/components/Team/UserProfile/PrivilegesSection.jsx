@@ -1,4 +1,3 @@
-
 import React from "react";
 import PrivilegeCategory from "./PrivilegeCategory";
 
@@ -6,29 +5,31 @@ function PrivilegesSection() {
   const privilegeCategories = [
     {
       name: "Exam schema",
-      permissions: ["Create", "Read", "Update", "Deprecate", "Manage"],
+      permissions: ["Create", "Read", "Update"],
     },
     {
       name: "Question Pools",
-      permissions: ["Create", "Read", "Update", "Deprecate", "Manage"],
+      permissions: ["Read", "Update", "Manage"],
     },
     {
       name: "Individual Questions",
-      permissions: ["Create", "Read", "Update", "Deprecate", "Manage"],
+      permissions: ["Create", "Read", "Update", "Deprecate"],
     },
     {
       name: "Students",
-      permissions: ["Create", "Read", "Update", "Deprecate", "Manage"],
+      permissions: ["Read", "Update"],
     },
     {
       name: "Team members",
-      permissions: ["Create", "Read", "Update", "Deprecate", "Manage"],
+      permissions: ["Create", "Read", "Manage"],
     },
     {
       name: "Blogs",
       permissions: ["Create", "Read", "Update", "Deprecate", "Manage"],
     },
   ];
+
+  const allPermissions = ["Create", "Read", "Update", "Deprecate", "Manage"];
 
   return (
     <section className="flex flex-col items-start px-8 mt-6 w-full max-md:px-5 max-md:max-w-full">
@@ -43,6 +44,7 @@ function PrivilegesSection() {
                 key={index}
                 name={category.name}
                 permissions={category.permissions}
+                allPermissions={allPermissions}
               />
             ))}
           </div>
