@@ -1,5 +1,6 @@
 import React from "react";
 import TeamMembersTable from "./TeamTable/t-table"
+import UserProfile from "./UserProfile/UserProfile";
 
 
 function MainContent() {
@@ -54,6 +55,7 @@ function MainContent() {
         </button>
       </div>
       <TeamMembersTable />
+      <UserProfile />
     </div>
   );
 }
