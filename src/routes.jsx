@@ -41,6 +41,7 @@ import AddNewSection from "./components/ExamSchemas/AddNewSection/AddNewSection.
 import DemoPage from "./components/Table/page.tsx";
 
 import QuestionPoolLayout from "./components/QuestionPool/ExamPage/QuestionPoolLayout.jsx";
+
 import TestQuestionEditor from "./components/TextEditorTesting/texteditor.tsx";
 import BlogEditorPage from "./components/BlogEditor/BlogEditor.tsx";
 import SingleBlog from "./components/SingleBlog/SingleBlog.tsx";
@@ -84,6 +85,7 @@ export const router = createBrowserRouter(
         <Route path="test" element={<MainContent />} />
         <Route path="blogscord" element={<BlogListCo />} />
         <Route path="question_pool" element={<QuestionPool />} />
+       
         <Route path="exam_schema" element={<ExamSchemas />} />
         <Route path="team" element={<Team />} />
         <Route path="students" element={<Students />} />
