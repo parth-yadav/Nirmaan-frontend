@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Calendar, Edit, Trash2 } from "lucide-react";
 import QuestionData from "./QuestionData";
 import QuestionForm from "../QuestionForm/QuestionForm";
+import Timeline from "../Timeline/Timeline";
 
 const QuestionDataa = QuestionData;
 
@@ -20,38 +21,56 @@ const ActionButtons = ({
   onNext,
   onProposeChanges,
   onDeleteQuestion,
+  
 }) => {
+  const displayEventTimeline = () => {
+    setIsTimelineVisible((prev) => !prev);
+    console.log("Toggling event timeline");
+  };
+
+  
+  const [isTimelineVisible, setIsTimelineVisible] = useState(false);
+
   return (
-    <div className="flex flex-wrap gap-5 justify-between mt-8 w-full text-sm leading-6 text-white">
-      <div className="flex gap-5">
-        <ActionButton
-          icon={<Edit className="w-4 h-4" />}
-          text="Propose changes"
-          bgColor="bg-slate-900"
-          onClick={onProposeChanges}
-        />
-        <ActionButton
-          icon={<Trash2 className="w-4 h-4" />}
-          text="Deprecate"
-          bgColor="bg-red-800"
-          onClick={onDeleteQuestion}
-        />
-      </div>
-      <div className="flex gap-5">
-        <ActionButton
-          icon={<Calendar className="w-4 h-4" />}
-          text="Event Timeline"
-          bgColor="bg-slate-900"
-          
-        />
-        {/* <ActionButton
+    <>
+      <div className="flex flex-wrap gap-5 justify-between mt-8 w-full text-sm leading-6 text-white">
+        <div className="flex gap-5">
+          <ActionButton
+            icon={<Edit className="w-4 h-4" />}
+            text="Propose changes"
+            bgColor="bg-slate-900"
+            onClick={onProposeChanges}
+          />
+          <ActionButton
+            icon={<Trash2 className="w-4 h-4" />}
+            text="Deprecate"
+            bgColor="bg-red-800"
+            onClick={onDeleteQuestion}
+          />
+        </div>
+        <div className="flex gap-5">
+          <ActionButton
+            icon={<Calendar className="w-4 h-4" />}
+            text="Event Timeline"
+            bgColor="bg-slate-900"
+            onClick={displayEventTimeline}
+          />
+
+          {/* <ActionButton
           icon={<Calendar className="w-4 h-4" />}
           text="Next Question"
           bgColor="bg-slate-900"
           onClick={onNext}
         /> */}
+        </div>
       </div>
-    </div>
+      {isTimelineVisible && (
+        <div className="absolute inset-y-0 right-0 w-full max-w-xl overflow-auto z-50">
+          <Timeline close = {displayEventTimeline} />
+          {/* Add your timeline details here */}
+        </div>
+      )}
+    </>
   );
 };
 
@@ -120,10 +139,11 @@ const QuestionPool = ({
   onNext,
   onProposeChanges,
   onDeleteQuestion,
+  displayEventTimeline
 }) => {
   return (
     <div className="flex flex-col font-medium max-md:max-w-full">
-      <header className="flex shrink-0 bg-gray-50 h-[50px] max-md:max-w-full" />
+      {/* <header className="flex shrink-0 bg-gray-50 h-[50px] max-md:max-w-full" /> */}
       <main className="flex flex-col  mt-8 w-full max-md:px-5 max-md:max-w-full">
         <h1 className="self-start text-xl font-semibold tracking-normal leading-snug text-black">
           Question Pool Editor
@@ -143,6 +163,7 @@ const QuestionPool = ({
           onNext={onNext}
           onProposeChanges={onProposeChanges}
           onDeleteQuestion={onDeleteQuestion}
+          displayEventTimeline={displayEventTimeline}
         />
       </main>
     </div>
@@ -178,6 +199,12 @@ const QuestionPoolLayout = () => {
     console.log("Delete question:", currentQuestionIndex + 1);
     // Implement the logic for deleting a question here
   };
+
+  const displayEventTimeline = () => {
+    // Implement the logic for displaying the event timeline here
+    console.log("Displaying event timeline");
+  };
+
 
   return (
     // <div className="overflow-hidden bg-white">
@@ -215,7 +242,7 @@ const QuestionPoolLayout = () => {
             onQuestionClick={handleQuestionClick}
           />
         </aside>
-        <main className="flex flex-col px-8 w-4/5 max-md:ml-0 max-md:w-full">
+        <main className="flex flex-col  bg-red-300 px-8 w-4/5 max-md:ml-0 max-md:w-full">
           <QuestionPool
             currentQuestion={QuestionDataa[currentQuestionIndex]}
             questionNumber={currentQuestionIndex + 1}
@@ -224,8 +251,9 @@ const QuestionPoolLayout = () => {
             onNext={handleNextQuestion}
             onProposeChanges={handleProposeChanges}
             onDeleteQuestion={handleDeleteQuestion}
+            displayEventTimeline={displayEventTimeline}
           />
-          <hr className="w-full bg-gray-300 mt-8 mb-8 border-0 h-px max-md:max-w-full" />
+          <hr className="w-full bg-blue-300 mt-8 mb-8 border-0 h-px max-md:max-w-full" />
           {showQuestionForm && (
             <div className="mt-8">
               <QuestionForm

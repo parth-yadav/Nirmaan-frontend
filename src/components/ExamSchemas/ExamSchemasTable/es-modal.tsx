@@ -22,7 +22,7 @@ const ExamSchemaModal: React.FC<ExamSchemaModalProps> = ({
 
         <NewExamSchemaCover data={data} close={onClose} />
       </div>
-    </>
+    </> 
   );
 };
 

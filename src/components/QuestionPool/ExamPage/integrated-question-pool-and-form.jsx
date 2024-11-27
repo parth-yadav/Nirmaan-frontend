@@ -172,8 +172,13 @@ const QuestionPoolLayout = () => {
     // Implement the logic for deleting a question here
   };
 
+  const displayEventTimeline = () => {
+    // Implement the logic for displaying the event timeline here
+    console.log("Displaying event timeline");
+  };
+
   return (
-    <div className="overflow-hidden bg-white">
+    <div className="overflow-hidden bg-red-300">
       <div className="flex gap-5 max-md:flex-col">
         <aside className="flex flex-col w-1/5 max-md:ml-0 max-md:w-full">
           <QuestionTileComponent
@@ -192,6 +197,7 @@ const QuestionPoolLayout = () => {
               onNext={handleNextQuestion}
               onProposeChanges={handleProposeChanges}
               onDeleteQuestion={handleDeleteQuestion}
+              displayEventTimeline={displayEventTimeline}
             />
           ) : (
             <div className="mt-8">

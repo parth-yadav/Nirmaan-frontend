@@ -217,12 +217,12 @@ const timelineData = [
   },
 ];
 
-export default function Timeline() {
+export default function Timeline({close}) {
   return (
     <section className="flex flex-col rounded-none max-w-[700px]">
       <div className="flex flex-col py-8 w-full bg-white shadow-[-5px_0px_20px_rgba(0,0,0,0.25)] max-md:max-w-full">
         <header className="flex flex-col px-8 w-full max-md:px-5 max-md:max-w-full">
-          <div className="flex gap-2.5 self-start text-xl font-semibold tracking-normal leading-snug whitespace-nowrap">
+          <div className="flex gap-2.5 text-xl font-semibold tracking-normal leading-snug whitespace-nowrap items-center">
             <img
               loading="lazy"
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/135bc6ba1cac0e6fdde6dbb6e19fb3bf2510b32037a56d2d12202bb1953acdba?placeholderIfAbsent=true&apiKey=8a82faa9db93454483a68c973b38c7b0"
@@ -230,6 +230,14 @@ export default function Timeline() {
               alt=""
             />
             <h1>Timeline</h1>
+            <button onClick={close} className="ml-auto">
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/75971904da857823c437cb2eb2c6ef1b8ab27ab6db876fa727bf66c43e016bc6?apiKey=8a82faa9db93454483a68c973b38c7b0&&apiKey=8a82faa9db93454483a68c973b38c7b0"
+                className="shrink-0 w-6 aspect-square"
+                alt=""
+              />
+            </button>
           </div>
         </header>
         <main className="flex flex-col px-8 mt-7 w-full max-md:px-5 max-md:max-w-full">

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Editor } from "@tinymce/tinymce-react";
 import conf from "@/conf/conf";
+import { OptionsContainer } from "./CorrectOPtion/OptionContainer";
 
 function QuestionForm({ question, onClose }) {
   const [questionText, setQuestionText] = useState("");
@@ -39,17 +40,15 @@ function QuestionForm({ question, onClose }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     console.log("Submitted question:", { questionText, options });
     onClose();
   };
 
-
-
   return (
     <form
       onSubmit={handleSubmit}
-      className="ml-8 flex flex-col text-sm rounded-none"
+      className=" flex flex-col text-sm rounded-none"
     >
       <div className="flex overflow-hidden flex-col pb-10 w-full bg-white max-md:max-w-full">
         <QuestionType />
@@ -64,6 +63,7 @@ function QuestionForm({ question, onClose }) {
           />
         ))}
         <AddOptionButton onClick={addOption} />
+        <OptionsContainer />
         <div className="flex justify-end mt-8">
           <button
             type="button"
@@ -116,7 +116,6 @@ function QuestionType() {
 }
 
 function QuestionInput({ value, onChange }) {
- 
   return (
     <div className="flex flex-col mt-7 w-full min-h-[126px] max-md:max-w-full">
       <div className="flex flex-col flex-1 w-full max-md:max-w-full">
@@ -161,10 +160,11 @@ function QuestionInput({ value, onChange }) {
                   "bullist numlist outdent indent | removeformat | help",
                 content_style: `
                   .tox.tox-tinymce-inline .tox-editor-header {
-                    background-color: #d81b1b;
-                    border: 2px solid #eee;
+                    
+                    border: 4px solid #eee;
                     border-radius: 10px;
-                    box-shadow: none;
+                   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+
                     overflow: hidden;
                     padding: 4px;
                     position: fixed; /* Change to fixed */
@@ -228,8 +228,8 @@ function OptionInput({ label, id, value, onChange }) {
                   "bullist numlist outdent indent | removeformat | help",
                 content_style: `
                   .tox.tox-tinymce-inline .tox-editor-header {
-                    background-color: #d81b1b;
-                    border: 2px solid #eee;
+                   
+                    border: 1px solid #eee;
                     border-radius: 10px;
                     box-shadow: none;
                     overflow: hidden;

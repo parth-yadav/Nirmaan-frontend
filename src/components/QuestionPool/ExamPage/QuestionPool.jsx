@@ -6,7 +6,7 @@ import ActionButtons from "./ActionButtons";
 const QuestionPool = () => {
   return (
     <div className="flex flex-col font-medium max-md:max-w-full">
-      <header className="flex shrink-0 bg-gray-50 h-[50px] max-md:max-w-full" />
+      {/* <header className="flex shrink-0 bg-gray-50 h-[50px] max-md:max-w-full" /> */}
       <main className="flex flex-col px-12 mt-8 w-full max-md:px-5 max-md:max-w-full">
         <h1 className="self-start text-xl font-semibold tracking-normal leading-snug text-black">
           Some Question pool name
