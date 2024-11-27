@@ -178,7 +178,7 @@ const QuestionPoolLayout = () => {
   };
 
   return (
-    <div className="overflow-hidden bg-red-300">
+    <div className="overflow-hidden bg-blue-300">
       <div className="flex gap-5 max-md:flex-col">
         <aside className="flex flex-col w-1/5 max-md:ml-0 max-md:w-full">
           <QuestionTileComponent

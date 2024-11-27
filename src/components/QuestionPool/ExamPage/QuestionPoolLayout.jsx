@@ -242,7 +242,7 @@ const QuestionPoolLayout = () => {
             onQuestionClick={handleQuestionClick}
           />
         </aside>
-        <main className="flex flex-col  bg-red-300 px-8 w-4/5 max-md:ml-0 max-md:w-full">
+        <main className="flex flex-col   px-8 w-4/5 max-md:ml-0 max-md:w-full">
           <QuestionPool
             currentQuestion={QuestionDataa[currentQuestionIndex]}
             questionNumber={currentQuestionIndex + 1}
