@@ -20,8 +20,9 @@ import {
 export type QuestionPool = {
   id: string;
   title: string;
-  tags: string;
+  tags: string[];
   status: "pending" | "processing" | "success" | "failed";
+  description: string;
 };
 
 export const columns: ColumnDef<QuestionPool>[] = [
@@ -33,16 +34,14 @@ export const columns: ColumnDef<QuestionPool>[] = [
   },
   {
     accessorKey: "tags",
-    // header: () => <div className="text-left">Status</div>,
     header: ({ column }) => (
       <div>
         <DataTableColumnHeader column={column} title="Tags" />
       </div>
     ),
-
     cell: ({ row }) => {
-      const tags = row.getValue("tags") as string;
-      return <div className="text-left">{tags}</div>;
+      const tags = row.getValue("tags") as string[];
+      return <div className="text-left">{tags.join(" ")}</div>;
     },
   },
   {

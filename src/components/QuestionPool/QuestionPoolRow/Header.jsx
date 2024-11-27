@@ -10,7 +10,7 @@ function Header({data, close}) {
             alt=""
             className="object-contain shrink-0 self-stretch my-auto w-3.5 aspect-square"
           />
-          <div className="self-stretch my-auto">Active</div>
+          <div className="self-stretch my-auto">{ data.status}</div>
         </div>
         <button onClick={close}>
           <img
@@ -26,7 +26,7 @@ function Header({data, close}) {
           htmlFor="questionPoolName"
           className="font-medium text-slate-900"
         >
-          Question pool name
+          Question pool name 
         </label>
         <div className="flex gap-2 items-start mt-1.5 w-full text-slate-400 max-md:max-w-full">
           <div className="flex flex-col flex-1 shrink w-full basis-0 min-w-[240px] max-md:max-w-full">

@@ -1,7 +1,7 @@
 import React from "react";
 
 import QuestionPoolTable from "./QuestionPoolTable/qp-table";
-import QuestionPool from "./QuestionPoolRow/QuestionPool";
+import QuestionPool from "./QuestionPoolRow/QuestionPoolRow";
 import ExamItem from "./ExamItem";
 
 function QuestionPoolPage() {
@@ -33,8 +33,8 @@ function QuestionPoolPage() {
 }
 
 export default QuestionPoolPage;
-  {
-    /* <div className="flex gap-5 max-md:flex-wrap max-md:max-w-full">
+{
+  /* <div className="flex gap-5 max-md:flex-wrap max-md:max-w-full">
           <div className="flex flex-col grow shrink-0 justify-center text-base leading-6 text-gray-500 basis-0 w-fit">
             <div className="flex flex-col justify-center">
               <div className="flex flex-col justify-center">
@@ -65,4 +65,4 @@ export default QuestionPoolPage;
             <span>View</span>
           </button>
         </div> */
-  }
+}

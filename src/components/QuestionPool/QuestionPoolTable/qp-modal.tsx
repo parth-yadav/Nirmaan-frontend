@@ -1,5 +1,5 @@
 import * as React from "react";
-import QuestionPoolRow from "../QuestionPoolRow/QuestionPool";
+import QuestionPoolRow from "../QuestionPoolRow/QuestionPoolRow";
 
 interface QustionPoolModalProps {
   isOpen: boolean;
@@ -17,9 +17,7 @@ const QuestionPoolModal: React.FC<QustionPoolModalProps> = ({
   return (
     <>
       <div className=" absolute inset-y-0 right-0 overflow-auto ">
-       
-          <QuestionPoolRow data={data} close={onClose} />
-       
+        <QuestionPoolRow data={data} close={onClose} />
       </div>
     </>
   );
