@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import EditSectionTable from "./EditSection/EditSectionTable/editsectiontable";
 import AddNewSection from "././../AddNewSection/AddNewSection";
 import { Button } from "@/components/ui/button";
@@ -6,6 +6,10 @@ import { Button } from "@/components/ui/button";
 function Sections({ data }) {
   const [showAddForm, setShowAddForm] = useState(false);
   const [sections, setSections] = useState(data.sections);
+
+  useEffect(() => {
+    setSections(data.sections);
+  }, [data.sections]);
 
   const handleAddNew = () => {
     setShowAddForm(true);
@@ -18,6 +22,14 @@ function Sections({ data }) {
   const handleSubmitNewSection = (newSection) => {
     setSections([...sections, newSection]);
     setShowAddForm(false);
+  };
+
+  const handleSectionUpdate = (updatedSection) => {
+    setSections((prevSections) =>
+      prevSections.map((section) =>
+        section.id === updatedSection.id ? updatedSection : section
+      )
+    );
   };
 
   return (
@@ -55,7 +67,10 @@ function Sections({ data }) {
           />
         </div>
       )}
-      <EditSectionTable data={{ ...data, sections }} />
+      <EditSectionTable
+        data={{ ...data, sections }}
+        onSectionUpdate={handleSectionUpdate}
+      />
 
       <div className="flex flex-wrap gap-5 justify-between mt-3.5 mr-5 ml-5 w-full text-sm font-medium leading-6 text-black max-w-[501px] max-md:mr-2.5 max-md:max-w-full">
         <div>Total Questio: {data.total_question}</div>
