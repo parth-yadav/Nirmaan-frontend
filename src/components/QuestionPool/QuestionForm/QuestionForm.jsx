@@ -3,6 +3,8 @@ import { Editor } from "@tinymce/tinymce-react";
 import conf from "@/conf/conf";
 import { OptionsContainer } from "./CorrectOPtion/OptionContainer";
 import { ActionBar } from "./ActionBar/ActionBar";
+import { ApprovalPanel } from "./ApprovalPanel/Quiz";
+import { ProposedChanges } from "./Proposed Changes/QuestionChanges";
 
 
 
@@ -49,30 +51,37 @@ function QuestionForm({ question, onClose }) {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className=" flex flex-col text-sm rounded-none"
-    >
-      <div className="flex overflow-hidden flex-col pb-10 w-full bg-white max-md:max-w-full">
-        <QuestionType />
-        <QuestionInput value={questionText} onChange={setQuestionText} />
-        {options.map((option) => (
-          <OptionInput
-            key={option.id}
-            label={option.label}
-            id={option.id}
-            value={option.text}
-            onChange={(value) => handleOptionChange(option.id, value)}
-          />
-        ))}
-        <AddOptionButton onClick={addOption} />
-        <OptionsContainer />
-        <div className="flex  mt-8">
-           <ActionBar />
+    <>
+      <form
+        onSubmit={handleSubmit}
+        className=" flex flex-col text-sm rounded-none"
+      >
+        <div className="flex overflow-hidden flex-col pb-10 w-full bg-white max-md:max-w-full">
+          <QuestionType />
+          <QuestionInput value={questionText} onChange={setQuestionText} />
+          {options.map((option) => (
+            <OptionInput
+              key={option.id}
+              label={option.label}
+              id={option.id}
+              value={option.text}
+              onChange={(value) => handleOptionChange(option.id, value)}
+            />
+          ))}
+          <AddOptionButton onClick={addOption} />
+          <OptionsContainer />
+          <div className="flex  mt-8">
+            <ActionBar />
+          </div>
         </div>
-       
+      </form>
+      <div>
+        <ApprovalPanel />
       </div>
-    </form>
+      <div>
+        <ProposedChanges />
+      </div>
+    </>
   );
 }
 
