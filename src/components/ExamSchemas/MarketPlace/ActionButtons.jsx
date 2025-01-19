@@ -20,7 +20,7 @@ function ActionButtons() {
           alt=""
           className="object-contain shrink-0 w-5 aspect-square"
         />
-        <div className="basis-auto">Some changes are not saved</div>
+        <div className="basis-auto">Some changes are not </div>
       </div>
     </div>
   );

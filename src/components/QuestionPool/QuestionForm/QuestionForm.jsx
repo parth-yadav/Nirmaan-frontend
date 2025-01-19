@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Editor } from "@tinymce/tinymce-react";
 import conf from "@/conf/conf";
 import { OptionsContainer } from "./CorrectOPtion/OptionContainer";
+import { ActionBar } from "./ActionBar/ActionBar";
+
+
 
 function QuestionForm({ question, onClose }) {
   const [questionText, setQuestionText] = useState("");
@@ -64,21 +67,10 @@ function QuestionForm({ question, onClose }) {
         ))}
         <AddOptionButton onClick={addOption} />
         <OptionsContainer />
-        <div className="flex justify-end mt-8">
-          <button
-            type="button"
-            onClick={onClose}
-            className="px-4 py-2 mr-4 text-black bg-gray-300 rounded-md"
-          >
-            Cancel
-          </button>
-          <button
-            type="submit"
-            className="px-4 py-2 text-white bg-blue-500 rounded-md"
-          >
-            Save Changes
-          </button>
+        <div className="flex  mt-8">
+           <ActionBar />
         </div>
+       
       </div>
     </form>
   );
