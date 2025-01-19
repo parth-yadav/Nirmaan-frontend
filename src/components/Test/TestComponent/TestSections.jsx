@@ -73,17 +73,17 @@ function TestSections({data}) {
         <table className="min-w-full table-auto ">
           <thead>
             <tr>
-              <th className="px-4 py-2  text-left">Section Name</th>
-              <th className="px-4 py-2  text-left">Questions</th>
-              <th className="px-4 py-2  text-left">Maximum Marks</th>
+              <th className=" py-2  text-left">Section Name</th>
+              <th className=" py-2  text-left">Questions</th>
+              <th className=" py-2  text-left">Maximum Marks</th>
             </tr>
           </thead>
           <tbody>
             {data.sections.map((section, index) => (
               <tr key={index} className="">
-                <td className="px-4 py-2 ">{section.title}</td>
-                <td className="px-4 py-2 ">{section.questions}</td>
-                <td className="px-4 py-2 ">{section.maximum_marks}</td>
+                <td className=" py-2 ">{section.title}</td>
+                <td className=" py-2 ">{section.questions}</td>
+                <td className=" py-2 ">{section.maximum_marks}</td>
               </tr>
             ))}
           </tbody>
