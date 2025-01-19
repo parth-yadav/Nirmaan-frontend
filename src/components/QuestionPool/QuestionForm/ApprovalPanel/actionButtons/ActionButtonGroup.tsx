@@ -1,5 +1,6 @@
 import * as React from "react";
 import { ActionButton } from "./ActionButton";
+import TimelineToggleButton from "@/components/QuestionPool/Timeline/EventTimelineButton";
 
 const actionData = [
   {
@@ -12,16 +13,12 @@ const actionData = [
     label: "Request changes",
     variant: "secondary" as const,
   },
-  {
-    icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/7076f310f05fa0055bac9e78b71bc3422fa9c17f33fe1c36965cd3df486131bf?placeholderIfAbsent=true&apiKey=8a82faa9db93454483a68c973b38c7b0",
-    label: "Event Timeline",
-    variant: "secondary" as const,
-  },
+ 
 ];
 
 export const ActionButtonGroup: React.FC = () => {
   return (
-    <div className="flex flex-wrap gap-10 text-sm font-medium leading-6 text-white rounded-md">
+    <div className="flex flex-wrap mt-6 gap-10 text-sm font-medium leading-6 text-white rounded-md">
       <div className="flex gap-5">
         {actionData.slice(0, 2).map((action, index) => (
           <ActionButton
@@ -32,11 +29,7 @@ export const ActionButtonGroup: React.FC = () => {
           />
         ))}
       </div>
-      <ActionButton
-        icon={actionData[2].icon}
-        label={actionData[2].label}
-        variant={actionData[2].variant}
-      />
+      <TimelineToggleButton />
     </div>
   );
 };

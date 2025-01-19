@@ -58,7 +58,7 @@ function NewBlogForm ()  {
             helperText="Tags helps in SEO and works as keywords"
           />
           <Button
-            text="Create"
+            text="Createee"
             icon="https://cdn.builder.io/api/v1/image/assets/TEMP/bbe9c09371a8e0a8dcc1f5c85441300ca8b19101919595d90572d08c724596ff?placeholderIfAbsent=true&apiKey=8a82faa9db93454483a68c973b38c7b0"
             className="mt-10"
           />

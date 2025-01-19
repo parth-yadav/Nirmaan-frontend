@@ -3,6 +3,7 @@ import { Calendar, Edit, Trash2 } from "lucide-react";
 import QuestionData from "./QuestionData";
 import QuestionForm from "../QuestionForm/QuestionForm";
 import Timeline from "../Timeline/Timeline";
+import TimelineToggleButton from "../Timeline/EventTimelineButton";
 
 const QuestionDataa = QuestionData;
 
@@ -48,13 +49,9 @@ const ActionButtons = ({
             onClick={onDeleteQuestion}
           />
         </div>
+
         <div className="flex gap-5">
-          <ActionButton
-            icon={<Calendar className="w-4 h-4" />}
-            text="Event Timeline"
-            bgColor="bg-slate-900"
-            onClick={displayEventTimeline}
-          />
+          <TimelineToggleButton />
 
           {/* <ActionButton
           icon={<Calendar className="w-4 h-4" />}
@@ -66,7 +63,7 @@ const ActionButtons = ({
       </div>
       {isTimelineVisible && (
         <div className="absolute inset-y-0 right-0 w-full max-w-xl overflow-auto z-50">
-          <Timeline close = {displayEventTimeline} />
+          <Timeline close={displayEventTimeline} />
           {/* Add your timeline details here */}
         </div>
       )}

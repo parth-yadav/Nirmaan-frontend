@@ -4,6 +4,7 @@ import React from "react";
 
 import TestTable from "./TestTable/test-table2"
 
+
 function MainContent() {
   return (
    
@@ -17,6 +18,7 @@ function MainContent() {
         </p>
        
         <TestTable />
+       
       </div>
     </main>
     

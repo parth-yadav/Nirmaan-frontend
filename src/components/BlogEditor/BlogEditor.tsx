@@ -1,175 +1,72 @@
 "use client";
 
-import { useRef, useEffect } from "react";
-import { Editor } from "@tinymce/tinymce-react";
-import { Button } from "@/components/ui/button";
-import { SaveIcon } from "lucide-react";
-import conf from "@/conf/conf";
+import { useState } from "react";
+import BlogCreator from "./BlogCreator";
+import BlogList from "./BlogList";
+import SingleBlogPost from "./SingleBlogPost";
+
+interface Blog {
+  id: number;
+  title: string;
+  content: string;
+  coverPhoto: string;
+  date: string;
+}
+
+const dummyBlogs: Blog[] = [
+  {
+    id: 1,
+    title: "My First Blog Post",
+    content:
+      "<p>This is the content of my first blog post. It's amazing!</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
+    coverPhoto: "/placeholder.svg?height=300&width=400",
+    date: "2023-05-01T12:00:00Z",
+  },
+  {
+    id: 2,
+    title: "Adventures in Coding",
+    content:
+      "<p>Today, I learned about React and Next.js. It was fun!</p><p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
+    coverPhoto: "/placeholder.svg?height=300&width=400",
+    date: "2023-05-05T14:30:00Z",
+  },
+];
 
 export default function BlogEditorPage() {
-  const editorRef = useRef<any>(null);
+  const [blogs, setBlogs] = useState<Blog[]>(dummyBlogs);
+  const [selectedBlog, setSelectedBlog] = useState<Blog | null>(null);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const header = document.getElementById("editor-header");
-      if (header) {
-        if (window.scrollY > 100) {
-          header.classList.add(
-            "bg-background/80",
-            "backdrop-blur-sm",
-            "shadow-md"
-          );
-        } else {
-          header.classList.remove(
-            "bg-background/80",
-            "backdrop-blur-sm",
-            "shadow-md"
-          );
-        }
-      }
-    };
+  const addBlog = (blog: Omit<Blog, "id">) => {
+    setBlogs([...blogs, { ...blog, id: blogs.length + 1 }]);
+  };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const handleSubmit = () => {
-    if (editorRef.current) {
-      const content = editorRef.current.getContent();
-      console.log({ content });
-      // Here you would typically send this data to your backend
-    }
+  const selectBlog = (id: number) => {
+    const blog = blogs.find((b) => b.id === id);
+    setSelectedBlog(blog || null);
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <header
-        id="editor-header"
-        className="fixed top-0 left-0 right-0 z-10 transition-all duration-300"
-      >
-        <div className="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="text-3xl font-bold bg-transparent border-none focus:outline-none focus:ring-0 p-0">
-            <Editor
-              apiKey={conf.tinymce}
-              onInit={(evt, editor) => (editorRef.current = editor)}
-              init={{
-                inline: true,
-                menubar: false,
-                plugins: [
-                  "advlist",
-                  "autolink",
-                  "lists",
-                  "link",
-                  "image",
-                  "charmap",
-                  "preview",
-                  "anchor",
-                  "searchreplace",
-                  "visualblocks",
-                  "code",
-                  "fullscreen",
-                  "insertdatetime",
-                  "media",
-                  "table",
-                  "code",
-                  "help",
-                  "wordcount",
-                ],
-                toolbar: "bold italic",
-                content_style: `
-                  body { 
-                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-                    font-size: 24px;
-                    font-weight: bold;
-                    line-height: 1.6;
-                    color: #333;
-                    max-width: 100%;
-                    padding: 0;
-                  }
-                `,
-              }}
-              initialValue="Untitled Story"
-            />
-          </div>
-          <div className="flex items-center gap-4">
-            <Button onClick={handleSubmit} size="sm">
-              <SaveIcon className="w-4 h-4 mr-2" />
-              Publish
-            </Button>
-          </div>
-        </div>
+    <div className="min-h-screen bg-purple-100 ">
+      <header className="bg-purple-600 text-white p-4">
+        <h1 className="text-2xl font-bold">Nirman</h1>
       </header>
-
-      <main className="pt-24 pb-16">
-        <div className="max-w-4xl mx-auto px-4 space-y-8">
-          <Editor
-            apiKey={conf.tinymce}
-            onInit={(evt, editor) => (editorRef.current = editor)}
-            init={{
-              inline: true,
-              menubar: true,
-              plugins: [
-                "advlist",
-                "autolink",
-                "lists",
-                "link",
-                "image",
-                "charmap",
-                "preview",
-                "anchor",
-                "searchreplace",
-                "visualblocks",
-                "code",
-                "fullscreen",
-                "insertdatetime",
-                "media",
-                "table",
-                "code",
-                "help",
-                "wordcount",
-              ],
-              toolbar:
-                "undo redo | formatselect | bold italic backcolor | \
-                alignleft aligncenter alignright alignjustify | \
-                bullist numlist outdent indent | removeformat | image | help",
-              content_style: `
-      .tox.tox-tinymce-inline .tox-editor-header {
-       
-        z-index: 100;
-      
-      }
-      `,
-              file_picker_types: "image",
-              image_title: true,
-              automatic_uploads: true,
-              file_picker_callback: (cb, value, meta) => {
-                const input = document.createElement("input");
-                input.setAttribute("type", "file");
-                input.setAttribute("accept", "image/*");
-
-                input.onchange = function () {
-                  const file = (this as HTMLInputElement).files?.[0];
-                  if (file) {
-                    const reader = new FileReader();
-                    reader.onload = function () {
-                      const id = "blobid" + new Date().getTime();
-                      const blobCache =
-                        editorRef.current.editorUpload.blobCache;
-                      const base64 = (reader.result as string).split(",")[1];
-                      const blobInfo = blobCache.create(id, file, base64);
-                      blobCache.add(blobInfo);
-                      cb(blobInfo.blobUri(), { title: file.name });
-                    };
-                    reader.readAsDataURL(file);
-                  }
-                };
-
-                input.click();
-              },
-            }}
-            initialValue="<p>Start writing your story...</p>"
-          />
-        </div>
+      <main className="container mx-auto p-4">
+        {selectedBlog ? (
+          <>
+            <button
+              onClick={() => setSelectedBlog(null)}
+              className="mb-4 text-purple-600 hover:text-purple-800 focus:outline-none focus:underline"
+            >
+              &larr; Back to all posts
+            </button>
+            <SingleBlogPost blog={selectedBlog} />
+          </>
+        ) : (
+          <>
+            <BlogCreator addBlog={addBlog} />
+            <BlogList blogs={blogs} selectBlog={selectBlog} />
+          </>
+        )}
       </main>
     </div>
   );

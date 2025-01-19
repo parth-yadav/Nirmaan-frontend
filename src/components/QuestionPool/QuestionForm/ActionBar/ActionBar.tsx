@@ -1,6 +1,7 @@
 import * as React from "react";
 import { ActionButton } from "./ActionButton";
 import { StatusIndicator } from "./StatusIndicator";
+import TimelineToggleButton from "../../Timeline/EventTimelineButton";
 
 const actions = [
   {
@@ -30,10 +31,7 @@ export function ActionBar() {
         <StatusIndicator />
       </div>
       <div className="text-white">
-        <ActionButton
-          icon="https://cdn.builder.io/api/v1/image/assets/TEMP/7076f310f05fa0055bac9e78b71bc3422fa9c17f33fe1c36965cd3df486131bf?placeholderIfAbsent=true&apiKey=8a82faa9db93454483a68c973b38c7b0"
-          label="Event Timeline"
-        />
+        <TimelineToggleButton />
       </div>
     </div>
   );

@@ -2,6 +2,7 @@ import * as React from "react";
 import { ActionButton } from "./ActionButton";
 import { QuestionOption } from "./QuestionOption";
 import { ApprovalNotification } from "./ApprovalNotification";
+import TimelineToggleButton from "../../Timeline/EventTimelineButton";
 
 const options = [
   { text: "Lorem ipsum dolor sit amet consectetur.", isCorrect: false },
@@ -63,11 +64,7 @@ export const ProposedChanges: React.FC = () => {
             <ActionButton key={index} {...action} />
           ))}
         </div>
-        <ActionButton
-          icon="https://cdn.builder.io/api/v1/image/assets/TEMP/7a5ab5f726d0cebeb4ce5aab76f94fea660c889a844003bc17938312ab010430?apiKey=8a82faa9db93454483a68c973b38c7b0&"
-          label="Event Timeline"
-          variant="dark"
-        />
+       <TimelineToggleButton />
       </div>
 
       <ApprovalNotification

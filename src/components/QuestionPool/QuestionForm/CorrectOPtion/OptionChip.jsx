@@ -7,7 +7,10 @@ export const OptionChip = ({ text }) => {
       role="button"
       tabIndex={0}
     >
-      {text} X
+      {text} 
+      <button>
+        X
+      </button>
     </div>
   );
 };
