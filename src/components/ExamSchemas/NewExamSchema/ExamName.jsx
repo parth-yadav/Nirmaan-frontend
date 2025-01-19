@@ -14,7 +14,7 @@ function ExamName({ data }) {
         htmlFor="examName"
         className="font-medium leading-none text-slate-900"
       >
-        Exam name {title}
+        {title}
       </label>
       <div className="flex gap-2 items-start mt-1.5 w-full text-base text-black max-md:max-w-full">
         <div className="flex flex-col flex-1 shrink w-full basis-0 min-w-[240px] max-md:max-w-full">

@@ -35,7 +35,7 @@ const ExamModal: React.FC<ExamModalProps> = ({ isOpen, onClose, data }) => {
             <p><strong>Duration:</strong> {data.duration} minutes</p>
           </div>
           <div>
-            <p><strong>Total Questions:</strong> {data.total_question}</p>
+            <p><strong>Total Questio:</strong> {data.total_question}</p>
             <p><strong>Total Max Marks:</strong> {data.total_max_marks}</p>
             <p>
               <strong>Status:</strong>{' '}

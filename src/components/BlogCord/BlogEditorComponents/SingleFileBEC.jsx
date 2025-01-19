@@ -332,7 +332,7 @@ function BlogHeader({ isOpen,isPublished ,onClose }) {
           <div className="self-stretch my-auto">Published</div>
         </div>
       ) : (
-        <div className="flex gap-1.5 justify-center items-center px-2 py-1.5 bg-red-500 rounded-md">
+        <div className="flex gap-1.5 justify-center items-center px-2 py-1.5  rounded-md">
           <img
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/64db57426044057a7d6922522ad27ca6bf8269a91714fe31bf7f38da2c1c7b20?placeholderIfAbsent=true&apiKey=8a82faa9db93454483a68c973b38c7b0"
@@ -410,7 +410,7 @@ const TagInput = ({ tags, onAddTag, onRemoveTag }) => {
   };
 
   return (
-    <div className="flex flex-col self-stretch w-full min-h-[183px] max-md:max-w-full">
+    <div className="mt-6 flex flex-col self-stretch w-full  max-md:max-w-full">
       <label
         htmlFor="tagSearch"
         className="font-medium leading-none text-slate-900"
@@ -523,11 +523,11 @@ function BlogEditor({ isOpen ,blog ,onClose }) {
 
   return (
     <div className="fixed inset-y-0 right-0 w-full max-w-xl overflow-auto z-50">
-      <div className="p-4 h-full rounded-l-lg">
-        <main className="flex flex-col rounded-none max-w-[600px]">
-          <section className="flex flex-col pt-8 pb-40 w-full bg-white shadow-[0px_0px_20px_rgba(0,0,0,0.1)] max-md:pb-24 max-md:max-w-full">
-            <div className="flex z-10 flex-col px-8 w-full text-sm leading-none max-md:px-5 max-md:max-w-full">
-              <div className="flex flex-col w-full max-md:max-w-full">
+      <div className="p-4 h-full rounded-l-lg ">
+        <main className="flex flex-col rounded-none max-w-[600px] ">
+          <section className="flex flex-col pt-8  w-full bg-white shadow-[0px_0px_20px_rgba(0,0,0,0.1)] max-md:pb-24 max-md:max-w-full">
+            <div className="flex flex-col px-8  text-sm  ">
+              <div className="flex flex-col w-full max-md:max-w-full ">
                 <BlogHeader onClose={ onClose} isOpen={ isOpen} isPublished={editedBlog?.isPublished} />
                 <BlogTitle
                   title={editedBlog.title}
@@ -538,12 +538,7 @@ function BlogEditor({ isOpen ,blog ,onClose }) {
                   onChange={handleDescriptionChange}
                 />
               </div>
-              <img
-                loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/23a979084e1caf06971cdc3871ead192bf09178630689dfe54c437b4b7f280db?placeholderIfAbsent=true&apiKey=8a82faa9db93454483a68c973b38c7b0"
-                className="object-contain self-end mt-14 w-6 aspect-square max-md:mt-10 max-md:mr-2"
-                alt="Decorative element"
-              />
+              
             </div>
             <div className="flex flex-col items-start px-8 pb-14 mt-0 w-full text-sm font-medium max-md:px-5 max-md:max-w-full">
               <TagInput
