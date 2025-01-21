@@ -69,7 +69,7 @@ export default function QuestionPoolTable() {
         columns={columns}
         searchcolumn="title"
         data={data}
-        ModalComponent={QuestionPoolModal} // Pass the modal component
+        ModalComponent={QuestionPoolModal}
       />
     </div>
   );

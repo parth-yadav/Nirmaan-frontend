@@ -1,9 +1,9 @@
 import * as React from "react";
 import {
-  ColumnDef,
-  ColumnFiltersState,
-  SortingState,
-  VisibilityState,
+  type ColumnDef,
+  type ColumnFiltersState,
+  type SortingState,
+  type VisibilityState,
   flexRender,
   getCoreRowModel,
   getFilteredRowModel,
@@ -29,6 +29,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import DataTablePagination from "./pagination";
+import { useMediaQuery } from "react-responsive";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -64,6 +65,8 @@ function DataTable<TData, TValue>({
   const [selectedRow, setSelectedRow] = React.useState<TData | null>(null);
   const [isModalOpen, setIsModalOpen] = React.useState(false);
 
+  const isMobile = useMediaQuery({ maxWidth: 767 });
+
   const table = useReactTable({
     data,
     columns,
@@ -91,11 +94,11 @@ function DataTable<TData, TValue>({
   };
 
   return (
-    <div>
-      <div className="flex items-center py-4 space-x-4 justify-between">
-        <div className="flex gap-4">
+    <div className="w-full">
+      <div className="flex flex-col sm:flex-row items-center py-4 space-y-4 sm:space-y-0 sm:space-x-4 justify-between">
+        <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
           {!hideSearch && (
-            <Input 
+            <Input
               placeholder={`Filter ${searchcolumn}...`}
               value={
                 (table.getColumn(searchcolumn)?.getFilterValue() as string) ??
@@ -106,13 +109,16 @@ function DataTable<TData, TValue>({
                   .getColumn(searchcolumn)
                   ?.setFilterValue(event.target.value)
               }
-              className="max-w-sm border-gray-300 w-80 rounded-xl"
+              className="w-full sm:max-w-sm border-gray-300  rounded-xl"
             />
           )}
           {!hideFilter && (
-            <DropdownMenu >
+            <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button className="border-gray-300 rounded-xl" variant="outline" >
+                <Button
+                  className="w-full sm:w-auto border-gray-300 rounded-xl"
+                  variant="outline"
+                >
                   Filter{" "}
                 </Button>
               </DropdownMenuTrigger>
@@ -137,12 +143,15 @@ function DataTable<TData, TValue>({
           )}
         </div>
         {!hideViewOptions && (
-          <div className="flex">
+          <div className="flex w-full sm:w-auto">
             <DropdownMenu>
-              <DropdownMenuTrigger asChild className="bg-white">
+              <DropdownMenuTrigger
+                asChild
+                className="bg-white w-full sm:w-auto"
+              >
                 <Button
                   variant="outline"
-                  className="ml-auto flex gap-2 justify-center px-4 py-2 text-sm font-medium leading-6 text-black whitespace-nowrap bg-white rounded-xl border border-gray-300 border-solid "
+                  className="w-full sm:w-auto flex gap-2 justify-center px-4 py-2 text-sm font-medium leading-6 text-black whitespace-nowrap bg-white rounded-xl border border-gray-300 border-solid "
                 >
                   View
                 </Button>
@@ -169,62 +178,77 @@ function DataTable<TData, TValue>({
         )}
       </div>
 
-      <div className="rounded-xl border">
-         <Table >
-        <TableHeader>
-          {table.getHeaderGroups().map((headerGroup) => (
-            <TableRow key={headerGroup.id} className="bg-muted/50">
-              {headerGroup.headers.map((header) => (
-                <TableHead key={header.id} className="font-bold text-muted-foreground">
-                  {header.isPlaceholder ? null : (
-                    <div className="text-left py-3  ">
-                      {flexRender(
-                        header.column.columnDef.header,
-                        header.getContext()
-                      )}
-                    </div>
-                  )}
-                </TableHead>
-              ))}
-            </TableRow>
-          ))}
-        </TableHeader>
-        <TableBody>
-          {table.getRowModel().rows.length ? (
-            table.getRowModel().rows.map((row) => (
-              <TableRow
-                key={row.id}
-                data-state={row.getIsSelected() && "selected"}
-                onClick={() => handleRowClick(row.original)}
-                className="hover:bg-muted/50 transition-colors cursor-pointer"
-              >
-                {row.getVisibleCells().map((cell) => (
-                  <TableCell key={cell.id} className="py-3 px-4">
-                    {flexRender(
-                      cell.column.columnDef.cell,
-                      cell.getContext()
+      <div className="rounded-xl border overflow-x-auto">
+        <Table>
+          <TableHeader>
+            {table.getHeaderGroups().map((headerGroup) => (
+              <TableRow key={headerGroup.id} className="bg-muted/50">
+                {headerGroup.headers.map((header) => (
+                  <TableHead
+                    key={header.id}
+                    className="font-bold text-muted-foreground"
+                  >
+                    {header.isPlaceholder ? null : (
+                      <div className="text-left py-3  ">
+                        {flexRender(
+                          header.column.columnDef.header,
+                          header.getContext()
+                        )}
+                      </div>
                     )}
-                  </TableCell>
+                  </TableHead>
                 ))}
               </TableRow>
-            ))
-          ) : (
-            <TableRow>
-              <TableCell
-                colSpan={columns.length}
-                className="h-24 text-center text-muted-foreground"
-              >
-                No results.
-              </TableCell>
-            </TableRow>
-          )}
-        </TableBody>
-      </Table>
+            ))}
+          </TableHeader>
+          <TableBody>
+            {table.getRowModel().rows.length ? (
+              table.getRowModel().rows.map((row) => (
+                <TableRow
+                  key={row.id}
+                  data-state={row.getIsSelected() && "selected"}
+                  onClick={() => handleRowClick(row.original)}
+                  className="hover:bg-muted/50 transition-colors cursor-pointer"
+                >
+                  {row.getVisibleCells().map((cell) => (
+                    <TableCell key={cell.id} className="py-3 px-2 sm:px-4">
+                      {isMobile ? (
+                        <div className="flex flex-col">
+                          <span className="font-bold">{cell.column.id}:</span>
+                          <span>
+                            {flexRender(
+                              cell.column.columnDef.cell,
+                              cell.getContext()
+                            )}
+                          </span>
+                        </div>
+                      ) : (
+                        flexRender(
+                          cell.column.columnDef.cell,
+                          cell.getContext()
+                        )
+                      )}
+                    </TableCell>
+                  ))}
+                </TableRow>
+              ))
+            ) : (
+              <TableRow>
+                <TableCell
+                  colSpan={columns.length}
+                  className="h-24 text-center text-muted-foreground"
+                >
+                  No results.
+                </TableCell>
+              </TableRow>
+            )}
+          </TableBody>
+        </Table>
       </div>
 
       {!hidePagination && (
-        <div className="flex items-center justify-end space-x-2 py-4 bg-white">
-          <DataTablePagination  table={table} />
+        <div className="flex items-center justify-end space-x-2 py-4 bg-white overflow-x-auto">
+          <DataTablePagination table={table} />
         </div>
       )}
 
