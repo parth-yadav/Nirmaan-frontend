@@ -95,7 +95,7 @@ function DataTable<TData, TValue>({
       <div className="flex items-center py-4 space-x-4 justify-between">
         <div className="flex gap-4">
           {!hideSearch && (
-            <Input
+            <Input 
               placeholder={`Filter ${searchcolumn}...`}
               value={
                 (table.getColumn(searchcolumn)?.getFilterValue() as string) ??
@@ -106,13 +106,13 @@ function DataTable<TData, TValue>({
                   .getColumn(searchcolumn)
                   ?.setFilterValue(event.target.value)
               }
-              className="max-w-sm border-gray-300 w-80"
+              className="max-w-sm border-gray-300 w-80 rounded-xl"
             />
           )}
           {!hideFilter && (
-            <DropdownMenu>
+            <DropdownMenu >
               <DropdownMenuTrigger asChild>
-                <Button className="border-gray-300" variant="outline">
+                <Button className="border-gray-300 rounded-xl" variant="outline" >
                   Filter{" "}
                 </Button>
               </DropdownMenuTrigger>
@@ -142,7 +142,7 @@ function DataTable<TData, TValue>({
               <DropdownMenuTrigger asChild className="bg-white">
                 <Button
                   variant="outline"
-                  className="ml-auto flex gap-2 justify-center px-4 py-2 text-sm font-medium leading-6 text-black whitespace-nowrap bg-white rounded-md border border-gray-300 border-solid "
+                  className="ml-auto flex gap-2 justify-center px-4 py-2 text-sm font-medium leading-6 text-black whitespace-nowrap bg-white rounded-xl border border-gray-300 border-solid "
                 >
                   View
                 </Button>
@@ -169,8 +169,8 @@ function DataTable<TData, TValue>({
         )}
       </div>
 
-      <div className="rounded-md border">
-         <Table>
+      <div className="rounded-xl border">
+         <Table >
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow key={headerGroup.id} className="bg-muted/50">
@@ -223,8 +223,8 @@ function DataTable<TData, TValue>({
       </div>
 
       {!hidePagination && (
-        <div className="flex items-center justify-end space-x-2 py-4">
-          <DataTablePagination table={table} />
+        <div className="flex items-center justify-end space-x-2 py-4 bg-white">
+          <DataTablePagination  table={table} />
         </div>
       )}
 

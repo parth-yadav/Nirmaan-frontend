@@ -16,10 +16,10 @@ function BlogSearch({ onSearch }) {
     <div className="">
       <input
         type="text"
-        placeholder="Search blogs..."
+        placeholder="Search blogs."
         value={searchTerm}
         onChange={handleSearch}
-        className="w-80 px-4 py-2 border border-gray-300 rounded-md"
+        className="w-80 px-4 py-2 border border-gray-300 rounded-xl"
       />
     </div>
   );

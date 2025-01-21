@@ -93,7 +93,7 @@ const SidebarItem = ({ icon, text, to }) => {
       <Link
       to={to}
       className=
-        "flex gap-2 px-4 py-2 mt-2.5 text-sm font-medium leading-6 text-black whitespace-nowrap rounded-md "
+        "flex gap-2 px-4 py-2 mt-2.5 text-sm font-medium leading-6 text-black whitespace-nowrap  "
       
        
       >
@@ -111,7 +111,7 @@ const SidebarItem = ({ icon, text, to }) => {
       <NavLink
         to={to}
         className={({ isActive }) =>
-          `flex gap-2 px-4 py-2 mt-2.5 text-sm font-medium leading-6 text-black whitespace-nowrap rounded-md dark:text-white   ${
+          `flex gap-2 px-4 py-2 mt-2.5 text-sm font-medium leading-6 text-black whitespace-nowrap rounded-xl dark:text-white   ${
             isActive ? 'text-blue-600 bg-gray-300 dark:bg-gray-300 dark:text-blue-600'  : ''
           }`
         }
@@ -143,7 +143,7 @@ function Sidebar() {
         <nav className="flex flex-col px-2.5 pt-6 pb-3.5 bg-white border-r border-gray-300 border-solid dark:bg-black  ">
           <div className="flex gap-5 justify-between ml-2.5 ">
             <NirmanButton />
-            <button className="flex justify-center items-center px-2 w-8 h-8 bg-white rounded-md border border-gray-300 border-solid dark:bg-black dark:text-white">
+            <button className="flex justify-center items-center px-2 w-8 h-8 bg-white rounded-xl border border-gray-300 border-solid dark:bg-black dark:text-white">
               <img
                 loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/1304022697a06d0ac891b41976d22f7bce1a64332f3271602c6d5661ec48fb09?apiKey=8a82faa9db93454483a68c973b38c7b0&"
@@ -154,7 +154,7 @@ function Sidebar() {
             <ThemeSwitcher /> 
           </div>
           
-          <hr className="shrink-0 mt-6 h-px bg-gray-300 border border-gray-300 border-solid dark:bg-black dark:text-white" />
+          <hr className="shrink-0 mt-6 h-px bg-gray-300 border border-gray-300 border-solid rounded-xl dark:bg-black dark:text-white" />
           {sidebarItems.map((item, index) => (
             <SidebarItem
               key={index}
@@ -168,7 +168,7 @@ function Sidebar() {
           
           
           
-          <div className="flex gap-5 justify-between mt-3.5 w-full">
+          <div alt="footer" className="flex gap-5 justify-between mt-3.5 w-full">
             <div className="flex gap-2.5 self-start text-sm font-medium leading-6 text-black">
               <img
                 loading="lazy"

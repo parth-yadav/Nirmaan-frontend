@@ -1,13 +1,13 @@
-
 import React from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import TagInput from "./TagInput";
 import Tag from "./Tag";
-// import Button from "./Button";
 import { Button } from "@/components/ui/button";
 import { useSelector } from "react-redux";
 import CloseBotton from "./CloseBotton";
 
 function BlogNewForm() {
+  const navigate = useNavigate(); // Initialize navigate
   const tags = [
     { id: 1, text: "Tag1" },
     { id: 2, text: "Some other tag" },
@@ -19,7 +19,6 @@ function BlogNewForm() {
     return null;
   }
 
- 
   return (
     <div className="fixed inset-y-0 right-0 w-full max-w-xl z-50 flex justify-center">
       <div className="p-4 max-w-[600px] w-full h-full rounded-l-lg overflow-auto">
@@ -86,15 +85,19 @@ function BlogNewForm() {
                   <Tag key={tag.id} text={tag.text} />
                 ))}
               </div>
-              {/* <Button className="bg-black" > */}
-              <Button className="bg-black text-white mt-6" variant="outline">Button</Button>
+              <Button
+                className="bg-black text-white mt-6 hover:bg-gray-600 hover:text-white"
+                variant="outline"
+                onClick={() => navigate("/blogeditor")} // Navigate to /blogeditor
+              >
+                Go to Blog Editor
+              </Button>
             </div>
           </section>
         </form>
       </div>
     </div>
   );
-
 }
 
 export default BlogNewForm;

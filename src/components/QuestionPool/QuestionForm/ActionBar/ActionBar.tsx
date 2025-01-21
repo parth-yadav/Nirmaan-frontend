@@ -29,7 +29,7 @@ export function ActionBar() {
           ))}
         </div>
         <StatusIndicator />
-      </div>
+      </div> 
       <div className="text-white">
         <TimelineToggleButton />
       </div>
