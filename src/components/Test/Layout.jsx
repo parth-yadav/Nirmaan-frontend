@@ -32,22 +32,27 @@ function Layout() {
         isMobile={isMobile}
         isOpen={isSidebarOpen}
         onToggle={toggleSidebar}
-        className="fixed bottom-0 w-full bg-white dark:bg-black p-4 shadow-lg max-md:static max-md:w-auto"
+        className={`${
+          isMobile
+            ? "fixed top-0 right-0 transform transition-transform duration-300 ease-in-out z-20"
+            : "sticky top-0 left-0"
+        } w-64 bg-white border dark:bg-gray-800 p-4 shadow-lg max-md:static max-md:w-auto`}
       />
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col max-w-full overflow-hidden">
         {isMobile && (
           <header className="bg-white dark:bg-gray-800 shadow-md p-4 flex items-center">
+            {/* NirmanButton on the leftmost */}
+            <NirmanButton />
+
+            {/* Menu button on the right */}
             <button
               onClick={toggleSidebar}
-              className="mr-4 text-gray-600 dark:text-gray-200"
+              className="ml-auto text-gray-600 dark:text-gray-200"
             >
               <Menu size={24} />
             </button>
-
-            {/* NirmanButton is shown only on mobile */}
-            {isMobile && <NirmanButton />}
           </header>
         )}
 

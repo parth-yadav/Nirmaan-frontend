@@ -1,0 +1,26 @@
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Show scrollbar on hover for Chrome, Safari and Opera */
+.scrollbar-hide:hover::-webkit-scrollbar {
+  display: auto;
+}
+
+/* Show scrollbar on hover for Firefox */
+.scrollbar-hide:hover {
+  scrollbar-width: auto;
+}
+
+/* Show scrollbar on hover for IE and Edge */
+.scrollbar-hide:hover {
+  -ms-overflow-style: auto;
+}
+
