@@ -26,7 +26,7 @@ function BlogEditor() {
   
   
   return (
-    <div className="fixed inset-y-0 right-0 w-full max-w-xl overflow-auto z-50">
+    <div className = " absolute shadow-lg shadow-gray-700 inset-y-0 right-0 w-full max-w-xl overflow-auto z-50">
     <div className="p-4 h-full rounded-l-lg">
     <main className="flex flex-col rounded-none max-w-[600px]">
       <section className="flex flex-col pt-8 pb-40 w-full bg-white shadow-[0px_0px_20px_rgba(0,0,0,0.1)] max-md:pb-24 max-md:max-w-full">
