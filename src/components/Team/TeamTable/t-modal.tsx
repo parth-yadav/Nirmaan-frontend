@@ -18,7 +18,7 @@ const TeamModal: React.FC<TeamModalProps> = ({
 
   return (
     <>
-      <div className=" absolute inset-y-0 right-0 w-full max-w-xl overflow-auto z-50">
+      <div className=" absolute shadow-lg shadow-gray-700 inset-y-0 right-0 w-full max-w-xl overflow-auto z-50">
         {/* <div className=" " onClick={onClose}></div> */}
 
         <UserProfile data={data} close={onClose} />

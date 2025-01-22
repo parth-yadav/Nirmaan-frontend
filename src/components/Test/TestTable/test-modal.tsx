@@ -10,15 +10,12 @@ interface TestModalProps {
 const ExamModal: React.FC<TestModalProps> = ({ isOpen, onClose, data }) => {
   if (!isOpen) return null;
 
-  return (  
+  return (
     <>
-      <div className=" absolute inset-y-0 right-0 w-full max-w-xl overflow-auto z-50">
+      <div className=" absolute shadow-lg shadow-gray-700 inset-y-0 right-0 w-full max-w-xl overflow-auto z-50">
         {/* <div className=" " onClick={onClose}></div> */}
-        
-         
-            <TestComponent data ={data} close = {onClose} />
-          
-       
+
+        <TestComponent data={data} close={onClose} />
       </div>
     </>
   );

@@ -11,7 +11,7 @@ import TestAnswerKey from "./TestAnswerKey";
 
 function TestComponent(props) {
   return (
-    <main className=" px-4 flex flex-col rounded shadow-[0px_0px_20px_rgba(0,0,0,0.1)] pt-8 pb-20 bg-white border-l   max-w-[38rem]">
+    <main className=" px-4 flex flex-col rounded shadow-xl shadow-black pt-8 pb-20 bg-white border-l   max-w-[38rem]">
       
       <TestHeader data = {props.data} close = {props.close} />
       <TestStats data = {props.data} />
