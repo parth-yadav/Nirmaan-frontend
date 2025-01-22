@@ -26,7 +26,7 @@ function Layout() {
   };
 
   return (
-    <div className="flex min-h-screen bg-white dark:bg-black dark:text-white">
+    <div className="flex min-h-screen bg-white dark:bg-black dark:text-white overflow-hidden">
       {/* Sidebar */}
       <Sidebar
         isMobile={isMobile}
@@ -35,7 +35,7 @@ function Layout() {
       />
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col">
+      <div className="flex-1 flex flex-col max-w-full">
         {isMobile && (
           <header className="bg-white dark:bg-gray-800 shadow-md p-4 flex items-center">
             <button
@@ -50,7 +50,7 @@ function Layout() {
           </header>
         )}
 
-        <main className="flex-1 overflow-x-hidden overflow-y-auto  p-6">
+        <main className="flex-1 overflow-hidden p-6 max-w-full">
           <Outlet />
         </main>
       </div>
