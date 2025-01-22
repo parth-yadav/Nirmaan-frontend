@@ -77,35 +77,35 @@ function BlogList() {
     setFilteredBlogs(filtered);
   };
   return (
-    <div className="flex flex-col mt-14 max-md:mt-10 max-md:max-w-full">
-      <h1 className="text-3xl font-semibold tracking-tight leading-9 text-black max-md:max-w-full dark:text-white">
+    <div className="flex flex-col mt-14 max-md:mt-10 max-md:max-w-full px-4 max-md:px-2">
+      {/* Title */}
+      <h1 className="text-3xl font-semibold tracking-tight leading-9 text-black dark:text-white text-center max-md:text-2xl">
         Blogs
       </h1>
-      <div className="flex flex-row mt-4 justify-between">
-        <div className="flex flex-row gap-8">
+
+      {/* Search and Filters */}
+      <div className="flex flex-row mt-4 justify-between items-center max-md:flex-col max-md:gap-4">
+        <div className="flex flex-row gap-8 max-md:flex-col max-md:gap-4 w-full">
           <BlogSearch onSearch={handleSearch} />
           <BlogFilter />
         </div>
-        <BlogView />
+        <div className="max-md:w-full">
+          <BlogView />
+        </div>
       </div>
-      <section className="mt-12 max-md:mt-10 max-md:max-w-full">
-        <div className="  grid grid-cols-1 gap-5 md:grid-cols-2">
+
+      {/* Blog Cards Section */}
+      <section className="mt-6 max-md:max-w-full">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 max-md:gap-4">
           {filteredBlogs.map((blog, index) => (
             <BlogCard key={index} {...blog} />
           ))}
         </div>
       </section>
+
+      {/* Additional Section */}
       <section className="mt-12 max-md:mt-10 max-md:max-w-full">
-        {/* <div className="flex gap-5 max-md:flex-col max-md:gap-0">
-          {blogData.map((blog, index) => (
-            <BlogCard key={index} {...blog} />
-          ))}
-        </div> */}
-        {/* <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-    {blogData.map((blog, index) => (
-      <BlogCard key={index} {...blog} />
-    ))}
-  </div> */}
+        {/* Add content here */}
       </section>
     </div>
   );
