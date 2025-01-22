@@ -79,7 +79,7 @@ function BlogList() {
   return (
     <div className="flex flex-col mt-14 max-md:mt-10 max-md:max-w-full px-4 max-md:px-2">
       {/* Title */}
-      <h1 className="text-3xl font-semibold tracking-tight leading-9 text-black dark:text-white text-center max-md:text-2xl">
+      <h1 className="text-3xl font-semibold tracking-tight leading-9 text-black dark:text-white  max-md:text-2xl">
         Blogs
       </h1>
 
