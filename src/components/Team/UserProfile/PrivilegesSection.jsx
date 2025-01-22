@@ -105,18 +105,18 @@ function PrivilegesSection() {
               <Button
                 onClick={handleSave}
                 disabled={!isChanged}
-                className="flex gap-2 justify-center items-center px-4 py-2 rounded-md bg-slate-900"
+                className="flex gap-2 justify-center items-center px-4 py-2 rounded-xl hover:bg-gray-800 bg-black"
               >
                 <Save className="w-4 h-4" />
                 <span className="self-stretch my-auto">Save</span>
               </Button>
-              <Popover>
+              <Popover >
                 <PopoverTrigger asChild>
-                  <Button variant="outline" className="w-10 h-10 p-0">
+                  <Button variant="outline" className=" bg-black w-10 h-10 p-0 rounded-xl hover:bg-gray-800">
                     <MoreVertical className="h-4 w-4" />
                   </Button>
                 </PopoverTrigger>
-                <PopoverContent className="w-56">
+                <PopoverContent className="w-56 bg-white">
                   <div className="grid gap-4">
                     <Button onClick={() => handleBulkAction("addAll")}>
                       Add all privileges
