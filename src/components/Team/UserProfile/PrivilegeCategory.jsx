@@ -20,16 +20,15 @@ function PrivilegeCategory({
   };
 
   return (
-    <>
-      <div className="shrink-0 self-stretch mt-5 h-px bg-gray-300 border border-gray-300 border-solid max-md:max-w-full" />
-      <div className="mt-5 text-base font-medium text-black">{name}</div>
-      <div className="flex gap-2.5 mt-2.5 max-w-full text-sm leading-none text-black whitespace-nowrap w-[341px]">
+    <div className="mt-5 pb-5 border-b border-gray-300">
+      <div className="text-base font-medium text-black mb-2.5">{name}</div>
+      <div className="flex flex-wrap gap-2.5 text-sm leading-none text-black">
         {allPermissions.map((permission, index) => (
           <Button
             key={index}
             variant="outline"
             onClick={() => togglePermission(permission)}
-            className={`px-4 rounded-xl  ${
+            className={`px-4 py-2 rounded-xl ${
               permissions.includes(permission) ? "bg-green-200" : "bg-red-200"
             }`}
           >
@@ -37,7 +36,7 @@ function PrivilegeCategory({
           </Button>
         ))}
       </div>
-    </>
+    </div>
   );
 }
 
