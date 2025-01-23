@@ -1,6 +1,4 @@
-import * as React from "react";
-//import TestComponent from "../TestComponent/TestComponent";
-import NewExamSchemaCover from "@/components/ExamSchemas/NewExamSchema/NewExamSchemacopy";
+import type * as React from "react";
 import UserProfile from "../StudentPopup/UserProfile";
 
 interface StudentModalProps {
@@ -18,11 +16,13 @@ const StudentModal: React.FC<StudentModalProps> = ({
 
   return (
     <>
-      <div className=" absolute shadow-lg shadow-gray-700 inset-y-0 right-0 w-full max-w-xl overflow-auto z-50">
-        {/* <div className=" " onClick={onClose}></div> */}
-
+      <div className="fixed md:absolute inset-0 md:inset-y-0 md:right-0 w-full md:w-full md:max-w-xl bg-white overflow-auto z-50 shadow-lg shadow-gray-700">
         <UserProfile data={data} close={onClose} />
       </div>
+      <div
+        className="md:hidden fixed inset-0 bg-black bg-opacity-50 z-40"
+        onClick={onClose}
+      ></div>
     </>
   );
 };

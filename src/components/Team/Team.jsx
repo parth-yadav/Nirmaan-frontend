@@ -3,7 +3,7 @@ import MainContent from './MainContent'
 
 function Team () {
   return (
-    <div className="pr-8 bg-white dark:bg-black dark:text-white">
+    <div className=" bg-white dark:bg-black dark:text-white">
       
    
         <MainContent />
