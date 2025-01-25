@@ -3,7 +3,8 @@ import { Editor } from "@tinymce/tinymce-react";
 import conf from "@/conf/conf";
 import { OptionsContainer } from "./CorrectOPtion/OptionContainer";
 import { ActionBar } from "./ActionBar/ActionBar";
-import { ApprovalPanel } from "./ApprovalPanel/Quiz";
+
+import { QuestionPoolApproval } from "../QuestionPoolApproval/QuestionPoolApproval.tsx";
 import { ProposedChanges } from "./Proposed Changes/QuestionChanges";
 
 
@@ -76,7 +77,8 @@ function QuestionForm({ question, onClose }) {
         </div>
       </form>
       <div>
-        <ApprovalPanel />
+     
+        <QuestionPoolApproval />
       </div>
       <div>
         <ProposedChanges />

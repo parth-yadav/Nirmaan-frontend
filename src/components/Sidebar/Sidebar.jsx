@@ -71,6 +71,11 @@ const sidebarItems = [
     text: "Testing Components",
     to: "/quiz/testing",
   },
+  {
+    icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/d98357a71e2ad3092798be3422551f3981de837b313b8f8ec2e6b40cbc3a19bd?apiKey=8a82faa9db93454483a68c973b38c7b0&",
+    text: "Settings",
+    to: "/quiz/settings",
+  },
 ];
 
 const SidebarItem = ({ icon, text, to }) => {
@@ -96,7 +101,7 @@ const SidebarItem = ({ icon, text, to }) => {
         className={({ isActive }) =>
           `flex gap-2 px-4 py-2 mt-2.5 text-sm font-medium leading-6 text-black whitespace-nowrap rounded-lg dark:text-white   ${
             isActive
-              ? "text-blue-600 bg-gray-300 dark:bg-gray-300 dark:text-blue-600"
+              ? " bg-gray-300 dark:bg-gray-300 dark:text-blue-600"
               : ""
           }`
         }
@@ -113,13 +118,27 @@ const SidebarItem = ({ icon, text, to }) => {
   }
 };
 
-function Sidebar({ isMobile, isOpen, onToggle ,className }) {
+import { useEffect, useRef, useState } from "react";
+
+function Sidebar({ isMobile, isOpen, onToggle, className }) {
   const dispatch = useDispatch();
+  const [hasOverflow, setHasOverflow] = useState(false);
+  const navRef = useRef(null);
+
   const logoutHandler = () => {
     authService.logout().then(() => {
       dispatch(logout());
     });
   };
+
+  // Check if the scrollable area has overflow content
+  useEffect(() => {
+    if (navRef.current) {
+      const hasOverflowContent =
+        navRef.current.scrollHeight > navRef.current.clientHeight;
+      setHasOverflow(hasOverflowContent);
+    }
+  }, [sidebarItems]); // Re-check when sidebarItems change
 
   return (
     <aside
@@ -134,8 +153,9 @@ function Sidebar({ isMobile, isOpen, onToggle ,className }) {
       } transition-transform duration-300 ease-in-out overflow-hidden z-20`}
     >
       <div className="flex flex-col h-full">
-        <nav className="flex-grow overflow-y-auto px-2.5 pt-6 pb-3.5 scrollbar-hide">
-          <div className="flex gap-5 justify-between ml-2.5 mb-6">
+        {/* Fixed Top Section */}
+        <div className="fixed top-0 left-0 right-0 bg-white dark:bg-gray-800 z-10">
+          <div className="flex gap-5 justify-between ml-2.5 p-4">
             {!isMobile && <NirmanButton />} {/* Hide NirmanButton on mobile */}
             {isMobile && (
               <button
@@ -145,18 +165,15 @@ function Sidebar({ isMobile, isOpen, onToggle ,className }) {
                 <X size={24} />
               </button>
             )}
-            <button className="flex justify-center items-center px-2 w-8 h-8 bg-white rounded-lg border border-gray-300 border-solid dark:bg-gray-700 dark:text-white">
-              <img
-                loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/1304022697a06d0ac891b41976d22f7bce1a64332f3271602c6d5661ec48fb09?apiKey=8a82faa9db93454483a68c973b38c7b0&"
-                alt=""
-                className="w-4 aspect-square"
-              />
-            </button>
-            <ThemeSwitcher />
           </div>
+          <hr className="shrink-0 h-px bg-white border border-gray-300 border-solid rounded-lg dark:border-gray-600" />
+        </div>
 
-          <hr className="shrink-0 mt-6 h-px bg-white border border-gray-300 border-solid rounded-lg dark:border-gray-600" />
+        {/* Scrollable Middle Section */}
+        <nav
+          ref={navRef}
+          className="flex-grow overflow-y-auto px-2.5 pt-20 pb-3.5 scrollbar-hide"
+        >
           {sidebarItems.map((item, index) => (
             <SidebarItem
               key={index}
@@ -165,11 +182,13 @@ function Sidebar({ isMobile, isOpen, onToggle ,className }) {
               to={item.to}
             />
           ))}
+         
         </nav>
 
+        {/* Fixed Footer Section */}
         <div className="mt-auto">
           <hr className="shrink-0 h-px bg-white border border-gray-300 border-solid dark:border-gray-600" />
-          <div alt="footer" className="flex gap-5 justify-between p-4 w-full">
+          <div className="flex gap-5 justify-between p-4 w-full">
             <div className="flex gap-2.5 self-start text-sm font-medium leading-6 text-black dark:text-white">
               <img
                 loading="lazy"
