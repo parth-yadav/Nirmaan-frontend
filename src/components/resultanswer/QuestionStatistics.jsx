@@ -16,7 +16,7 @@ function QuestionStatistics() {
         {statistics.map((stat, index) => (
           <div
             key={index}
-            className="flex gap-2.5 px-4 py-2.5 bg-white rounded-xl shadow-sm"
+            className="flex gap-2.5 px-4 py-2.5 bg-white rounded-lg shadow-sm"
           >
             <div
               className={`flex-1 shrink-0 ${stat.color} rounded-full ${

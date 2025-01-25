@@ -17,7 +17,7 @@ function BlogCard({
       className="flex flex-col max-md:ml-0 max-md:w-full cursor-pointer"
       onClick={onClick}
     >
-      <div className="flex flex-col grow px-6 py-5 w-full text-sm font-medium bg-gray-50 dark:bg-gray-800 rounded-xl max-md:pl-5 max-md:mt-10 max-md:max-w-full">
+      <div className="flex flex-col grow px-6 py-5 w-full text-sm font-medium bg-gray-50 dark:bg-gray-800 rounded-lg max-md:pl-5 max-md:mt-10 max-md:max-w-full">
         <div className="flex gap-5 justify-between w-full text-xs leading-5 max-md:flex-wrap max-md:max-w-full">
           <div className="flex gap-2.5 text-blue-800 whitespace-nowrap">
             {tags.map((tag, index) => (

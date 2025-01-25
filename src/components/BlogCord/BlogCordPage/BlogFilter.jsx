@@ -4,7 +4,7 @@ function BlogFilter() {
   return (
     <div className="flex flex-row">
       <div >
-        <button className="flex rounded-xl gap-2 justify-center px-4 py-2 text-sm
+        <button className="flex rounded-lg gap-2 justify-center px-4 py-2 text-sm
          font-medium leading-6 text-black whitespace-nowrap bg-white  border border-gray-300 border-solid">
          
           <img

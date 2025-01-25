@@ -91,7 +91,7 @@ function PrivilegesSection() {
               <Button
                 onClick={handleSave}
                 disabled={!isChanged}
-                className="flex gap-2 justify-center items-center px-4 py-2 rounded-xl hover:bg-gray-800 bg-black"
+                className="flex gap-2 justify-center items-center px-4 py-2 rounded-lg hover:bg-gray-800 bg-black"
               >
                 <Save className="w-4 h-4" />
                 <span className="self-stretch my-auto">Save</span>
@@ -100,7 +100,7 @@ function PrivilegesSection() {
                 <PopoverTrigger asChild>
                   <Button
                     variant="outline"
-                    className="bg-black w-10 h-10 p-0 rounded-xl hover:bg-gray-800"
+                    className="bg-black w-10 h-10 p-0 rounded-lg hover:bg-gray-800"
                   >
                     <MoreVertical className="h-4 w-4" />
                   </Button>
@@ -139,7 +139,7 @@ function PrivilegesSection() {
             <Button
               onClick={handleSave}
               disabled={!isChanged}
-              className="flex gap-2 justify-center items-center px-4 py-2 rounded-xl hover:bg-gray-800 bg-black"
+              className="flex gap-2 justify-center items-center px-4 py-2 rounded-lg hover:bg-gray-800 bg-black"
             >
               <Save className="w-4 h-4" />
               <span className="self-stretch my-auto">Save</span>
@@ -148,7 +148,7 @@ function PrivilegesSection() {
               <PopoverTrigger asChild>
                 <Button
                   variant="outline"
-                  className="bg-black w-10 h-10 p-0 rounded-xl hover:bg-gray-800"
+                  className="bg-black w-10 h-10 p-0 rounded-lg hover:bg-gray-800"
                 >
                   <MoreVertical className="h-4 w-4" />
                 </Button>

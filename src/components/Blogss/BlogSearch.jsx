@@ -73,7 +73,7 @@ function BlogSearch({ onSearch }) {
         placeholder="Search blogs..."
         value={searchTerm}
         onChange={handleSearch}
-        className="w-80 px-4 py-2 border border-gray-300 rounded-xl"
+        className="w-80 px-4 py-2 border border-gray-300 rounded-lg"
       />
     </div>
   );

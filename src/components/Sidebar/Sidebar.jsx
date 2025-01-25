@@ -94,7 +94,7 @@ const SidebarItem = ({ icon, text, to }) => {
       <NavLink
         to={to}
         className={({ isActive }) =>
-          `flex gap-2 px-4 py-2 mt-2.5 text-sm font-medium leading-6 text-black whitespace-nowrap rounded-xl dark:text-white   ${
+          `flex gap-2 px-4 py-2 mt-2.5 text-sm font-medium leading-6 text-black whitespace-nowrap rounded-lg dark:text-white   ${
             isActive
               ? "text-blue-600 bg-gray-300 dark:bg-gray-300 dark:text-blue-600"
               : ""
@@ -145,7 +145,7 @@ function Sidebar({ isMobile, isOpen, onToggle ,className }) {
                 <X size={24} />
               </button>
             )}
-            <button className="flex justify-center items-center px-2 w-8 h-8 bg-white rounded-xl border border-gray-300 border-solid dark:bg-gray-700 dark:text-white">
+            <button className="flex justify-center items-center px-2 w-8 h-8 bg-white rounded-lg border border-gray-300 border-solid dark:bg-gray-700 dark:text-white">
               <img
                 loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/1304022697a06d0ac891b41976d22f7bce1a64332f3271602c6d5661ec48fb09?apiKey=8a82faa9db93454483a68c973b38c7b0&"
@@ -156,7 +156,7 @@ function Sidebar({ isMobile, isOpen, onToggle ,className }) {
             <ThemeSwitcher />
           </div>
 
-          <hr className="shrink-0 mt-6 h-px bg-white border border-gray-300 border-solid rounded-xl dark:border-gray-600" />
+          <hr className="shrink-0 mt-6 h-px bg-white border border-gray-300 border-solid rounded-lg dark:border-gray-600" />
           {sidebarItems.map((item, index) => (
             <SidebarItem
               key={index}

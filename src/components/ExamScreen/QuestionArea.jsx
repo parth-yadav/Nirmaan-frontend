@@ -3,7 +3,7 @@ import React from "react";
 
 const Option = ({ number, isSelected }) => (
   <div
-    className={`flex gap-5 px-5 py-3 mt-2.5 text-lg bg-white rounded-xl ${
+    className={`flex gap-5 px-5 py-3 mt-2.5 text-lg bg-white rounded-lg ${
       isSelected
         ? "border-2 border-blue-600"
         : "border border-solid border-zinc-300"
@@ -27,7 +27,7 @@ const QuestionArea = () => {
         <h2 className="justify-center my-auto text-2xl font-bold tracking-widest uppercase">
           Question 18 / 24
         </h2>
-        <div className="justify-center px-4 py-3 text-2xl font-medium bg-white rounded-xl shadow-sm">
+        <div className="justify-center px-4 py-3 text-2xl font-medium bg-white rounded-lg shadow-sm">
           Time Remaining - 127 : 34
         </div>
       </div>
@@ -43,7 +43,7 @@ const QuestionArea = () => {
       <Option number={2} isSelected={true} />
       <Option number={3} isSelected={false} />
       <Option number={4} isSelected={false} />
-      <button className="flex gap-4 self-start py-1.5 pr-5 pl-4 mt-10 text-xl font-bold text-white bg-blue-600 rounded-xl">
+      <button className="flex gap-4 self-start py-1.5 pr-5 pl-4 mt-10 text-xl font-bold text-white bg-blue-600 rounded-lg">
         <img
           loading="lazy"
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/0347294c7ca304f9d60b71747bffa1f675e1924aa6e8019103525bffcd652363?apiKey=8a82faa9db93454483a68c973b38c7b0&"
@@ -53,7 +53,7 @@ const QuestionArea = () => {
         <span>Remove Selection</span>
       </button>
       <div className="flex gap-5 self-start mt-96 text-2xl font-bold text-blue-600 whitespace-nowrap max-md:flex-wrap max-md:pr-5 max-md:mt-10">
-        <button className="flex gap-5 justify-between px-6 py-2.5 rounded-xl border-2 border-blue-600 border-solid max-md:px-5">
+        <button className="flex gap-5 justify-between px-6 py-2.5 rounded-lg border-2 border-blue-600 border-solid max-md:px-5">
           <img
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/3545386c5f3628baf8bd9a7296723fac493e3781ed8048b18941d2482817ceb1?apiKey=8a82faa9db93454483a68c973b38c7b0&"
@@ -62,7 +62,7 @@ const QuestionArea = () => {
           />
           <span>Previous</span>
         </button>
-        <button className="flex gap-5 justify-between px-6 py-2.5 rounded-xl border-2 border-blue-600 border-solid max-md:px-5">
+        <button className="flex gap-5 justify-between px-6 py-2.5 rounded-lg border-2 border-blue-600 border-solid max-md:px-5">
           <img
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/ffcce404ca1f13b4d24b03adb1992e45db57be05822a186c65ed78d02e3b22ab?apiKey=8a82faa9db93454483a68c973b38c7b0&"
@@ -71,7 +71,7 @@ const QuestionArea = () => {
           />
           <span>Flag</span>
         </button>
-        <button className="flex gap-5 justify-between py-2.5 pr-6 pl-7 rounded-xl border-2 border-blue-600 border-solid max-md:px-5">
+        <button className="flex gap-5 justify-between py-2.5 pr-6 pl-7 rounded-lg border-2 border-blue-600 border-solid max-md:px-5">
           <span>Next</span>
           <img
             loading="lazy"

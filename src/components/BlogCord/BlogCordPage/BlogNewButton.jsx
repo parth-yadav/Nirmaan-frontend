@@ -37,7 +37,7 @@ function BlogNew() {
   return (
     <div>
       <button
-        className="flex gap-2 justify-center px-4 py-2 text-sm font-medium leading-6 text-white whitespace-nowrap bg-black rounded-xl border border-gray-300 border-solid"
+        className="flex gap-2 justify-center px-4 py-2 text-sm font-medium leading-6 text-white whitespace-nowrap bg-black rounded-lg border border-gray-300 border-solid"
         onClick={handleShowNewEditor}
       >
         <img

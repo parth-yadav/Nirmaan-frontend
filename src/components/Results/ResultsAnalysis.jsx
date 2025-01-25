@@ -17,7 +17,7 @@ function ResultsAnalysis() {
             <h2 className="flex-auto text-3xl font-bold text-black">
               Result Analysis
             </h2>
-            <div className="flex gap-5 px-2.5 py-2 text-base rounded-xl border border-solid border-stone-300 text-neutral-600">
+            <div className="flex gap-5 px-2.5 py-2 text-base rounded-lg border border-solid border-stone-300 text-neutral-600">
               <span>Last 10 Exams</span>
               <img
                 loading="lazy"

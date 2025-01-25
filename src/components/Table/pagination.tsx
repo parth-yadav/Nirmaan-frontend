@@ -37,15 +37,15 @@ import {
                 table.setPageSize(Number(value));
               }}
             >
-              <SelectTrigger className="h-8 w-[70px] rounded-xl">
+              <SelectTrigger className="h-8 w-[70px] rounded-lg">
                 <SelectValue
                   placeholder={table.getState().pagination.pageSize}
                 />
               </SelectTrigger>
-              <SelectContent className="bg-white rounded-xl" side="top">
+              <SelectContent className="bg-white rounded-lg" side="top">
                 {[10, 20, 30, 40, 50].map((pageSize) => (
                   <SelectItem
-                    className="bg-white rounded-xl "
+                    className="bg-white rounded-lg "
                     key={pageSize}
                     value={`${pageSize}`}
                   >
@@ -62,7 +62,7 @@ import {
           <div className="flex items-center space-x-2 ">
             <Button
               variant="outline"
-              className="hidden h-8 w-8 p-0 lg:flex rounded-xl"
+              className="hidden h-8 w-8 p-0 lg:flex rounded-lg"
               onClick={() => table.setPageIndex(0)}
               disabled={!table.getCanPreviousPage()}
             >
@@ -71,7 +71,7 @@ import {
             </Button>
             <Button
               variant="outline"
-              className="h-8 w-8 p-0 rounded-xl"
+              className="h-8 w-8 p-0 rounded-lg"
               onClick={() => table.previousPage()}
               disabled={!table.getCanPreviousPage()}
             >
@@ -80,7 +80,7 @@ import {
             </Button>
             <Button
               variant="outline"
-              className="h-8 w-8 p-0 rounded-xl"
+              className="h-8 w-8 p-0 rounded-lg"
               onClick={() => table.nextPage()}
               disabled={!table.getCanNextPage()}
             >
@@ -89,7 +89,7 @@ import {
             </Button>
             <Button
               variant="outline"
-              className="hidden h-8 w-8 p-0 lg:flex rounded-xl"
+              className="hidden h-8 w-8 p-0 lg:flex rounded-lg"
               onClick={() => table.setPageIndex(table.getPageCount() - 1)}
               disabled={!table.getCanNextPage()}
             >

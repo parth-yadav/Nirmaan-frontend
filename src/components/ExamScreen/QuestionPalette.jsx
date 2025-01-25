@@ -58,7 +58,7 @@ const QuestionPalette = () => {
           ))}
         </div>
       ))}
-      <button className="justify-center px-12 py-5 mt-96 text-xl text-white uppercase bg-blue-600 rounded-xl max-md:px-5 max-md:mt-10">
+      <button className="justify-center px-12 py-5 mt-96 text-xl text-white uppercase bg-blue-600 rounded-lg max-md:px-5 max-md:mt-10">
         SUBMIT TEST
       </button>
     </div>

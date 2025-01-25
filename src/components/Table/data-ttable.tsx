@@ -109,14 +109,14 @@ function DataTable<TData, TValue>({
                   .getColumn(searchcolumn)
                   ?.setFilterValue(event.target.value)
               }
-              className="w-full sm:max-w-sm border-gray-300  rounded-xl"
+              className="w-full sm:max-w-sm border-gray-300  rounded-lg"
             />
           )}
           {!hideFilter && (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button
-                  className="w-full sm:w-auto border-gray-300 rounded-xl"
+                  className="w-full sm:w-auto border-gray-300 rounded-lg"
                   variant="outline"
                 >
                   Filter{" "}
@@ -151,7 +151,7 @@ function DataTable<TData, TValue>({
               >
                 <Button
                   variant="outline"
-                  className="w-full sm:w-auto flex gap-2 justify-center px-4 py-2 text-sm font-medium leading-6 text-black whitespace-nowrap bg-white rounded-xl border border-gray-300 border-solid "
+                  className="w-full sm:w-auto flex gap-2 justify-center px-4 py-2 text-sm font-medium leading-6 text-black whitespace-nowrap bg-white rounded-lg border border-gray-300 border-solid "
                 >
                   View
                 </Button>
@@ -178,7 +178,7 @@ function DataTable<TData, TValue>({
         )}
       </div>
 
-      <div className="rounded-xl border overflow-x-auto">
+      <div className="rounded-lg border overflow-x-auto">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (

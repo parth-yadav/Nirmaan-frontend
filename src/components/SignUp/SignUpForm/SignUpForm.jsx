@@ -74,7 +74,7 @@ function Signup() {
 
   return (
     <div className="flex items-center justify-center">
-  <div className="mx-auto w-full max-w-lg  rounded-xl ">
+  <div className="mx-auto w-full max-w-lg  rounded-lg ">
     <div className="mb-2 flex justify-center">
       <span className="inline-block w-full max-w-[100px]">
         {/* <Logo width="100%" /> */}

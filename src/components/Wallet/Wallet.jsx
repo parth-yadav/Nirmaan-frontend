@@ -19,7 +19,7 @@ function Wallet() {
               <p className="mt-3 text-3xl font-semibold tracking-tight leading-9 text-black max-md:max-w-full dark:bg-black dark:text-white">
                 ₹ 2500
               </p>
-              <button  className="px-4 rounded-xl py-2 mt-8 text-sm font-medium leading-6 text-white rounded-md bg-slate-900 dark:text-black dark:bg-white">
+              <button  className="px-4 rounded-lg py-2 mt-8 text-sm font-medium leading-6 text-white rounded-md bg-slate-900 dark:text-black dark:bg-white">
                 Add Money
               </button>
             </section>

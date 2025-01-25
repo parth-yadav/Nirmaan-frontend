@@ -8,10 +8,10 @@ function Header() {
         Results
       </h1>
       <div className="flex gap-5 text-2xl font-medium text-neutral-600 max-md:flex-wrap">
-        <div className="grow justify-center px-4 py-3 bg-white rounded-xl shadow-sm w-fit">
+        <div className="grow justify-center px-4 py-3 bg-white rounded-lg shadow-sm w-fit">
           MOCK TESTS ATTEMPTED : 2
         </div>
-        <div className="justify-center px-4 py-3 bg-white rounded-xl shadow-sm">
+        <div className="justify-center px-4 py-3 bg-white rounded-lg shadow-sm">
           22 JAN 2022
         </div>
       </div>

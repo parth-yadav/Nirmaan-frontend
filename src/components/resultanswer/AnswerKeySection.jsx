@@ -48,12 +48,12 @@ const questions = [
 
 function AnswerKeySection() {
   return (
-    <section className="flex flex-col px-8 pt-5 pb-16 mt-24 bg-white rounded-xl shadow-lg max-md:px-5 max-md:mt-10 max-md:max-w-full">
+    <section className="flex flex-col px-8 pt-5 pb-16 mt-24 bg-white rounded-lg shadow-lg max-md:px-5 max-md:mt-10 max-md:max-w-full">
       <div className="flex gap-5 w-full font-bold max-md:flex-wrap max-md:pr-5 max-md:max-w-full">
         <h2 className="flex-auto text-3xl text-black">
           Answer key & your responses
         </h2>
-        <button className="flex gap-4 px-4 py-1.5 text-xl text-white bg-blue-600 rounded-xl">
+        <button className="flex gap-4 px-4 py-1.5 text-xl text-white bg-blue-600 rounded-lg">
           <img
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/d1b8f976c1628463845867374a447625dc63ef68d36f4bf1391c4d684bf28aa8?apiKey=8a82faa9db93454483a68c973b38c7b0&"

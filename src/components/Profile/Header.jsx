@@ -8,7 +8,7 @@ function Header() {
         Profile
       </h1>
       <div className="flex gap-5 text-2xl font-medium text-neutral-600">
-        <div className="flex gap-2.5 px-4 py-3 whitespace-nowrap bg-white rounded-xl shadow-sm">
+        <div className="flex gap-2.5 px-4 py-3 whitespace-nowrap bg-white rounded-lg shadow-sm">
           <img
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/c20ea05224220d3825146ccb639b8df025e4a7aa84ffed43a3db874f65ce9ee7?apiKey=8a82faa9db93454483a68c973b38c7b0&"
@@ -17,7 +17,7 @@ function Header() {
           />
           <div>1600</div>
         </div>
-        <div className="justify-center px-4 py-3 bg-white rounded-xl shadow-sm">
+        <div className="justify-center px-4 py-3 bg-white rounded-lg shadow-sm">
           22 JAN 2022
         </div>
         <img

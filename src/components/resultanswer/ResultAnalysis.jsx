@@ -5,7 +5,7 @@ import QuestionStatistics from "./QuestionStatistics";
 
 function ResultAnalysis() {
   return (
-    <section className="pt-5 pr-20 pb-16 pl-8 mt-28 bg-white rounded-xl shadow-lg max-md:px-5 max-md:mt-10 max-md:max-w-full">
+    <section className="pt-5 pr-20 pb-16 pl-8 mt-28 bg-white rounded-lg shadow-lg max-md:px-5 max-md:mt-10 max-md:max-w-full">
       <div className="flex gap-5 max-md:flex-col max-md:gap-0">
         <div className="flex flex-col w-[38%] max-md:ml-0 max-md:w-full">
           <div className="flex flex-col grow max-md:mt-10">
@@ -35,7 +35,7 @@ function ResultAnalysis() {
 
 function PerformanceBox({ title, marks, rank, percentage }) {
   return (
-    <div className="flex flex-col items-start py-4 pr-14 pl-2.5 mt-8 w-full bg-sky-100 rounded-xl max-md:pr-5">
+    <div className="flex flex-col items-start py-4 pr-14 pl-2.5 mt-8 w-full bg-sky-100 rounded-lg max-md:pr-5">
       <div className="text-base font-bold tracking-wider uppercase text-neutral-600">
         {title}
       </div>

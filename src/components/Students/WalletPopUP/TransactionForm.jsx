@@ -5,7 +5,7 @@ export function TransactionForm() {
   const [transactionType, setTransactionType] = React.useState("credit");
 
   return (
-    <form className="flex flex-col px-5 py-6 mt-5 w-full rounded-xl border border-gray-300 border-solid max-md:max-w-full">
+    <form className="flex flex-col px-5 py-6 mt-5 w-full rounded-lg border border-gray-300 border-solid max-md:max-w-full">
       <TransactionTypeToggle
         selectedType={transactionType}
         onTypeChange={setTransactionType}
