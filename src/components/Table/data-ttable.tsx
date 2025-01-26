@@ -218,7 +218,7 @@ function DataTable<TData, TValue>({
                     <TableCell key={cell.id} className="py-3 px-2 sm:px-4">
                       {isMobile ? (
                         <div className="flex flex-col">
-                          <span className="font-bold">{cell.column.id}:</span>
+                          {/* <span className="font-bold">{cell.column.id}:</span> */}
                           <span>
                             {flexRender(
                               cell.column.columnDef.cell,
