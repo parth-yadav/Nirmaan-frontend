@@ -47,6 +47,8 @@ import BlogEditorPage from "./components/BlogEditor/BlogEditor.tsx";
 import SingleBlog from "./components/SingleBlog/SingleBlog.tsx";
 import Timeline from "./components/QuestionPool/Timeline/Timeline.jsx";
 import Settings from "./components/Settings/Settings.jsx";
+import { QuestionPoolApproval } from "./components/QuestionPool/QuestionPoolApproval/QuestionPoolApproval.tsx";
+import QuestionPoolPage from "./components/QuestionPool/QuestionPoolPage.jsx";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -85,8 +87,8 @@ export const router = createBrowserRouter(
 
         <Route path="test" element={<MainContent />} />
         <Route path="blogscord" element={<BlogListCo />} />
-        <Route path="question_pool" element={<QuestionPoolLayout/>} />
-       
+        <Route path="question-pool" element={<QuestionPoolPage/>} />
+
         <Route path="exam_schema" element={<ExamSchemas />} />
         <Route path="team" element={<Team />} />
         <Route path="students" element={<Students />} />
@@ -98,7 +100,15 @@ export const router = createBrowserRouter(
         <Route path="settings" element={<Settings />} />
       </Route>
       <Route
-        path="exampool"
+        path="approve-exampool"
+        element={
+          <AuthLayout authentication={false}>
+            <QuestionPoolApproval />
+          </AuthLayout>
+        }
+      />
+      <Route
+        path="edit-questionpool"
         element={
           <AuthLayout authentication={false}>
             <QuestionPoolLayout />

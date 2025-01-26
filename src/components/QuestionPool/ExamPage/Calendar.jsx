@@ -23,7 +23,7 @@ const Calendar = () => {
               index === 2
                 ? "bg-red-300"
                 : index === 3
-                ? "text-black bg-blue-300 rounded-3xl"
+                ? "text-black bg-blue-800 rounded-3xl"
                 : "bg-white"
             } rounded-md`}
           >

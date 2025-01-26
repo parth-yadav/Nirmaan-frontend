@@ -12,7 +12,7 @@ function Actions() {
       <div className="flex gap-5 mt-5 w-full text-sm font-medium leading-6">
         <button
           className="flex gap-2 justify-center items-center px-4 py-2 text-white rounded-md bg-slate-900"
-          onClick={() => navigate("/exampool")}
+          onClick={() => navigate("/edit-questionpool")}
         >
           <img
             loading="lazy"
