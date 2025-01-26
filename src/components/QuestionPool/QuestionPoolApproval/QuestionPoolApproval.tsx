@@ -3,7 +3,7 @@ import { useState } from "react";
 import { QuizQuestion } from "./ApprovalPanel/Question";
 import QuestionsData from "../ExamPage/QuestionData";
 import { ActionButtonGroup } from "./ApprovalPanel/actionButtons/ActionButtonGroup";
-import QuestionTileComponent from "../ExamPage/QuestionPoolSeperated/QuestionTileComponent";
+import QuestionTileComponent from "./QuestionTileComponent";
 
 export const QuestionPoolApproval: React.FC = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);

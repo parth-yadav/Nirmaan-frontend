@@ -8,7 +8,7 @@ export const ActionButton: React.FC<ActionButtonProps> = ({
   onClick,
 }) => {
   const baseClasses =
-    "flex gap-2 justify-center items-center px-4 py-2 whitespace-nowrap rounded-md";
+    "flex gap-2 justify-center items-center px-4 py-2 whitespace-nowrap rounded-lg";
   const variantClasses =
     variant === "primary" ? "bg-green-700" : "bg-slate-900";
 

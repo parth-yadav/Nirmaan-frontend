@@ -17,7 +17,7 @@ export default function TimelineToggleButton() {
 
   return (
     <div className="relative">
-      <Button onClick={toggleTimeline} className="bg-black hover:bg-gray-700 ">
+      <Button onClick={toggleTimeline} className="bg-black rounded-lg hover:bg-gray-700 ">
         {isTimelineVisible ? "Hide Timeline" : "Event Timeline"}
       </Button>
       {isTimelineVisible && (
