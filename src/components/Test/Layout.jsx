@@ -25,6 +25,20 @@ function Layout() {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
+  // Prevent scrolling on the body when the sidebar is open
+  useEffect(() => {
+    if (isMobile && isSidebarOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    // Cleanup function to reset overflow when the component unmounts
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isMobile, isSidebarOpen]);
+
   return (
     <div className="flex min-h-screen bg-white dark:bg-black dark:text-white">
       {/* Sidebar */}
@@ -32,6 +46,7 @@ function Layout() {
         isMobile={isMobile}
         isOpen={isSidebarOpen}
         onToggle={toggleSidebar}
+        onClose={() => setIsSidebarOpen(false)} // Pass a function to close the sidebar
         className={`${
           isMobile
             ? "fixed top-0 right-0 transform transition-transform duration-300 ease-in-out z-20"
@@ -60,6 +75,14 @@ function Layout() {
           <Outlet />
         </main>
       </div>
+
+      {/* Overlay for closing the sidebar when clicking outside */}
+      {isMobile && isSidebarOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-10"
+          onClick={() => setIsSidebarOpen(false)}
+        />
+      )}
     </div>
   );
 }
