@@ -1,11 +1,11 @@
 import * as React from "react";
-
 import { ActionButtonProps } from "./types";
 
 export const ActionButton: React.FC<ActionButtonProps> = ({
   icon,
   label,
   variant = "secondary",
+  onClick,
 }) => {
   const baseClasses =
     "flex gap-2 justify-center items-center px-4 py-2 whitespace-nowrap rounded-md";
@@ -17,6 +17,7 @@ export const ActionButton: React.FC<ActionButtonProps> = ({
       className={`${baseClasses} ${variantClasses}`}
       tabIndex={0}
       role="button"
+      onClick={onClick}
     >
       <img
         loading="lazy"
