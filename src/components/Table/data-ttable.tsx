@@ -95,31 +95,36 @@ function DataTable<TData, TValue>({
 
   return (
     <div className="w-full">
-      <div className="flex flex-col sm:flex-row items-center py-4 space-y-4 sm:space-y-0 sm:space-x-4 justify-between">
-        <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-          {!hideSearch && (
-            <Input
-              placeholder={`Filter ${searchcolumn}...`}
-              value={
-                (table.getColumn(searchcolumn)?.getFilterValue() as string) ??
-                ""
-              }
-              onChange={(event) =>
-                table
-                  .getColumn(searchcolumn)
-                  ?.setFilterValue(event.target.value)
-              }
-              className="w-full sm:max-w-sm border-gray-300  rounded-lg"
-            />
-          )}
+      {/* Search, Filter, and View Buttons */}
+      <div className="flex flex-col sm:flex-row items-center py-4 gap-4 sm:gap-0 sm:space-x-4 justify-between">
+        {/* Search Input */}
+        {!hideSearch && (
+          <Input
+            placeholder={`Filter ${searchcolumn}...`}
+            value={
+              (table.getColumn(searchcolumn)?.getFilterValue() as string) ?? ""
+            }
+            onChange={(event) =>
+              table.getColumn(searchcolumn)?.setFilterValue(event.target.value)
+            }
+            className={`w-full ${
+              isMobile ? "w-full" : "sm:max-w-sm"
+            } border-gray-300 rounded-lg`}
+          />
+        )}
+
+        {/* Filter and View Buttons */}
+        <div className="flex flex-row gap-4 w-full sm:w-auto">
           {!hideFilter && (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button
-                  className="w-full sm:w-auto border-gray-300 rounded-lg"
+                  className={`w-full ${
+                    isMobile ? "w-1/2" : "sm:w-auto"
+                  } border-gray-300 border rounded-lg`}
                   variant="outline"
                 >
-                  Filter{" "}
+                  Filter
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-white" align="start">
@@ -141,17 +146,15 @@ function DataTable<TData, TValue>({
               </DropdownMenuContent>
             </DropdownMenu>
           )}
-        </div>
-        {!hideViewOptions && (
-          <div className="flex w-full sm:w-auto">
+
+          {!hideViewOptions && (
             <DropdownMenu>
-              <DropdownMenuTrigger
-                asChild
-                className="bg-white w-full sm:w-auto"
-              >
+              <DropdownMenuTrigger asChild>
                 <Button
                   variant="outline"
-                  className="w-full sm:w-auto flex gap-2 justify-center px-4 py-2 text-sm font-medium leading-6 text-black whitespace-nowrap bg-white rounded-lg border border-gray-300 border-solid "
+                  className={`w-full ${
+                    isMobile ? "w-1/2" : "sm:w-auto"
+                  } flex gap-2 justify-center px-4 py-2 text-sm font-medium leading-6 text-black whitespace-nowrap bg-white rounded-lg border border-gray-300 border-solid`}
                 >
                   View
                 </Button>
@@ -163,7 +166,7 @@ function DataTable<TData, TValue>({
                   .map((column) => (
                     <DropdownMenuCheckboxItem
                       key={column.id}
-                      className="capitalize bg-white "
+                      className="capitalize bg-white"
                       checked={column.getIsVisible()}
                       onCheckedChange={(value) =>
                         column.toggleVisibility(!!value)
@@ -174,10 +177,11 @@ function DataTable<TData, TValue>({
                   ))}
               </DropdownMenuContent>
             </DropdownMenu>
-          </div>
-        )}
+          )}
+        </div>
       </div>
 
+      {/* Table */}
       <div className="rounded-lg border overflow-x-auto">
         <Table>
           <TableHeader>
@@ -189,7 +193,7 @@ function DataTable<TData, TValue>({
                     className="font-bold text-muted-foreground"
                   >
                     {header.isPlaceholder ? null : (
-                      <div className="text-left py-3  ">
+                      <div className="text-left py-3">
                         {flexRender(
                           header.column.columnDef.header,
                           header.getContext()
@@ -246,12 +250,14 @@ function DataTable<TData, TValue>({
         </Table>
       </div>
 
+      {/* Pagination */}
       {!hidePagination && (
         <div className="flex items-center justify-end space-x-2 py-4 bg-white overflow-x-auto">
           <DataTablePagination table={table} />
         </div>
       )}
 
+      {/* Modal */}
       {isModalOpen && selectedRow && ModalComponent && (
         <ModalComponent
           isOpen={isModalOpen}
