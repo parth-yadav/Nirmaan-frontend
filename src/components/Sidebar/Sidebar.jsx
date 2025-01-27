@@ -10,115 +10,87 @@ import "./scrollbar-hide.css";
 
 // Keep your existing sidebarItems array here
 
+import {
+  FileText,
+  Search,
+  Wallet,
+  Book,
+  Archive,
+  Grid,
+  BarChart,
+  Users,
+  Building,
+  Settings,
+} from "lucide-react";
+
 const sidebarItems = [
   {
-    icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/e69662981acab63aa64aa1912c25c27ffdf7548842bbbc32f3e8840991b488b0?apiKey=8a82faa9db93454483a68c973b38c7b0&",
+    icon: <FileText className="w-4 h-4 my-auto" />,
     text: "My tests",
     to: "/quiz/test",
   },
   {
-    icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/49f56325d3f9f737f16e780de9c3b9f6f06f88a0ca7fda342128cd008869ffa0?apiKey=8a82faa9db93454483a68c973b38c7b0&",
+    icon: <Search className="w-4 h-4 my-auto" />,
     text: "Discover",
     to: "/quiz/discover",
   },
   {
-    icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/aa068a97d9c74226417b8a0b967e6b3ab77297120310ee40f1f2f9fcd0ffccd3?apiKey=8a82faa9db93454483a68c973b38c7b0&",
+    icon: <Wallet className="w-4 h-4 my-auto" />,
     text: "Wallet",
     to: "/quiz/wallet",
   },
   {
-    icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/d98357a71e2ad3092798be3422551f3981de837b313b8f8ec2e6b40cbc3a19bd?apiKey=8a82faa9db93454483a68c973b38c7b0&",
+    icon: <Book className="w-4 h-4 my-auto" />,
     text: "Blogs",
     to: "/quiz/blogs",
   },
   {
-    icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/d98357a71e2ad3092798be3422551f3981de837b313b8f8ec2e6b40cbc3a19bd?apiKey=8a82faa9db93454483a68c973b38c7b0&",
-    text: "Blogs Cord..",
-    to: "/quiz/blogscord",
-  },
-  {
-    icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/d98357a71e2ad3092798be3422551f3981de837b313b8f8ec2e6b40cbc3a19bd?apiKey=8a82faa9db93454483a68c973b38c7b0&",
+    icon: <Archive className="w-4 h-4 my-auto" />,
     text: "Question Pool",
     to: "/quiz/question-pool",
   },
   {
-    icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/d98357a71e2ad3092798be3422551f3981de837b313b8f8ec2e6b40cbc3a19bd?apiKey=8a82faa9db93454483a68c973b38c7b0&",
-    text: "Approve Question Pool",
-    to: "/approve-exampool",
-  },
-  {
-    icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/d98357a71e2ad3092798be3422551f3981de837b313b8f8ec2e6b40cbc3a19bd?apiKey=8a82faa9db93454483a68c973b38c7b0&",
+    icon: <Grid className="w-4 h-4 my-auto" />,
     text: "Exam Schemas",
     to: "/quiz/exam_schema",
   },
   {
-    icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/d98357a71e2ad3092798be3422551f3981de837b313b8f8ec2e6b40cbc3a19bd?apiKey=8a82faa9db93454483a68c973b38c7b0&",
+    icon: <BarChart className="w-4 h-4 my-auto" />,
     text: "Analytics",
     to: "/quiz/analytics",
   },
   {
-    icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/d98357a71e2ad3092798be3422551f3981de837b313b8f8ec2e6b40cbc3a19bd?apiKey=8a82faa9db93454483a68c973b38c7b0&",
+    icon: <Users className="w-4 h-4 my-auto" />,
     text: "Team",
     to: "/quiz/team",
   },
   {
-    icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/d98357a71e2ad3092798be3422551f3981de837b313b8f8ec2e6b40cbc3a19bd?apiKey=8a82faa9db93454483a68c973b38c7b0&",
-    text: "Students",
-    to: "/quiz/students",
-  },
-  {
-    icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/d98357a71e2ad3092798be3422551f3981de837b313b8f8ec2e6b40cbc3a19bd?apiKey=8a82faa9db93454483a68c973b38c7b0&",
+    icon: <Building className="w-4 h-4 my-auto" />,
     text: "Organisation",
     to: "/quiz/organisation",
   },
   {
-    icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/d98357a71e2ad3092798be3422551f3981de837b313b8f8ec2e6b40cbc3a19bd?apiKey=8a82faa9db93454483a68c973b38c7b0&",
-    text: "Testing Components",
-    to: "/quiz/testing",
-  },
-  {
-    icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/d98357a71e2ad3092798be3422551f3981de837b313b8f8ec2e6b40cbc3a19bd?apiKey=8a82faa9db93454483a68c973b38c7b0&",
+    icon: <Settings className="w-4 h-4 my-auto" />,
     text: "Settings",
     to: "/quiz/settings",
   },
 ];
 
+
 const SidebarItem = ({ icon, text, to }) => {
-  if (text === "/discover") {
-    return (
-      <Link
-        to={to}
-        className="flex gap-2 px-4 py-2 mt-2.5 text-sm font-medium leading-6 text-black whitespace-nowrap  "
-      >
-        <img
-          loading="lazy"
-          src={icon || "/placeholder.svg"}
-          alt=""
-          className="shrink-0 my-auto w-4 aspect-square"
-        />
-        <div className="text">{text}</div>
-      </Link>
-    );
-  } else {
-    return (
-      <NavLink
-        to={to}
-        className={({ isActive }) =>
-          `flex gap-2 px-4 py-2 mt-2.5 text-sm font-medium leading-6 text-black whitespace-nowrap rounded-lg dark:text-white   ${
-            isActive ? " bg-gray-300 dark:bg-gray-300 dark:text-blue-600" : ""
-          }`
-        }
-      >
-        <img
-          loading="lazy"
-          src={icon || "/placeholder.svg"}
-          alt=""
-          className="shrink-0 my-auto w-4 aspect-square dark:text-white"
-        />
-        <div className="text ">{text}</div>
-      </NavLink>
-    );
-  }
+  return (
+    <NavLink
+      to={to}
+      className={({ isActive }) =>
+        `flex gap-2 px-4 py-2 mt-2.5 text-sm font-medium leading-6 text-black whitespace-nowrap rounded-lg dark:text-white ${
+          isActive ? "bg-gray-300 dark:bg-gray-300 dark:text-blue-600" : ""
+        }`
+      }
+    >
+      {icon}
+      <div className="text">{text}</div>
+    </NavLink>
+  );
 };
 
 import { useEffect, useRef, useState } from "react";
