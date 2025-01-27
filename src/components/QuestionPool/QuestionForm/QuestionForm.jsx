@@ -129,54 +129,50 @@ function QuestionInput({ value, onChange }) {
           >
             Question
           </label>
-          <div className="text-lg">
+          <div className="text-lg ">
             <Editor
               apiKey={conf.tinymce}
               value={value}
               onEditorChange={onChange}
               init={{
                 inline: true,
-                menubar: true,
+                menubar: ' insert  format table ',
                 plugins: [
-                  "advlist",
-                  "autolink",
-                  "lists",
-                  "link",
+                 
+                 
+                  "link", // Plugin for attachments (files, links, etc.)
                   "image",
-                  "charmap",
-                  "preview",
-                  "anchor",
+                  
+                  
                   "searchreplace",
                   "visualblocks",
                   "code",
                   "fullscreen",
                   "insertdatetime",
                   "media",
-                  "table",
-                  "code",
-                  "help",
-                  "wordcount",
+                  "table", // Plugin for table creation
+                  
+                 
                 ],
                 toolbar:
                   "undo redo | formatselect | bold italic backcolor | " +
                   "alignleft aligncenter alignright alignjustify | " +
-                  "bullist numlist outdent indent | removeformat | help",
+                  "bullist numlist outdent indent | removeformat | " +
+                  "link table ", // Added 'link' and 'table' to the toolbar
                 content_style: `
-                  .tox.tox-tinymce-inline .tox-editor-header {
-                    
-                    border: 4px solid #eee;
-                    border-radius: 10px;
-                   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
-
-                    overflow: hidden;
-                    padding: 4px;
-                    position: fixed; /* Change to fixed */
-                    width: 800px;
-                    z-index: 100;
-                    top: 0px;
-                    
-                  }
-      `,
+      .tox.tox-tinymce-inline .tox-editor-header {
+        border: 4px solid #eee;
+        border-radius: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+        overflow: hidden;
+        padding: 16px 4px 4px 4px; /* Added top padding (16px) */
+        position: fixed;
+        width: 800px;
+        z-index: 100;
+        top: 0px;
+        background-color: white; /* Ensure the background is white for better shadow visibility */
+      }
+    `,
               }}
             />
           </div>

@@ -28,9 +28,7 @@ export default function TinyMCECustomCSS() {
             "insertdatetime media table paste code help wordcount",
           ],
           toolbar:
-            "undo redo | formatselect | bold italic backcolor | \
-            alignleft aligncenter alignright alignjustify | \
-            bullist numlist outdent indent | removeformat | help",
+            "undo redo | formatselect | bold italic backcolor |",
           content_style: `
             body { font-family: Arial, sans-serif; }
             p { line-height: 1.5; color: #333; }
