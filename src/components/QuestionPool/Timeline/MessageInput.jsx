@@ -23,10 +23,10 @@ function MessageInput() {
       </div>
       <button
         type="submit"
-        className="flex shrink-0 self-start mt-5 w-9 h-9 bg-blue-200 rounded-md"
+        className="flex shrink-0 self-start mt-5 w-9 h-9 bg-blue-800 rounded-md"
         aria-label="Send message"
       >
-        <span className="sr-only">Send</span>
+        <span className=" bg-black sr-only">Send</span>
       </button>
     </form>
   );

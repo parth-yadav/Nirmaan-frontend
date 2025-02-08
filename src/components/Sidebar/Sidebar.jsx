@@ -74,6 +74,11 @@ const sidebarItems = [
     text: "Settings",
     to: "/quiz/settings",
   },
+  {
+    icon: <Settings className="w-4 h-4 my-auto" />,
+    text: "Approval Page",
+    to: "/approve-exampool",
+  },
 ];
 
 

@@ -59,7 +59,7 @@ function MessageInput() {
                 className="flex-1 px-3 py-2 leading-none bg-white rounded-md border border-solid border-slate-300 text-slate-400"
                 placeholder="Type your message here"
               />
-              <Button type="submit" size="icon" className="ml-2">
+              <Button type="submit" size="icon" className=" bg-blue-300 ml-2">
                 <SendHorizonal className="h-4 w-4" />
                 <span className="sr-only">Send</span>
               </Button>
@@ -124,42 +124,45 @@ const timelineData = [
 
 export default function Timeline({ close }) {
   return (
-    <section className="flex flex-col rounded-none max-w-[700px]">
-      <div className="flex flex-col py-8 w-full bg-white shadow-[-5px_0px_20px_rgba(0,0,0,0.25)] max-md:max-w-full">
-        <header className="flex flex-col px-8 w-full max-md:px-5 max-md:max-w-full">
-          <div className="flex gap-2.5 text-xl font-semibold tracking-normal leading-snug whitespace-nowrap items-center">
+    <div className="flex flex-col bg-white w-[35vw] fixed inset-y-0 right-0 z-50  h-screen shadow-[-5px_0px_20px_rgba(0,0,0,0.25)] max-md:max-w-full">
+      {/* Header - Fixed at Top */}
+      <header className="sticky top-0 bg-white z-10 flex flex-col px-8 py-4 shadow-md max-md:px-5">
+        <div className="flex gap-2.5 text-xl font-semibold items-center">
+          <img
+            loading="lazy"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/135bc6ba1cac0e6fdde6dbb6e19fb3bf2510b32037a56d2d12202bb1953acdba?apiKey=8a82faa9db93454483a68c973b38c7b0"
+            className="object-contain w-6 aspect-square"
+            alt=""
+          />
+          <h1 className="text-black">Timeline</h1>
+          <Button
+            onClick={close}
+            size="icon"
+            variant="ghost"
+            className="ml-auto"
+          >
             <img
               loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/135bc6ba1cac0e6fdde6dbb6e19fb3bf2510b32037a56d2d12202bb1953acdba?placeholderIfAbsent=true&apiKey=8a82faa9db93454483a68c973b38c7b0"
-              className="object-contain shrink-0 my-auto w-6 aspect-square"
-              alt=""
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/75971904da857823c437cb2eb2c6ef1b8ab27ab6db876fa727bf66c43e016bc6?apiKey=8a82faa9db93454483a68c973b38c7b0"
+              className="h-4 w-4"
+              alt="Close"
             />
-            <h1>Timeline</h1>
-            <Button
-              onClick={close}
-              size="icon"
-              variant="ghost"
-              className="ml-auto"
-            >
-              <img
-                loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/75971904da857823c437cb2eb2c6ef1b8ab27ab6db876fa727bf66c43e016bc6?apiKey=8a82faa9db93454483a68c973b38c7b0&&apiKey=8a82faa9db93454483a68c973b38c7b0"
-                className="h-4 w-4"
-                alt="Close"
-              />
-            </Button>
-          </div>
-        </header>
-        <main className="flex flex-col px-8 mt-7 w-full max-md:px-5 max-md:max-w-full">
-          {timelineData.map((item, index) => (
-            <TimelineItem key={index} {...item} />
-          ))}
-        </main>
-        <footer className="flex flex-col w-full max-md:max-w-full">
-          <div className="w-full bg-gray-300 border border-gray-300 border-solid min-h-[1px] max-md:max-w-full" />
-          <MessageInput />
-        </footer>
-      </div>
-    </section>
+          </Button>
+        </div>
+      </header>
+
+      {/* Scrollable Content */}
+      <main className="flex-1 overflow-auto px-8 mt-7 max-md:px-5">
+        {timelineData.map((item, index) => (
+          <TimelineItem key={index} {...item} />
+        ))}
+      </main>
+
+      {/* Footer - Fixed at Bottom */}
+      <footer className="sticky pb-4 bottom-0 bg-white z-10 flex flex-col w-full shadow-md">
+        <div className="w-full bg-gray-300 border border-gray-300 min-h-[1px]" />
+        <MessageInput />
+      </footer>
+    </div>
   );
 }
