@@ -79,6 +79,11 @@ const sidebarItems = [
     text: "Approval Page",
     to: "/approve-exampool",
   },
+  {
+    icon: <Settings className="w-4 h-4 my-auto" />,
+    text: "Blog-editor",
+    to: "/blogeditor",
+  },
 ];
 
 

@@ -4,6 +4,7 @@ import { useState } from "react";
 import BlogCreator from "./BlogCreator";
 import BlogList from "./BlogList";
 import SingleBlogPost from "./SingleBlogPost";
+import NirmanButton from "../NirmanButton/NirmanButton";
 
 interface Blog {
   id: number;
@@ -47,26 +48,17 @@ export default function BlogEditorPage() {
 
   return (
     <div className="min-h-screen bg-purple-100 ">
-      <header className="bg-purple-600 text-white p-4">
-        <h1 className="text-2xl font-bold">Nirman</h1>
+      <header className="bg-white text-black pl-6 py-4">
+        <div className="text-left ml-12">
+          <NirmanButton />
+        </div>
       </header>
       <main className="container mx-auto p-4">
-        {selectedBlog ? (
-          <>
-            <button
-              onClick={() => setSelectedBlog(null)}
-              className="mb-4 text-purple-600 hover:text-purple-800 focus:outline-none focus:underline"
-            >
-              &larr; Back to all posts
-            </button>
-            <SingleBlogPost blog={selectedBlog} />
-          </>
-        ) : (
-          <>
+       
+         
             <BlogCreator addBlog={addBlog} />
-            <BlogList blogs={blogs} selectBlog={selectBlog} />
-          </>
-        )}
+         
+      
       </main>
     </div>
   );

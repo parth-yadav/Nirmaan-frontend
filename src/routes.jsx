@@ -49,6 +49,7 @@ import Timeline from "./components/QuestionPool/Timeline/Timeline.jsx";
 import Settings from "./components/Settings/Settings.jsx";
 import { QuestionPoolApproval } from "./components/QuestionPool/QuestionPoolApproval/QuestionPoolApproval.tsx";
 import QuestionPoolPage from "./components/QuestionPool/QuestionPoolPage.jsx";
+import BlogCreator from "./components/BlogEditor/BlogCreator.tsx";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -119,7 +120,7 @@ export const router = createBrowserRouter(
         path="blogeditor"
         element={
           <AuthLayout authentication={false}>
-            <BlogEditorPage />
+      <BlogCreator />
           </AuthLayout>
         }
       />
