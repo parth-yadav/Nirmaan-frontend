@@ -104,6 +104,7 @@ export default function BlogCreator({ addBlog }: BlogCreatorProps) {
                     "undo redo | formatselect | bold italic backcolor | " +
                     "alignleft aligncenter alignright alignjustify | " +
                     "bullist numlist outdent indent | removeformat | help",
+                  placeholder: "Type here...",
                   content_style: `
       .tox.tox-tinymce-inline .tox-editor-header {
         border: none !important;
@@ -115,14 +116,10 @@ export default function BlogCreator({ addBlog }: BlogCreatorProps) {
         width: 800px;
         z-index: 100;
         top: 0px;
+        left: 50vw;
       }
 
-      /* Remove focus border */
-      .tox-tinymce, .tox-edit-area, .tox.tox-tinymce-inline {
-        border: none !important;
-        outline: none !important;
-        box-shadow: none !important;
-      }
+      
     `,
                 }}
               />
