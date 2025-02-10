@@ -14,7 +14,7 @@ const ActionButton: React.FC<ActionButtonProps> = ({
   onClick,
 }) => (
   <button
-    className={`flex gap-2 justify-center items-center px-4 py-2 rounded-md ${bgColor}`}
+    className={`flex gap-2 justify-center rounded-lg items-center px-4 py-2  ${bgColor}`}
     onClick={onClick}
   >
     {icon}

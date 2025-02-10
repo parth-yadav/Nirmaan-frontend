@@ -33,7 +33,7 @@ const QuestionPoolLayout: React.FC = () => {
             onQuestionClick={handleQuestionClick}
           />
         </aside>
-        <main className="flex flex-col   px-8 w-4/5 max-md:ml-0 max-md:w-full">
+        <main className="flex flex-col w-4/5 max-md:ml-0 max-md:w-full md:mx-8">
           <QuestionPool
             currentQuestion={QuestionData[currentQuestionIndex]}
             questionNumber={currentQuestionIndex + 1}
@@ -44,13 +44,16 @@ const QuestionPoolLayout: React.FC = () => {
           <hr className="w-full bg-blue-300 mt-8 mb-8 border-0 h-px max-md:max-w-full" />
           {showQuestionForm && (
             <div className="mt-8">
-              <QuestionForm question={QuestionData[currentQuestionIndex]} onClose={() => setShowQuestionForm(false)} />
+              <QuestionForm
+                question={QuestionData[currentQuestionIndex]}
+                onClose={() => setShowQuestionForm(false)}
+              />
             </div>
           )}
         </main>
       </div>
     </div>
-  )
+  );
 }
 
 export default QuestionPoolLayout

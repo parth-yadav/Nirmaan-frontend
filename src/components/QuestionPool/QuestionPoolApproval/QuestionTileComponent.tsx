@@ -47,7 +47,7 @@ const QuestionTileComponent: React.FC<QuestionTileComponentProps> = ({
           <div className="flex justify-between items-center p-4 border-b border-gray-200">
             <div className="flex gap-2 items-center">
               <Calendar className="w-[30px] h-[30px]" />
-              <div>Question Navigator</div>
+              <div>Question Navigatorr</div>
             </div>
             <button onClick={toggleMobileMenu} aria-label="Close menu">
               <X className="w-[30px] h-[30px]" /> {/* Close icon */}
