@@ -16,7 +16,7 @@ const QuestionPoolModal: React.FC<QustionPoolModalProps> = ({
 
   return (
     <>
-      <div className=" absolute  shadow-lg shadow-gray-700 inset-y-0 right-0 overflow-auto ">
+      <div className=" ">
         <QuestionPoolRow data={data} close={onClose} />
       </div>
     </>

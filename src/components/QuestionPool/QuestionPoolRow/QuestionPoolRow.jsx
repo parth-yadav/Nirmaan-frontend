@@ -3,19 +3,18 @@ import Header from "./Header";
 import Description from "./Description";
 import Tags from "./Tags";
 
-
-function QuestionPoolRow({data, close}) {
+function QuestionPoolRow({ data, close }) {
   return (
-   
-    <main className=" border flex flex-col rounded-none max-w-[600px] mx-auto ">
-      <section className="flex flex-col pt-8 pb-8 w-full bg-white  rounded-lg max-md:pb-24 max-md:max-w-full">
-        <div className="flex flex-col px-8 w-full text-sm max-md:px-5 max-md:max-w-full">
-          <Header data={data} close={close} />
-          <Description  data ={data} />
-        </div>
-        <Tags  data = {data}/>
-      </section>
-    </main>
+    <div className="absolute shadow-lg bg-white  shadow-gray-700 inset-y-0 right-0 overflow-auto sm:h-screen w-full max-w-[600px] max-md:max-w-full">
+      <main className="border flex bg-white p-6 flex-col rounded-none w-full">
+       
+            <Header data={data} close={close} />
+            <Description data={data} />
+          
+          <Tags data={data} />
+        
+      </main>
+    </div>
   );
 }
 
