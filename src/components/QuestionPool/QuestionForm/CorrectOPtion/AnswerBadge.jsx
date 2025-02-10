@@ -5,7 +5,7 @@ export default function AnswerBadge() {
     <button
       type="button"
      
-      className="flex gap-2 justify-center items-center self-start px-4 py-2     font-medium leading-6 text-black bg-gray-300 rounded-md"
+      className="flex gap-2 justify-center items-center self-start px-4 py-2     font-medium leading-6 text-black bg-gray-300 rounded-lg"
     >
       <img
         loading="lazy"

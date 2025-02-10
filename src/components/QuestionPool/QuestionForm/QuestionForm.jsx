@@ -76,13 +76,13 @@ function QuestionForm({ question, onClose }) {
           </div>
         </div>
       </form>
-      <div>
+      {/* <div>
      
         <QuestionPoolApproval />
       </div>
       <div>
         <ProposedChanges />
-      </div>
+      </div> */}
     </>
   );
 }
@@ -254,7 +254,7 @@ function AddOptionButton({ onClick }) {
     <button
       type="button"
       onClick={onClick}
-      className="flex gap-2 justify-center items-center self-start px-4 py-2 mt-8 font-medium leading-6 text-black bg-gray-300 rounded-md"
+      className="flex gap-2 justify-center items-center self-start px-4 py-2 mt-8 font-medium leading-6 text-black bg-gray-300 rounded-lg"
     >
       <img
         loading="lazy"
