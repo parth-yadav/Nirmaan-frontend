@@ -12,7 +12,7 @@ function Statistics({ data }) {
         {Object.entries(stats).map(([key, value], index) => (
           <div
             key={index}
-            className="flex flex-col flex-1 justify-center p-2.5 bg-gray-100 rounded-md"
+            className="flex flex-col flex-1 justify-center p-2.5 bg-gray-100 rounded-lg"
           >
             <div className="text-sm font-medium leading-none text-gray-700 uppercase">
               {key.replace("_", " ")} {/* Format label */}
