@@ -4,7 +4,7 @@ function Statistics({ data }) {
   const stats = data.statistics[0]; // Access the first object in the array
 
   return (
-    <section className="flex flex-col px-8 mt-5 w-full max-md:px-5 max-md:max-w-full">
+    <section className="flex flex-col  mt-5 w-full max-md:px-5 max-md:max-w-full">
       <h2 className="self-start text-lg font-semibold leading-loose text-black">
         Statistics
       </h2>

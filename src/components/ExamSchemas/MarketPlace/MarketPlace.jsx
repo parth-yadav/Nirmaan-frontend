@@ -22,7 +22,7 @@ function MarketPlace({data}) {
           <InputField label="Discount (in %) :" />
           <ActionButtons />
           <hr className="mt-7 w-full bg-gray-300  min-h-[1px] max-md:max-w-full" />
-          <section className="flex flex-col mt-5 ml-8 max-w-full w-[281px] max-md:ml-2.5">
+          <section className="flex flex-col mt-5  max-w-full w-[281px] max-md:ml-2.5">
             <h2 className="self-start text-lg font-semibold leading-loose text-black">
               Actions
             </h2>
