@@ -1,9 +1,10 @@
 
+import { X } from "lucide-react";
 function Header({data, close}) {
   return (
     <div className="flex flex-col w-full max-md:max-w-full">
       <div className="flex flex-wrap gap-5 justify-between w-full font-medium leading-none text-green-800 whitespace-nowrap max-md:max-w-full">
-        <div className="flex gap-1.5 justify-center items-center px-2 py-1.5 bg-green-200 rounded-md">
+        <div className="flex gap-1.5 justify-center items-center px-4 py-2 bg-green-200 rounded-lg">
           <img
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/d9c1cc3b66bd19b889ba519adbf6c43b9bfedcb94be73665e7e9974978281d19?placeholderIfAbsent=true&apiKey=8a82faa9db93454483a68c973b38c7b0"
@@ -13,18 +14,13 @@ function Header({data, close}) {
           <div className="self-stretch my-auto">{ data.status}</div>
         </div>
         <button onClick={close}>
-          <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/75971904da857823c437cb2eb2c6ef1b8ab27ab6db876fa727bf66c43e016bc6?placeholderIfAbsent=true&apiKey=8a82faa9db93454483a68c973b38c7b0"
-            alt=""
-            className="object-contain shrink-0 w-6 aspect-square"
-          />
+          <X className="w-5 h-5 text-black" />
         </button>
       </div>
       <div className="flex flex-col mt-8 w-full leading-none max-md:max-w-full">
         <label
           htmlFor="questionPoolName"
-          className="font-medium text-slate-900"
+          className="font-medium mb-2 text-slate-900"
         >
           Question pool name 
         </label>

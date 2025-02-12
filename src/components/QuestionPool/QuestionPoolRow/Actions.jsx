@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 function Actions() {
   const navigate = useNavigate();
   return (
-    <div className="flex flex-col mt-4 max-w-full w-[323px] max-md:ml-2.5">
+    <div className="flex flex-col  max-w-full w-[323px] max-md:ml-2.5">
       <h2 className="self-start text-xl font-semibold tracking-normal leading-snug text-black">
         Actions
       </h2>
