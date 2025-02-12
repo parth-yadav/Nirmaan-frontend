@@ -38,11 +38,16 @@ function App() {
 
 
 
-  return !loading ? ( 
+  return !loading ? (
     <div className="App">
-     <Outlet />
+      <Outlet />
     </div>
-  ):<h1 className='text-center text-4xl'>Loading</h1>
+  ) : (
+    <h1 className="flex justify-center items-center min-h-screen text-4xl">
+      Loading...
+    </h1>
+  );
+
 }
 
 export default App;

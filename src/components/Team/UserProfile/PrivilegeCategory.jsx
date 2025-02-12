@@ -28,7 +28,7 @@ function PrivilegeCategory({
             key={index}
             variant="outline"
             onClick={() => togglePermission(permission)}
-            className={`px-4 py-2 rounded-lg ${
+            className={`px-4 py-2  rounded-lg ${
               permissions.includes(permission) ? "bg-green-200" : "bg-red-200"
             }`}
           >

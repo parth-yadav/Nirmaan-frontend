@@ -16,7 +16,7 @@ export const ActionButton: React.FC<ActionButtonProps> = ({
   return (
     <button
       onClick={onClick}
-      className={`flex gap-2 justify-center items-center px-4 py-2 ${bgColor} rounded-md text-white`}
+      className={`flex gap-2 justify-center items-center px-4 py-2 ${bgColor} rounded-lg text-white`}
     >
       <img
         loading="lazy"

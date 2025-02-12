@@ -33,42 +33,44 @@ function AuthButtons() {
 
   return (
     <>
-    <nav>
-    <ul className='flex ml-auto'>
-            {navItems.map((item) => 
+      <nav>
+        <ul className="flex ml-auto">
+          {navItems.map((item) =>
             item.active ? (
               <li key={item.name}>
                 <button
-                onClick={() => navigate(item.slug)}
-                // {if (item.name===){
+                  onClick={() => navigate(item.slug)}
+                  // {if (item.name===){
 
-                // }}
-                className={`justify-center px-4 py-2 ml-3 rounded-md ${item.name === 'Login' ? 'border border-black bg-white text-black' : 'bg-black border border-solid border-slate-500 text-white'}`}
-                  >{item.name}</button>
+                  // }}
+                  className={`justify-center rounded-lg px-4 py-2 ml-3 ${
+                    item.name === "Login"
+                      ? "border border-black bg-white text-black"
+                      : "bg-black border border-solid border-slate-500 text-white"
+                  }`}
+                >
+                  {item.name}
+                </button>
               </li>
             ) : null
-            )}
+          )}
 
-            <div className="flex flex-row gap-2">
+          <div className="flex flex-row gap-2">
             {authStatus && (
-              <li className="border border-black bg-white text-black">
+              <li className="border  border-black bg-white text-black">
                 <QuizButton />
               </li>
-              
             )}
 
             {authStatus && (
-              <li className="border border-black bg-white text-black">
+              <li className="border  border-black bg-white text-black">
                 <LogoutBtn />
               </li>
-
-              
             )}
-            </div>
-
-          </ul>
-          </nav>
-    {/* <div className="flex gap-5 leading-6">
+          </div>
+        </ul>
+      </nav>
+      {/* <div className="flex gap-5 leading-6">
       <button className="justify-center px-4 py-2 bg-white rounded-md border border-solid border-slate-500 text-slate-900">
         Login
       </button>

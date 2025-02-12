@@ -50,6 +50,7 @@ import Settings from "./components/Settings/Settings.jsx";
 import { QuestionPoolApproval } from "./components/QuestionPool/QuestionPoolApproval/QuestionPoolApproval.tsx";
 import QuestionPoolPage from "./components/QuestionPool/QuestionPoolPage.jsx";
 import BlogCreator from "./components/BlogEditor/BlogCreator.tsx";
+import { ProposedChanges } from "./components/QuestionPool/QuestionForm/Proposed Changes/QuestionChanges.tsx";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -121,6 +122,14 @@ export const router = createBrowserRouter(
         element={
           <AuthLayout authentication={false}>
       <BlogCreator />
+          </AuthLayout>
+        }
+      />
+      <Route
+        path="proposed-changes"
+        element={
+          <AuthLayout authentication={false}>
+      <ProposedChanges />
           </AuthLayout>
         }
       />

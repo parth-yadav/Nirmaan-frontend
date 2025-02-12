@@ -84,6 +84,11 @@ const sidebarItems = [
     text: "Blog-editor",
     to: "/blogeditor",
   },
+  {
+    icon: <Settings className="w-4 h-4 my-auto" />,
+    text: "Proposed-changes",
+    to: "/proposed-changes",
+  },
 ];
 
 

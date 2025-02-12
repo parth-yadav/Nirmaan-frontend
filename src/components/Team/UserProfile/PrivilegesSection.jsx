@@ -113,7 +113,7 @@ function PrivilegesSection() {
                     <Button onClick={() => handleBulkAction("removeAll")}>
                       Remove all privileges
                     </Button>
-                    <Button onClick={() => handleBulkAction("banUser")}>
+                    <Button className ="bg-red-500 rounded-lg text-white"onClick={() => handleBulkAction("banUser")}>
                       Ban user
                     </Button>
                   </div>
@@ -121,7 +121,7 @@ function PrivilegesSection() {
               </Popover>
             </div>
           </div>
-          <h2 className="text-xl font-semibold tracking-normal leading-snug text-black mb-5">
+          <h2 className=" mt-4 text-xl font-semibold tracking-normal leading-snug text-black mb-5">
             Privileges
           </h2>
           {privilegeCategories.map((category, index) => (
