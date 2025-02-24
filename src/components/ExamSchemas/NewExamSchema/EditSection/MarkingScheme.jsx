@@ -3,13 +3,11 @@ import React from "react";
 
 function MarkingScheme() {
   return (
-    <div className="flex flex-wrap gap-2.5">
-      <div className="flex flex-col grow shrink-0 basis-0 w-fit">
-        <div className="flex gap-4 items-center w-full">
+    <div className="flex gap-4 items-center w-full">
           <label className="self-stretch my-auto font-medium text-black">
             Marking scheme :
           </label>
-          <div className="flex flex-col flex-1 shrink self-stretch my-auto whitespace-nowrap basis-0 text-slate-900">
+          <div className="flex flex-col text-slate-900">
             <input
               type="text"
               value="4"
@@ -17,8 +15,8 @@ function MarkingScheme() {
               aria-label="Correct answer score"
             />
           </div>
-        </div>
-      </div>
+        
+     
       <div className="flex flex-col whitespace-nowrap text-slate-900">
         <input
           type="text"

@@ -8,7 +8,7 @@ function TestStats({ data }) {
 
   return (
     <section className="flex gap-5 mt-8 max-md:flex-wrap max-md:max-w-full">
-      <div className="flex flex-col flex-1 justify-center items-start p-2.5 bg-gray-100 rounded-md max-md:pr-5">
+      <div className="flex flex-col flex-1 justify-center items-start p-2.5 bg-gray-100 rounded-lg max-md:pr-5">
         <div className="text-sm font-medium leading-4 text-gray-700 uppercase">
           Total Questions
         </div>
@@ -17,7 +17,7 @@ function TestStats({ data }) {
           <span className=""> {data.total_questions}</span>
         </div>
       </div>
-      <div className="flex flex-col flex-1 justify-center items-start p-2.5 bg-gray-100 rounded-md max-md:pr-5">
+      <div className="flex flex-col flex-1 justify-center items-start p-2.5 bg-gray-100 rounded-lg max-md:pr-5">
         <div className="text-sm font-medium leading-4 text-gray-700 uppercase">
         Duration
         </div>
@@ -26,7 +26,7 @@ function TestStats({ data }) {
           <span className=""> {data.duration}</span>
         </div>
       </div>
-      <div className="flex flex-col flex-1 justify-center items-start p-2.5 bg-gray-100 rounded-md max-md:pr-5">
+      <div className="flex flex-col flex-1 justify-center items-start p-2.5 bg-gray-100 rounded-lg max-md:pr-5">
         <div className="text-sm font-medium leading-4 text-gray-700 uppercase">
         Maximum Marks
         </div>

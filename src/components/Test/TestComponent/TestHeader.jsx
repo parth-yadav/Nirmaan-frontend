@@ -2,7 +2,7 @@ function TestHeader({ data ,close}) {
   return (
     <header className="flex flex-col  w-full max-md:px-5 max-md:max-w-full">
       <div className="flex gap-5 justify-between w-full text-sm font-medium leading-4 text-blue-800 whitespace-nowrap max-md:flex-wrap max-md:max-w-full">
-        <div className="flex gap-1.5 justify-center px-2 py-1.5 bg-blue-200 rounded-md">
+        <div className="flex gap-1.5 justify-center px-2 py-1.5 bg-blue-200 rounded-lg">
           <img
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/d262efb894b440ebccfc59d615439352a915b2a545bf785b058a25dba046b18e?apiKey=8a82faa9db93454483a68c973b38c7b0&&apiKey=8a82faa9db93454483a68c973b38c7b0"

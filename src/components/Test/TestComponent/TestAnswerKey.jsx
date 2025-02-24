@@ -22,7 +22,7 @@ function TestAnswerKey() {
         In case you want to have more attempts, we recommend not to look at the
         answer key until you have exhausted all your attempts
       </p>
-      <button className="flex gap-2 justify-center px-4 py-2 mt-6 text-sm leading-6 text-white bg-black rounded-md">
+      <button className="flex gap-2 justify-center px-4 py-2 mt-6 text-sm leading-6 text-white bg-black rounded-lg">
         <img
           loading="lazy"
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/0f7b586ef954a50e394c201a9a57a7958cc1688b2b1b41b2d15cac69d96f0df4?apiKey=8a82faa9db93454483a68c973b38c7b0&&apiKey=8a82faa9db93454483a68c973b38c7b0"
