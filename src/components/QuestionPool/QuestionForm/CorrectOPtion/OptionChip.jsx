@@ -3,12 +3,12 @@ import * as React from "react";
 export const OptionChip = ({ text }) => {
   return (
     <div
-      className="gap-1.5 self-stretch px-1.5 bg-gray-200 rounded-md"
+      className="mr-2 px-4 py-2 bg-gray-200 rounded-lg "
       role="button"
       tabIndex={0}
     >
       {text} 
-      <button>
+      <button className="ml-2">
         X
       </button>
     </div>

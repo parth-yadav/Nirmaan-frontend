@@ -48,7 +48,7 @@ function QuestionForm({ question, onClose }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col text-sm w-full  bg-red-300"
+      className="flex flex-col text-sm w-full  "
     >
       <div className="flex flex-col pb-10 w-full max-md:max-w-full">
         <QuestionType />
@@ -263,15 +263,17 @@ function AddOptionButton({ onClick }) {
     <button
       type="button"
       onClick={onClick}
-      className="flex gap-2 justify-center items-center self-start px-4 py-3 mt-8 font-medium leading-6 text-black bg-gray-300 rounded-lg max-md:px-6 max-md:py-4"
+      className="flex gap-2 justify-center items-center self-start px-4 py-1.5 mt-8 font-medium text-black bg-gray-300 rounded-lg hover:bg-gray-400 transition-colors duration-200 max-md:px-6 max-md:py-2 max-md:text-base"
     >
+      {/* Icon */}
       <img
         loading="lazy"
         src="https://cdn.builder.io/api/v1/image/assets/TEMP/4e67780b15f327e409d60ce48aa25b1e7643442e3925beb62c391feb610d70b2?placeholderIfAbsent=true&apiKey=8a82faa9db93454483a68c973b38c7b0"
-        className="object-contain shrink-0 self-stretch my-auto w-4 aspect-square"
-        alt=""
+        className="object-contain shrink-0 w-4 h-4"
+        alt="Add option"
       />
-      <span className="self-stretch my-auto">Add option</span>
+      {/* Text */}
+      <span className="text-center">Add option</span>
     </button>
   );
 }
