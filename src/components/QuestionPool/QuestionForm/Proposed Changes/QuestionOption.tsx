@@ -6,7 +6,7 @@ export const QuestionOption: React.FC<OptionProps> = ({ text, isCorrect }) => {
 
   return (
     <div
-      className={`px-5 py-5 mt-2.5 w-full ${bgColor} rounded-md max-md:max-w-full`}
+      className={`px-5 py-5 mt-2.5 w-full ${bgColor} rounded-lg max-md:max-w-full`}
     >
       {text}
     </div>

@@ -31,7 +31,7 @@ const actions = [
 
 export const ProposedChanges: React.FC = () => {
   return (
-    <div className="flex flex-col text-base font-medium text-black">
+    <div className="flex flex-col text-base font-medium text-black px-4">
       <div className="w-full min-h-0 bg-gray-300 border border-gray-300 border-solid max-md:max-w-full" />
       <div className="flex flex-wrap gap-5 justify-between mt-7 w-full text-xl font-semibold tracking-normal leading-snug max-md:max-w-full">
         <div>Proposed changes</div>
