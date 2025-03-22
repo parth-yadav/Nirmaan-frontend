@@ -1,3 +1,4 @@
+
 import React from "react";
 import { SendHorizonal } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -34,7 +35,7 @@ function TimelineItem({ author, action, details, comment, status, timestamp }) {
 
 function TimelineComment({ comment }) {
   return (
-    <div className="self-end px-2.5 pt-3 pb-5 mt-2.5 max-w-full text-xs leading-4 text-gray-700 bg-gray-100 rounded-md w-[510px] max-md:pr-5 max-md:max-w-full">
+    <div className="self-end px-2.5 pt-3 pb-5 mt-2.5 max-w-full text-xs leading-4 text-gray-700 bg-gray-100 rounded-md w-[510px] max-md:w-full">
       {comment}
     </div>
   );
@@ -42,7 +43,7 @@ function TimelineComment({ comment }) {
 
 function MessageInput() {
   return (
-    <form className="flex flex-wrap gap-1 mt-5 mr-8 ml-8 text-sm max-md:mr-2.5">
+    <form className="flex flex-wrap gap-1 mt-5 mx-8 text-sm max-md:mx-2.5">
       <div className="flex flex-col grow shrink-0 basis-0 w-fit max-md:max-w-full">
         <div className="flex flex-col w-full max-md:max-w-full">
           <div className="flex flex-col w-full rounded-md max-md:max-w-full">
@@ -59,7 +60,7 @@ function MessageInput() {
                 className="flex-1 px-3 py-2 leading-none bg-white rounded-md border border-solid border-slate-300 text-slate-400"
                 placeholder="Type your message here"
               />
-              <Button type="submit" size="icon" className=" bg-blue-300 ml-2">
+              <Button type="submit" size="icon" className="bg-blue-300 ml-2">
                 <SendHorizonal className="h-4 w-4" />
                 <span className="sr-only">Send</span>
               </Button>
@@ -124,7 +125,7 @@ const timelineData = [
 
 export default function Timeline({ close }) {
   return (
-    <div className="flex flex-col bg-white w-[35vw] fixed inset-y-0 right-0 z-50  h-screen shadow-[-5px_0px_20px_rgba(0,0,0,0.25)] max-md:max-w-full">
+    <div className="flex flex-col bg-white w-[35vw] fixed inset-y-0 right-0 z-50 h-screen shadow-[-5px_0px_20px_rgba(0,0,0,0.25)] max-md:w-full max-md:inset-0 max-md:shadow-none">
       {/* Header - Fixed at Top */}
       <header className="sticky top-0 bg-white z-10 flex flex-col px-8 py-4 shadow-md max-md:px-5">
         <div className="flex gap-2.5 text-xl font-semibold items-center">
