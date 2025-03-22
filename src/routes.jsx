@@ -52,6 +52,7 @@ import QuestionPoolPage from "./components/QuestionPool/QuestionPoolPage.jsx";
 import BlogCreator from "./components/BlogEditor/BlogCreator.tsx";
 import { ProposedChanges } from "./components/QuestionPool/QuestionForm/Proposed Changes/QuestionChanges.tsx";
 import ExamPage from "./components/ExamPage/ExamPage.tsx";
+import TestResult from "./components/ResultPdf/TestResult.tsx";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -147,6 +148,14 @@ export const router = createBrowserRouter(
         element={
           <AuthLayout authentication={false}>
             <SingleBlog />
+          </AuthLayout>
+        }
+      />
+      <Route
+        path="testresult"
+        element={
+          <AuthLayout authentication={false}>
+            <TestResult />
           </AuthLayout>
         }
       />
