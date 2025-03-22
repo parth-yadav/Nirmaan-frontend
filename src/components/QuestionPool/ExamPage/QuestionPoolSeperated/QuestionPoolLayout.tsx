@@ -43,7 +43,7 @@ const QuestionPoolLayout: React.FC = () => {
           />
           <hr className="w-full bg-blue-300 mt-8 mb-8 border-0 h-px max-md:max-w-full" />
           {showQuestionForm && (
-            <div className="mt-8">
+            <div className="p-4">
               <QuestionForm
                 question={QuestionData[currentQuestionIndex]}
                 onClose={() => setShowQuestionForm(false)}
