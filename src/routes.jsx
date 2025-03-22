@@ -51,6 +51,7 @@ import { QuestionPoolApproval } from "./components/QuestionPool/QuestionPoolAppr
 import QuestionPoolPage from "./components/QuestionPool/QuestionPoolPage.jsx";
 import BlogCreator from "./components/BlogEditor/BlogCreator.tsx";
 import { ProposedChanges } from "./components/QuestionPool/QuestionForm/Proposed Changes/QuestionChanges.tsx";
+import ExamPage from "./components/ExamPage/ExamPage.tsx";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -130,6 +131,14 @@ export const router = createBrowserRouter(
         element={
           <AuthLayout authentication={false}>
       <ProposedChanges />
+          </AuthLayout>
+        }
+      />
+      <Route
+        path="exam-page"
+        element={
+          <AuthLayout authentication={false}>
+          <ExamPage />
           </AuthLayout>
         }
       />
