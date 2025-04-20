@@ -1,11 +1,11 @@
 import * as React from "react";
 
-export default function AnswerBadge() {
+export default function AnswerBadge({ onClick }) {
   return (
     <button
       type="button"
-     
-      className="flex gap-2 justify-center items-center self-start px-4 py-2 font-medium  text-black bg-gray-300 rounded-lg"
+      onClick={onClick} // Pass the click handler to the parent
+      className="flex gap-2 justify-center items-center self-start px-4 py-2 font-medium text-black bg-gray-300 rounded-lg cursor-pointer"
     >
       <img
         loading="lazy"
@@ -13,7 +13,7 @@ export default function AnswerBadge() {
         className="object-contain shrink-0 self-stretch w-4 aspect-square"
         alt=""
       />
-      <span className="self-stretch ">Correct option</span>
+      <span className="self-stretch">Correct option</span>
     </button>
   );
 }
