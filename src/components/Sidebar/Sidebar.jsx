@@ -89,6 +89,16 @@ const sidebarItems = [
     text: "Proposed-changes",
     to: "/proposed-changes",
   },
+  {
+    icon: <Settings className="w-4 h-4 my-auto" />,
+    text: "Test Results",
+    to: "/testresult",
+  },
+  {
+    icon: <Settings className="w-4 h-4 my-auto" />,
+    text: "Exam Page",
+    to: "/exampage",
+  },
 ];
 
 

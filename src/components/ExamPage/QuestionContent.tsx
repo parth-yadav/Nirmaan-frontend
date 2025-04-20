@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ActionButton from "./ActionButton";
 import QuestionsData from "../QuestionPool/ExamPage/QuestionData"; // Import the questions data
 
@@ -18,15 +18,29 @@ const QuestionContent = ({
 }) => {
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
 
+  // Reset selectedOption when the currentQuestion changes
+  useEffect(() => {
+    setSelectedOption(null); // Clear the selection for the new question
+  }, [currentQuestion]);
+
   const handleOptionSelect = (optionIndex: number) => {
     setSelectedOption(optionIndex);
     onSelectOption(optionIndex); // Notify parent about the selection
   };
 
+  const handleClearResponse = () => {
+    setSelectedOption(null); // Clear the selected option
+    onSelectOption(0); // Notify parent that the response is cleared
+  };
+
   const question = QuestionsData[currentQuestion - 1]; // Get the current question
 
   return (
-    <article className="flex flex-col self-stretch my-auto w-full text-black  max-md:max-w-full">
+    <article
+      className="flex flex-col pt-6 self-stretch my-auto w-full text-black min-h-screen max-md:max-w-full"
+      style={{ minHeight: "100vh" }}
+    >
+      {/* Header */}
       <header className="flex flex-wrap gap-5 justify-between max-md:max-w-full">
         <div className="flex flex-col">
           <h2 className="text-xl font-semibold tracking-normal leading-snug">
@@ -41,36 +55,40 @@ const QuestionContent = ({
         </p>
       </header>
 
-      <p className="self-start mt-8 text-base font-semibold leading-7 text-black">
-        Multiple Choice Question
-      </p>
+      {/* Main Content */}
+      <div className="flex-grow overflow-y-auto">
+        <p className="self-start mt-8 text-base font-semibold leading-7 text-black">
+          Multiple Choice Question
+        </p>
 
-      <p className="mt-4 text-xl leading-7 text-justify max-md:max-w-full">
-        {question.question}
-      </p>
+        <p className="mt-4 text-xl leading-7 text-justify max-md:max-w-full">
+          {question.question}
+        </p>
 
-      <div className="mt-8 space-y-2.5">
-        {question.options.map((option, index) => (
-          <button
-            key={index}
-            className={`flex flex-wrap gap-4 px-5 py-4 text-base font-medium bg-gray-100 rounded-md w-full text-left ${
-              selectedOption === index + 1
-                ? "border-2 border-blue-600 border-solid"
-                : ""
-            }`}
-            onClick={() => handleOptionSelect(index + 1)}
-          >
-            <span
-              className={`flex shrink-0 self-start rounded-full h-[15px] w-[15px] ${
-                selectedOption === index + 1 ? "bg-blue-600" : "bg-white"
+        <div className="mt-8 space-y-2.5">
+          {question.options.map((option, index) => (
+            <button
+              key={index}
+              className={`flex flex-wrap gap-4 px-5 py-4 text-base font-medium bg-gray-100 rounded-lg w-full text-left ${
+                selectedOption === index + 1
+                  ? "border-2 border-blue-600 border-solid"
+                  : ""
               }`}
-            />
-            <span className="flex-auto max-md:max-w-full">{option.text}</span>
-          </button>
-        ))}
+              onClick={() => handleOptionSelect(index + 1)}
+            >
+              <span
+                className={`flex shrink-0 self-start rounded-full h-[15px] w-[15px] ${
+                  selectedOption === index + 1 ? "bg-blue-600" : "bg-white"
+                }`}
+              />
+              <span className="flex-auto max-md:max-w-full">{option.text}</span>
+            </button>
+          ))}
+        </div>
       </div>
 
-      <footer className="flex flex-wrap gap-5 justify-between mt-96 w-full text-sm font-medium leading-6 text-white max-md:mt-10 max-md:max-w-full">
+      {/* Footer */}
+      <footer className="flex flex-wrap gap-5 justify-between mt-auto w-full text-sm font-medium leading-6 text-white  p-4 max-md:mt-10 max-md:max-w-full">
         <div className="flex gap-5 whitespace-nowrap">
           <ActionButton
             text="Previous"
@@ -97,6 +115,12 @@ const QuestionContent = ({
             iconSrc="https://cdn.builder.io/api/v1/image/assets/TEMP/8ca024a4c5cfba618c96ca544591d335539775a5?placeholderIfAbsent=true&apiKey=8a82faa9db93454483a68c973b38c7b0"
             iconPosition="left"
             onClick={() => {}}
+          />
+          <ActionButton
+            text="Clear Response"
+            iconSrc="https://cdn.builder.io/api/v1/image/assets/TEMP/clear-icon.png?placeholderIfAbsent=true&apiKey=8a82faa9db93454483a68c973b38c7b0"
+            iconPosition="left"
+            onClick={handleClearResponse}
           />
           <ActionButton
             text="End Test"

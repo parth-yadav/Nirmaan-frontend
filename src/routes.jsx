@@ -136,7 +136,7 @@ export const router = createBrowserRouter(
         }
       />
       <Route
-        path="exam-page"
+        path="exampage"
         element={
           <AuthLayout authentication={false}>
           <ExamPage />

@@ -42,7 +42,7 @@ function ExamPage() {
   };
 
   return (
-    <main className="overflow-hidden bg-white">
+    <main className="h-[100vh ">
       <div className="flex gap-5 max-md:flex-col">
         {/* Navigation Section */}
         <div className="w-[21%] max-md:w-full">
@@ -87,7 +87,7 @@ function ExamPage() {
         </div>
 
         {/* Question Content */}
-        <div className="px-4 w-[79%] max-md:ml-0 max-md:w-full">
+        <div className="px-4 pb-2 w-[79%] max-md:ml-0 max-md:w-full">
           <QuestionContent
             currentQuestion={currentQuestion}
             onNext={handleNext}

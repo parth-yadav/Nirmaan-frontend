@@ -26,12 +26,12 @@ const QuestionNavigation = ({
         if (questionNumber > QuestionsData.length) break;
 
         // Determine button class based on question state
-        let buttonClass = "px-4 w-10 h-10 bg-white rounded-md";
+        let buttonClass = "px-4 w-10 h-10 bg-white rounded-lg";
 
         if (completedQuestions.includes(questionNumber)) {
-          buttonClass = "px-4 w-10 h-10 bg-sky-300 rounded-md";
+          buttonClass = "px-4 w-10 h-10 bg-sky-300 rounded-lg";
         } else if (flaggedQuestions.includes(questionNumber)) {
-          buttonClass = "px-4 w-10 h-10 bg-yellow-300 rounded-md";
+          buttonClass = "px-4 w-10 h-10 bg-yellow-300 rounded-lg";
         } else if (currentQuestion === questionNumber) {
           buttonClass = "px-4 w-10 h-10 text-white bg-black rounded-full";
         }
@@ -58,8 +58,12 @@ const QuestionNavigation = ({
   };
 
   return (
-    <section className="flex flex-col px-5 pt-6 pb-72 mx-auto w-full text-lg font-semibold leading-loose text-black whitespace-nowrap bg-gray-100 max-md:pb-24 max-md:mt-10">
-      <div className="flex gap-1 self-start">
+    <section
+      className="flex flex-col px-5 py-6 mx-auto w-full text-lg font-semibold leading-loose text-black whitespace-nowrap bg-gray-100 h-screen max-md:h-auto"
+      style={{ height: "100vh" }}
+    >
+      {/* Header */}
+      <div className="flex gap-1 self-start mb-6">
         <img
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/58a1b0249cea22a5716c6d7b6ce91d48f559d961?placeholderIfAbsent=true&apiKey=8a82faa9db93454483a68c973b38c7b0"
           alt="Nirmaan Logo"
@@ -67,7 +71,9 @@ const QuestionNavigation = ({
         />
         <h1 className="my-auto">Nirmaan</h1>
       </div>
-      {renderQuestionGrid()}
+
+      {/* Question Grid */}
+      <div className="flex-grow overflow-y-auto">{renderQuestionGrid()}</div>
     </section>
   );
 };
