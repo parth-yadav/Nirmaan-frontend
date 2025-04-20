@@ -26,7 +26,7 @@ const QuestionContent: React.FC<QuestionContentProps> = ({ question }) => {
         <div
           key={index}
           className={`px-5 py-5 mt-${index === 0 ? "9" : "2.5"} text-base 
-          text-black bg-gray-100 rounded-md max-md:max-w-full cursor-pointer 
+          text-black bg-gray-100 rounded-lg max-md:max-w-full cursor-pointer 
           hover:bg-gray-200 transition-colors duration-200`}
         >
           {option.text}
