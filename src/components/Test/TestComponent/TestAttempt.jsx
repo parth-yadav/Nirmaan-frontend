@@ -17,7 +17,7 @@ function TestAttempt({data}) {
       </button>
       <div className="flex-auto my-auto text-gray-700">
         <span className="text-xl font-bold leading-7 text-black">{data.attempts_remaining}</span> / {data.max_attempts}
-        Attempts remaining
+        { } Attempts remaining
       </div>
     </div>
   );

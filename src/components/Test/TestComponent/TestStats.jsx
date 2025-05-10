@@ -13,25 +13,26 @@ function TestStats({ data }) {
           Total Questions
         </div>
         <div className="mt-2.5 text-3xl font-semibold tracking-tight leading-9 text-black">
-         
           <span className=""> {data.total_questions}</span>
         </div>
       </div>
       <div className="flex flex-col flex-1 justify-center items-start p-2.5 bg-gray-100 rounded-lg max-md:pr-5">
         <div className="text-sm font-medium leading-4 text-gray-700 uppercase">
-        Duration
+          Duration
         </div>
         <div className="mt-2.5 text-3xl font-semibold tracking-tight leading-9 text-black">
-          
-          <span className=""> {data.duration}</span>
+          <span>{data.duration}</span>
+          <span className="ml-1 text-lg font-normal text-gray-700">
+            minutes
+          </span>
         </div>
       </div>
+
       <div className="flex flex-col flex-1 justify-center items-start p-2.5 bg-gray-100 rounded-lg max-md:pr-5">
         <div className="text-sm font-medium leading-4 text-gray-700 uppercase">
-        Maximum Marks
+          Maximum Marks
         </div>
         <div className="mt-2.5 text-3xl font-semibold tracking-tight leading-9 text-black">
-          
           <span className=""> {data.maximum_marks}</span>
         </div>
       </div>
