@@ -45,6 +45,11 @@ const sidebarItems = [
     to: "/quiz/blogs",
   },
   {
+    icon: <Book className="w-4 h-4 my-auto" />,
+    text: "BlogsCo-ord",
+    to: "/quiz/blogscord",
+  },
+  {
     icon: <Archive className="w-4 h-4 my-auto" />,
     text: "Question Pool",
     to: "/quiz/question-pool",
@@ -52,7 +57,12 @@ const sidebarItems = [
   {
     icon: <Grid className="w-4 h-4 my-auto" />,
     text: "Exam Schemas",
-    to: "/quiz/exam_schema",
+    to: "/quiz/exam-schema",
+  },
+  {
+    icon: <Grid className="w-4 h-4 my-auto" />,
+    text: "Students",
+    to: "/quiz/students",
   },
   {
     icon: <BarChart className="w-4 h-4 my-auto" />,

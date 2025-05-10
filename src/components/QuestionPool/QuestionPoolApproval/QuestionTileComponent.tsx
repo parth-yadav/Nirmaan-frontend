@@ -24,7 +24,7 @@ const QuestionTileComponent: React.FC<QuestionTileComponentProps> = ({
   };
 
   return (
-    <div className="flex flex-col items-center p-6 w-full text-lg font-semibold leading-loose text-black whitespace-nowrap bg-gray-100">
+    <div className="flex flex-col items-center p-6 w-full h-full text-lg font-semibold leading-loose text-black whitespace-nowrap bg-gray-100">
       <div className="flex gap-2 items-center w-full">
         <button
           className="lg:hidden"
@@ -63,7 +63,7 @@ const QuestionTileComponent: React.FC<QuestionTileComponentProps> = ({
                   className={`px-4 w-10 h-10 cursor-pointer flex items-center justify-center ${
                     index === currentQuestionIndex
                       ? "text-white bg-blue-500 rounded-full"
-                      : "bg-white rounded-md"
+                      : "bg-white rounded-lg"
                   }`}
                   onClick={() => {
                     onQuestionClick(index);
@@ -87,7 +87,7 @@ const QuestionTileComponent: React.FC<QuestionTileComponentProps> = ({
               className={`px-4 w-10 h-10 cursor-pointer flex items-center justify-center ${
                 index === currentQuestionIndex
                   ? "text-white bg-blue-800 rounded-full"
-                  : "bg-white rounded-md"
+                  : "bg-white rounded-lg"
               }`}
               onClick={() => onQuestionClick(index)}
             >

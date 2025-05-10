@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 function TimelineItem({ author, action, details, comment, status, timestamp }) {
   return (
-    <article className="flex gap-2.5 mb-5 relative">
+    <article className="flex  gap-2.5 mb-5 relative">
       <div className="relative flex-shrink-0 w-5">
         <div className="absolute top-0 left-0 w-5 h-5 rounded-full bg-zinc-300" />
         {details && (
@@ -35,7 +35,7 @@ function TimelineItem({ author, action, details, comment, status, timestamp }) {
 
 function TimelineComment({ comment }) {
   return (
-    <div className="self-end px-2.5 pt-3 pb-5 mt-2.5 max-w-full text-xs leading-4 text-gray-700 bg-gray-100 rounded-md w-[510px] max-md:w-full">
+    <div className="self-end px-2.5 pt-3 pb-5 mt-2.5 max-w-full text-xs leading-4 text-gray-700 bg-gray-100 rounded-lg w-[510px] max-md:w-full">
       {comment}
     </div>
   );
@@ -46,7 +46,7 @@ function MessageInput() {
     <form className="flex flex-wrap gap-1 mt-5 mx-8 text-sm max-md:mx-2.5">
       <div className="flex flex-col grow shrink-0 basis-0 w-fit max-md:max-w-full">
         <div className="flex flex-col w-full max-md:max-w-full">
-          <div className="flex flex-col w-full rounded-md max-md:max-w-full">
+          <div className="flex flex-col w-full rounded-lg max-md:max-w-full">
             <label
               htmlFor="timelineMessage"
               className="self-start font-medium leading-none text-black mb-1"
@@ -57,10 +57,10 @@ function MessageInput() {
               <input
                 id="timelineMessage"
                 type="text"
-                className="flex-1 px-3 py-2 leading-none bg-white rounded-md border border-solid border-slate-300 text-slate-400"
+                className="flex-1 px-3 py-2 leading-none bg-white rounded-lg border border-solid border-slate-300 text-slate-400"
                 placeholder="Type your message here"
               />
-              <Button type="submit" size="icon" className="bg-blue-300 ml-2">
+              <Button type="submit" size="icon" className="bg-blue-300 rounded-lg ml-2">
                 <SendHorizonal className="h-4 w-4" />
                 <span className="sr-only">Send</span>
               </Button>

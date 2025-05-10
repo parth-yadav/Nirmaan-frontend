@@ -93,7 +93,7 @@ export const router = createBrowserRouter(
         <Route path="blogscord" element={<BlogListCo />} />
         <Route path="question-pool" element={<QuestionPoolPage/>} />
 
-        <Route path="exam_schema" element={<ExamSchemas />} />
+        <Route path="exam-schema" element={<ExamSchemas />} />
         <Route path="team" element={<Team />} />
         <Route path="students" element={<Students />} />
         <Route path="team" element={<Team />} />
