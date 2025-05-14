@@ -91,7 +91,7 @@ function TestResults({ results }: TestResultsProps) {
   });
 
   return (
-    <div className="w-full mt-8">
+    <div className="w-full">
       <h2 className="flex gap-1.5 text-lg font-semibold leading-7 text-black">
         <img
           loading="lazy"
@@ -104,10 +104,10 @@ function TestResults({ results }: TestResultsProps) {
       <Table className="  ">
         <TableHeader className="">
           {table.getHeaderGroups().map((headerGroup) => (
-            <TableRow key={headerGroup.id}>
+            <TableRow className="" key={headerGroup.id}>
               {headerGroup.headers.map((header) => {
                 return (
-                  <TableHead className="text-left " key={header.id}>
+                  <TableHead className="text-left  " key={header.id}>
                     {header.isPlaceholder
                       ? null
                       : flexRender(

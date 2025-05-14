@@ -53,6 +53,7 @@ import BlogCreator from "./components/BlogEditor/BlogCreator.tsx";
 import { ProposedChanges } from "./components/QuestionPool/QuestionForm/Proposed Changes/QuestionChanges.tsx";
 import ExamPage from "./components/ExamPage/ExamPage.tsx";
 import TestResult from "./components/ResultPdf/TestResult.tsx";
+import Discover from "./components/Discover/page.jsx";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -86,6 +87,7 @@ export const router = createBrowserRouter(
         <Route index element={<MainContent />} />
         <Route path="blogs" element={<BlogList />} />
         <Route path="wallet" element={<Wallet />} />
+        <Route path="discover" element={<Discover />} />
 
         <Route path="discover" element={<TestComponent />} />
 

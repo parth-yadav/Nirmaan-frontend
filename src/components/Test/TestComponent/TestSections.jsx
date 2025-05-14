@@ -1,6 +1,6 @@
 function TestSections({ data }) {
   return (
-    <section className="self-center mt-8 w-full max-md:max-w-full">
+    <section className="self-center w-full max-md:max-w-full">
       <div className="overflow-x-auto">
         <table className="min-w-full table-fixed">
           <thead>

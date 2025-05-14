@@ -5,7 +5,7 @@ import React from "react";
 
 function TestAnswerKey() {
   return (
-    <section className="flex flex-col items-start  mt-9 w-full font-medium max-md:px-5 max-md:max-w-full">
+    <section className="flex flex-col items-start w-full font-medium max-md:px-5 max-md:max-w-full">
       <h2 className="flex gap-1.5 text-lg font-semibold leading-7 text-black">
         <img
           loading="lazy"

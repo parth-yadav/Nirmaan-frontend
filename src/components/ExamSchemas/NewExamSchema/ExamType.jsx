@@ -3,7 +3,7 @@ import React from "react";
 
 function ExamType({data}) {
   return (
-    <div className="flex flex-col mt-5 w-full max-md:mr-1.5 max-md:max-w-full">
+    <div className="flex flex-col w-full max-md:mr-1.5 max-md:max-w-full">
       <label
         htmlFor="examType"
         className="text-sm font-medium leading-none text-slate-900"
