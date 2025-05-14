@@ -1,4 +1,3 @@
-
 import React from "react";
 
 function QuestionType() {
@@ -15,7 +14,7 @@ function QuestionType() {
           <div className="flex flex-col flex-1 shrink self-stretch my-auto basis-0 min-w-[240px] text-slate-400">
             <select
               id="questionType"
-              className="self-stretch py-2 pr-14 pl-3 w-full bg-white rounded-md border border-solid border-slate-300 max-md:pr-5"
+              className="self-stretch py-2 pr-14 pl-3 w-full bg-white rounded-lg border border-solid border-slate-300 max-md:pr-5"
             >
               <option>Multi choice question</option>
             </select>

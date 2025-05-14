@@ -1,4 +1,3 @@
-
 import React from "react";
 
 const TextInput = ({ label, placeholder }) => {
@@ -16,7 +15,7 @@ const TextInput = ({ label, placeholder }) => {
             type="text"
             id={label.toLowerCase()}
             placeholder={placeholder}
-            className="self-stretch py-2 pr-14 pl-3 w-full bg-white rounded-md border border-solid border-slate-300 max-md:pr-5 max-md:max-w-full"
+            className="self-stretch py-2 pr-14 pl-3 w-full bg-white rounded-lg border border-solid border-slate-300 max-md:pr-5 max-md:max-w-full"
           />
         </div>
       </div>

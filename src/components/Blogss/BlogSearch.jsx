@@ -1,4 +1,3 @@
-
 // import React from "react";
 
 // function BlogSearch() {
@@ -8,7 +7,7 @@
 //         <form className="flex flex-col grow shrink-0 justify-center text-base leading-6 text-gray-500 basis-0 w-fit">
 //           <div className="flex flex-col justify-center">
 //             <div className="flex flex-col justify-center">
-//               <div className="flex gap-5 justify-between px-3 py-2 bg-white rounded-md border border-gray-300 border-solid">
+//               <div className="flex gap-5 justify-between px-3 py-2 bg-white rounded-lg border border-gray-300 border-solid">
 //                 <label htmlFor="blogSearch" className="sr-only">
 //                   Search for blogs
 //                 </label>
@@ -30,7 +29,7 @@
 //             </div>
 //           </div>
 //         </form>
-//         <button className="flex gap-2 justify-center px-4 py-2 text-sm font-medium leading-6 text-black whitespace-nowrap bg-white rounded-md border border-gray-300 border-solid">
+//         <button className="flex gap-2 justify-center px-4 py-2 text-sm font-medium leading-6 text-black whitespace-nowrap bg-white rounded-lg border border-gray-300 border-solid">
 //           <img
 //             loading="lazy"
 //             src="https://cdn.builder.io/api/v1/image/assets/TEMP/6f1438ce2a8fedbecb7110c9b551cae299ef99c534a0da237aeb1ea4e5e72078?apiKey=8a82faa9db93454483a68c973b38c7b0&"
@@ -40,7 +39,7 @@
 //           <span>Filters</span>
 //         </button>
 //       </div>
-//       <button className="flex gap-2 justify-center px-4 py-2 text-sm font-medium leading-6 text-black whitespace-nowrap bg-white rounded-md border border-gray-300 border-solid">
+//       <button className="flex gap-2 justify-center px-4 py-2 text-sm font-medium leading-6 text-black whitespace-nowrap bg-white rounded-lg border border-gray-300 border-solid">
 //         <img
 //           loading="lazy"
 //           src="https://cdn.builder.io/api/v1/image/assets/TEMP/1c56d97cbb4bedc75230dcea7b2c5a69e019203c7d6ee158a02b323809a9bbc3?apiKey=8a82faa9db93454483a68c973b38c7b0&"
@@ -55,10 +54,10 @@
 
 // export default BlogSearch;
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 function BlogSearch({ onSearch }) {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearch = (event) => {
     const value = event.target.value;
@@ -80,4 +79,3 @@ function BlogSearch({ onSearch }) {
 }
 
 export default BlogSearch;
-

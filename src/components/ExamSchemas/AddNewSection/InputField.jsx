@@ -13,7 +13,7 @@ function InputField({ label }) {
         type="text"
         id={label.replace(/\s+/g, "-").toLowerCase()}
         placeholder="Add value"
-        className="flex-1 py-2 px-3 w-full bg-white rounded-md border border-solid border-slate-300 min-w-[240px] text-slate-900"
+        className="flex-1 py-2 px-3 w-full bg-white rounded-lg border border-solid border-slate-300 min-w-[240px] text-slate-900"
       />
     </div>
   );

@@ -1,4 +1,3 @@
-
 import React from "react";
 
 function InputField({ label }) {
@@ -16,7 +15,7 @@ function InputField({ label }) {
             type="text"
             id={label.replace(/\s+/g, "-").toLowerCase()}
             placeholder="Add value"
-            className="self-stretch py-2 pr-14 pl-3 w-full bg-white rounded-md border border-solid border-slate-300 max-md:pr-5"
+            className="self-stretch py-2 pr-14 pl-3 w-full bg-white rounded-lg border border-solid border-slate-300 max-md:pr-5"
           />
         </div>
       </div>

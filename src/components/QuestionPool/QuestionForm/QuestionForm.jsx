@@ -46,10 +46,7 @@ function QuestionForm({ question, onClose }) {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="flex flex-col text-sm w-full  "
-    >
+    <form onSubmit={handleSubmit} className="flex flex-col text-sm w-full  ">
       <div className="flex flex-col pb-10 w-full max-md:max-w-full">
         <QuestionType />
         <QuestionInput value={questionText} onChange={setQuestionText} />
@@ -71,9 +68,6 @@ function QuestionForm({ question, onClose }) {
     </form>
   );
 }
-
-
-
 
 import {
   DropdownMenu,
@@ -102,7 +96,7 @@ function QuestionType() {
           <DropdownMenuTrigger asChild>
             <button
               id="questionType"
-              className="py-2 px-3 w-60 bg-white rounded-md border border-solid border-slate-300 text-left max-md:text-sm max-md:w-full"
+              className="py-2 px-3 w-60 bg-white rounded-lg border border-solid border-slate-300 text-left max-md:text-sm max-md:w-full"
             >
               {selectedOption}
             </button>
@@ -135,8 +129,6 @@ function QuestionType() {
     </div>
   );
 }
-
-
 
 function QuestionInput({ value, onChange }) {
   return (

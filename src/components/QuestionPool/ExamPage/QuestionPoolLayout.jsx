@@ -9,7 +9,7 @@
 
 // const ActionButton = ({ icon, text, bgColor, onClick }) => (
 //   <button
-//     className={`flex gap-2 justify-center items-center px-4 py-2 rounded-md  ${bgColor}`}
+//     className={`flex gap-2 justify-center items-center px-4 py-2 rounded-lg  ${bgColor}`}
 //     onClick={onClick}
 //   >
 //     {icon}
@@ -22,14 +22,13 @@
 //   onNext,
 //   onProposeChanges,
 //   onDeleteQuestion,
-  
+
 // }) => {
 //   const displayEventTimeline = () => {
 //     setIsTimelineVisible((prev) => !prev);
 //     console.log("Toggling event timeline");
 //   };
 
-  
 //   const [isTimelineVisible, setIsTimelineVisible] = useState(false);
 
 //   return (
@@ -92,7 +91,7 @@
 //               className={`px-4 w-10 h-10 cursor-pointer flex items-center justify-center ${
 //                 index === currentQuestionIndex
 //                   ? "text-white bg-blue-500 rounded-full"
-//                   : "bg-white rounded-md"
+//                   : "bg-white rounded-lg"
 //               }`}
 //               onClick={() => onQuestionClick(index)}
 //             >
@@ -117,8 +116,8 @@
 //       {question.options.map((option, index) => (
 //         <div
 //           key={index}
-//           className={`px-5 py-5 mt-${index === 0 ? "9" : "2.5"} text-base 
-//           text-black bg-gray-100 rounded-md max-md:max-w-full cursor-pointer 
+//           className={`px-5 py-5 mt-${index === 0 ? "9" : "2.5"} text-base
+//           text-black bg-gray-100 rounded-lg max-md:max-w-full cursor-pointer
 //           hover:bg-gray-200 transition-colors duration-200`}
 //         >
 //           {option.text}
@@ -149,7 +148,7 @@
 //           <div className="grow text-base text-black">
 //             Question {questionNumber} / {totalQuestions}
 //           </div>
-//           <div className="flex gap-1.5 justify-center items-center px-2 py-1.5 text-sm leading-none text-yellow-700 whitespace-nowrap bg-yellow-200 rounded-md">
+//           <div className="flex gap-1.5 justify-center items-center px-2 py-1.5 text-sm leading-none text-yellow-700 whitespace-nowrap bg-yellow-200 rounded-lg">
 //             <Calendar className="w-3.5 h-3.5" />
 //             <div className="self-stretch my-auto">Draft</div>
 //           </div>
@@ -168,7 +167,7 @@
 // };
 
 // const QuestionPoolLayout = () => {
-  
+
 //   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 //   const [showQuestionForm, setShowQuestionForm] = useState(false);
 //   const handlePreviousQuestion = () => {
@@ -202,9 +201,8 @@
 //     console.log("Displaying event timeline");
 //   };
 
-
 //   return (
-   
+
 //     <div className="overflow-hidden bg-white">
 //       <div className="flex  max-md:flex-col">
 //         <aside className="flex flex-col w-1/5 max-md:ml-0 max-md:w-full">

@@ -1,4 +1,3 @@
-
 import React from "react";
 import Button from "./Button";
 import TagInput from "./TagInput";
@@ -6,17 +5,14 @@ import TextInput from "./TextInput";
 import TextArea from "./TextArea";
 import { useDispatch, useSelector } from "react-redux";
 
-function NewBlogForm ()  {
-  
-  
-
+function NewBlogForm() {
   return (
     <form className="flex flex-col text-sm rounded-none max-w-[600px]">
       <div className="flex flex-col pt-8 w-full bg-white pb-[505px] shadow-[-5px_0px_20px_rgba(0,0,0,0.25)] max-md:pb-24 max-md:max-w-full">
         <div className="flex flex-col px-8 w-full leading-none max-md:px-5 max-md:max-w-full">
           <div className="flex flex-col w-full max-md:max-w-full">
             <header className="flex flex-wrap gap-5 justify-between w-full font-medium leading-none text-blue-800 max-md:max-w-full">
-              <div className="flex gap-1.5 justify-center items-center px-2 py-1.5 bg-blue-200 rounded-md">
+              <div className="flex gap-1.5 justify-center items-center px-2 py-1.5 bg-blue-200 rounded-lg">
                 <img
                   loading="lazy"
                   src="https://cdn.builder.io/api/v1/image/assets/TEMP/bef55ccdd3accc64047fbb5bc53a0ec0e5fc529d8941322c8a2c4264b892010e?placeholderIfAbsent=true&apiKey=8a82faa9db93454483a68c973b38c7b0"
@@ -66,6 +62,6 @@ function NewBlogForm ()  {
       </div>
     </form>
   );
-};
+}
 
 export default NewBlogForm;

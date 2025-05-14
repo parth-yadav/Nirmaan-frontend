@@ -23,7 +23,7 @@ export function TransactionForm() {
             type="number"
             id="amount"
             placeholder="Amount to add to the wallet"
-            className="flex flex-col flex-1 shrink w-full basis-0 min-w-[240px] py-2 pr-14 pl-3 bg-white rounded-md border border-solid border-slate-300 max-md:pr-5 max-md:max-w-full"
+            className="flex flex-col flex-1 shrink w-full basis-0 min-w-[240px] py-2 pr-14 pl-3 bg-white rounded-lg border border-solid border-slate-300 max-md:pr-5 max-md:max-w-full"
           />
         </div>
       </div>
@@ -38,7 +38,7 @@ export function TransactionForm() {
         <textarea
           id="reason"
           placeholder="Amount to add to the wallet"
-          className="flex flex-1 gap-2 items-start mt-1.5 py-2 pr-14 pl-3 w-full bg-white rounded-md border border-solid border-slate-300 max-md:pr-5 max-md:max-w-full"
+          className="flex flex-1 gap-2 items-start mt-1.5 py-2 pr-14 pl-3 w-full bg-white rounded-lg border border-solid border-slate-300 max-md:pr-5 max-md:max-w-full"
         />
         <p className="mt-1.5 leading-none text-slate-500">
           The reason will also be visible to student in transaction history.
@@ -47,7 +47,7 @@ export function TransactionForm() {
 
       <button
         type="submit"
-        className="flex gap-2 justify-center items-center self-start px-4 py-2 mt-5 text-sm font-medium leading-6 text-white whitespace-nowrap rounded-md bg-slate-900"
+        className="flex gap-2 justify-center items-center self-start px-4 py-2 mt-5 text-sm font-medium leading-6 text-white whitespace-nowrap rounded-lg bg-slate-900"
       >
         <img
           loading="lazy"

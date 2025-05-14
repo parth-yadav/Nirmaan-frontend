@@ -1,4 +1,3 @@
-
 import React from "react";
 
 const questions = [
@@ -78,7 +77,7 @@ function QuestionBlock({ number, status, statusClass, content, options }) {
           Question {number}
         </div>
         <div
-          className={`justify-center px-2 py-1.5 text-sm font-medium ${statusClass} rounded-md shadow-sm`}
+          className={`justify-center px-2 py-1.5 text-sm font-medium ${statusClass} rounded-lg shadow-sm`}
         >
           {status}
         </div>
@@ -91,7 +90,7 @@ function QuestionBlock({ number, status, statusClass, content, options }) {
             index === 0 ? "4" : "1.5"
           } text-sm ${
             option.class
-          } rounded-md border border-solid border-zinc-300 max-md:pr-5 max-md:max-w-full`}
+          } rounded-lg border border-solid border-zinc-300 max-md:pr-5 max-md:max-w-full`}
         >
           {option.text}
         </div>

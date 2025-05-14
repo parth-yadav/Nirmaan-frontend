@@ -1,4 +1,3 @@
-
 import React from "react";
 
 function BlogCard({ tags, date, title, content, likes, views, comments }) {
@@ -10,12 +9,11 @@ function BlogCard({ tags, date, title, content, likes, views, comments }) {
             {tags.map((tag, index) => (
               <div
                 key={index}
-                className="flex gap-1.5 justify-center px-1.5 bg-blue-200 rounded-md"
+                className="flex gap-1.5 justify-center px-1.5 bg-blue-200 rounded-lg"
               >
                 <img
                   loading="lazy"
                   src="https://cdn.builder.io/api/v1/image/assets/TEMP/1646c25c4b3fcdabd3ee831d72d2e40855242a38e0f7df2e3f063ea311756691?apiKey=8a82faa9db93454483a68c973b38c7b0&"
-              
                   alt=""
                   className="shrink-0 my-auto w-3 aspect-square"
                 />

@@ -1,9 +1,8 @@
-
 import React from "react";
 
 const ActionButton = ({ text, icon, bgColor, textColor }) => (
   <button
-    className={`flex gap-2 justify-center items-center px-4 py-2 text-${textColor} rounded-md ${bgColor}`}
+    className={`flex gap-2 justify-center items-center px-4 py-2 text-${textColor} rounded-lg ${bgColor}`}
   >
     <img
       loading="lazy"

@@ -1,4 +1,3 @@
-
 import React from "react";
 
 function ActionButton({ type, text }) {
@@ -10,7 +9,7 @@ function ActionButton({ type, text }) {
 
   return (
     <button
-      className={`flex flex-1 gap-2 justify-center items-center px-4 py-2 rounded-md ${bgColor}`}
+      className={`flex flex-1 gap-2 justify-center items-center px-4 py-2 rounded-lg ${bgColor}`}
     >
       <img
         loading="lazy"

@@ -91,9 +91,7 @@ function DataTable<TData, TValue>({
               (table.getColumn(searchcolumn)?.getFilterValue() as string) ?? ""
             }
             onChange={(event) =>
-              table
-                .getColumn(searchcolumn)
-                ?.setFilterValue(event.target.value)
+              table.getColumn(searchcolumn)?.setFilterValue(event.target.value)
             }
             className="max-w-sm border-gray-300 w-80"
           />
@@ -127,7 +125,7 @@ function DataTable<TData, TValue>({
             <DropdownMenuTrigger asChild className="bg-white">
               <Button
                 variant="outline"
-                className="ml-auto flex gap-2 justify-center px-4 py-2 text-sm font-medium leading-6 text-black whitespace-nowrap bg-white rounded-md border border-gray-300 border-solid "
+                className="ml-auto flex gap-2 justify-center px-4 py-2 text-sm font-medium leading-6 text-black whitespace-nowrap bg-white rounded-lg border border-gray-300 border-solid "
               >
                 View
               </Button>
@@ -153,7 +151,7 @@ function DataTable<TData, TValue>({
         </div>
       </div>
 
-      <div className="rounded-md border">
+      <div className="rounded-lg border">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
@@ -209,15 +207,14 @@ function DataTable<TData, TValue>({
       <div className="flex items-center justify-end space-x-2 py-4">
         <DataTablePagination table={table} />
       </div>
-
-     
     </div>
   );
 }
 
 export default DataTable;
 
- {/* {isModalOpen && selectedExam && (
+{
+  /* {isModalOpen && selectedExam && (
         <ApiModal
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
@@ -228,4 +225,5 @@ export default DataTable;
             // Refresh table logic (e.g., refetch data from API)
           }}
         />
-      )} */}
+      )} */
+}

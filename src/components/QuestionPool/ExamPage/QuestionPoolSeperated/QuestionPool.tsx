@@ -33,7 +33,7 @@ const QuestionPool: React.FC<QuestionPoolProps> = ({
           <div className="grow text-base text-black">
             Question {questionNumber} / {totalQuestions}
           </div>
-          <div className="flex gap-1.5 justify-center items-center px-2 py-1.5 text-sm leading-none text-yellow-700 whitespace-nowrap bg-yellow-200 rounded-md">
+          <div className="flex gap-1.5 justify-center items-center px-2 py-1.5 text-sm leading-none text-yellow-700 whitespace-nowrap bg-yellow-200 rounded-lg">
             <Calendar className="w-3.5 h-3.5" />
             <div className="self-stretch my-auto">Draft</div>
           </div>

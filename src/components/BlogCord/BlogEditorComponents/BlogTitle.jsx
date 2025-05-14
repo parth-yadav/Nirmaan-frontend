@@ -1,4 +1,3 @@
-
 import React from "react";
 
 const BlogTitle = ({ title }) => (
@@ -11,7 +10,7 @@ const BlogTitle = ({ title }) => (
         <input
           id="blogTitle"
           type="text"
-          className="self-stretch py-2 pr-14 pl-3 w-full bg-white rounded-md border border-solid border-slate-300 max-md:pr-5 max-md:max-w-full"
+          className="self-stretch py-2 pr-14 pl-3 w-full bg-white rounded-lg border border-solid border-slate-300 max-md:pr-5 max-md:max-w-full"
           value={title}
           placeholder="Blog Title"
         />

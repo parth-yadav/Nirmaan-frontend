@@ -1,4 +1,3 @@
-
 import React from "react";
 
 // const sectionData = [
@@ -13,7 +12,7 @@ import React from "react";
 //   },
 // ];
 
-function Sections({data}) {
+function Sections({ data }) {
   return (
     <section className="mt-10 max-md:mt-10">
       <div className="flex flex-wrap gap-5 justify-between mx-5 w-full max-w-[500px] max-md:mr-2.5 max-md:max-w-full">
@@ -26,7 +25,7 @@ function Sections({data}) {
         <div className="flex flex-col self-start text-sm font-medium">
           <div className="flex gap-5 self-end max-w-full w-[165px]">
             <div className="leading-6 text-black">Total: 4</div>
-            <button className="flex gap-1.5 justify-center items-center px-2 py-1.5 leading-none text-black bg-gray-200 rounded-md">
+            <button className="flex gap-1.5 justify-center items-center px-2 py-1.5 leading-none text-black bg-gray-200 rounded-lg">
               <img
                 loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/09c59797db0ddeec2a41a16db34aa1a3060f3aaf4fdd529728b052e77bc5cb9f?placeholderIfAbsent=true&apiKey=8a82faa9db93454483a68c973b38c7b0"
@@ -37,7 +36,7 @@ function Sections({data}) {
             </button>
           </div>
           <div className="flex gap-5 mt-4 leading-none text-black">
-            <div className="grow">{ data.section.name}</div>
+            <div className="grow">{data.section.name}</div>
             <div>Marking</div>
             <div>Max Marks</div>
           </div>

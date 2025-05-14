@@ -105,7 +105,7 @@ export default function TestQuestionEditor() {
           >
             Question
           </Label>
-          <div className="border rounded-md p-2 min-h-[100px]">
+          <div className="border rounded-lg p-2 min-h-[100px]">
             <Editor
               id="question-editor"
               apiKey={conf.tinymce}
@@ -122,7 +122,7 @@ export default function TestQuestionEditor() {
           <h3 className="mb-2 text-lg font-semibold">Options</h3>
           {options.map((option, index) => (
             <div key={index} className="mb-4 flex items-start space-x-2">
-              <div className="flex-grow border rounded-md p-2 min-h-[50px]">
+              <div className="flex-grow border rounded-lg p-2 min-h-[50px]">
                 <Label htmlFor={`option-editor-${index}`} className="sr-only">
                   Option {index + 1}
                 </Label>

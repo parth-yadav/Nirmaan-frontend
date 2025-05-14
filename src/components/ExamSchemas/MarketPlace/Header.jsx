@@ -1,10 +1,9 @@
-
 import React from "react";
 
 function Header() {
   return (
     <header className="flex flex-wrap gap-5 justify-between w-full font-medium leading-none text-yellow-800 whitespace-nowrap max-md:max-w-full">
-      <div className="flex gap-1.5 justify-center items-center px-2 py-1.5 bg-yellow-200 rounded-md">
+      <div className="flex gap-1.5 justify-center items-center px-2 py-1.5 bg-yellow-200 rounded-lg">
         <img
           loading="lazy"
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/d14e208933e2a3ce9eea5f10f7c00907f97b99166bf72df275044ec98ba08b8c?placeholderIfAbsent=true&apiKey=8a82faa9db93454483a68c973b38c7b0"

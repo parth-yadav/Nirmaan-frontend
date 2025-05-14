@@ -1,8 +1,6 @@
-
-
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import { showEditor } from '../../../store/blogEditorSlice'; // Adjust the path as needed
+import React from "react";
+import { useDispatch } from "react-redux";
+import { showEditor } from "../../../store/blogEditorSlice"; // Adjust the path as needed
 
 function BlogEdit() {
   const dispatch = useDispatch();
@@ -14,7 +12,7 @@ function BlogEdit() {
   return (
     <div>
       <button
-        className="flex gap-2 justify-center px-4 py-2 text-sm font-medium leading-6 text-white whitespace-nowrap bg-black rounded-md border border-gray-300 border-solid"
+        className="flex gap-2 justify-center px-4 py-2 text-sm font-medium leading-6 text-white whitespace-nowrap bg-black rounded-lg border border-gray-300 border-solid"
         onClick={handleShowEditor}
       >
         <img

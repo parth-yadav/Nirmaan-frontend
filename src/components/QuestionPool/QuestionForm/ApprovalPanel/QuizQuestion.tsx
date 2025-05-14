@@ -8,7 +8,7 @@ export const QuizQuestion: React.FC<QuizQuestionProps> = ({
   options,
 }) => {
   return (
-    <div className="flex flex-col text-base font-medium text-black rounded-md">
+    <div className="flex flex-col text-base font-medium text-black rounded-lg">
       <div className="self-start font-semibold leading-7 text-black">
         {title}
       </div>

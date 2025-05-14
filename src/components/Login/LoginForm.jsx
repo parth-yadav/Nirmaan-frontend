@@ -69,7 +69,7 @@ function Login() {
               id="email"
               type="email"
               placeholder="Enter your email"
-              className="justify-center items-start px-3 py-2 bg-white rounded-md border border-solid border-slate-300 max-md:pr-5 max-md:max-w-full"
+              className="justify-center items-start px-3 py-2 bg-white rounded-lg border border-solid border-slate-300 max-md:pr-5 max-md:max-w-full"
               {...register("email", {
                 required: true,
                 validate: {
@@ -91,13 +91,13 @@ function Login() {
               id="password"
               type="password"
               placeholder="Enter your password"
-              className="justify-center items-start px-3 py-2 bg-white rounded-md border border-solid border-slate-300 max-md:pr-5 max-md:max-w-full"
+              className="justify-center items-start px-3 py-2 bg-white rounded-lg border border-solid border-slate-300 max-md:pr-5 max-md:max-w-full"
               {...register("password", {
                 required: true,
               })}
             />
           </div>
-          
+
           <div className="flex items-center space-x-2">
             <input
               id="terms"
@@ -116,7 +116,7 @@ function Login() {
           </div>
           <button
             type="submit"
-            className="justify-center self-start px-4 py-2 mt-7 text-sm font-medium leading-6 text-white whitespace-nowrap rounded-md bg-slate-900"
+            className="justify-center self-start px-4 py-2 mt-7 text-sm font-medium leading-6 text-white whitespace-nowrap rounded-lg bg-slate-900"
           >
             Log in
           </button>
@@ -139,7 +139,7 @@ export default Login;
                 id="email"
                 type="email"
                 placeholder="Enter your email"
-                className="justify-center items-start px-3 py-2 bg-white rounded-md border border-solid border-slate-300 max-md:pr-5 max-md:max-w-full"
+                className="justify-center items-start px-3 py-2 bg-white rounded-lg border border-solid border-slate-300 max-md:pr-5 max-md:max-w-full"
                 {...register("email", {
                   required: true,
                   validate: {
@@ -159,7 +159,7 @@ export default Login;
                 id="password"
                 type="password"
                 placeholder="Enter your password"
-                className="justify-center items-start px-3 py-2 bg-white rounded-md border border-solid border-slate-300 max-md:pr-5 max-md:max-w-full"
+                className="justify-center items-start px-3 py-2 bg-white rounded-lg border border-solid border-slate-300 max-md:pr-5 max-md:max-w-full"
                 {...register("password", {
                   required: true,
                 })}
@@ -167,7 +167,7 @@ export default Login;
             </div>
             <button
               type="submit"
-              className="justify-center self-start px-4 py-2 mt-7 text-sm font-medium leading-6 text-white whitespace-nowrap rounded-md bg-slate-900"
+              className="justify-center self-start px-4 py-2 mt-7 text-sm font-medium leading-6 text-white whitespace-nowrap rounded-lg bg-slate-900"
             >
               Log in
             </button>

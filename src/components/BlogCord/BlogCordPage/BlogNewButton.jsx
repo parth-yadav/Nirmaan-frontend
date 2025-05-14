@@ -6,7 +6,7 @@
 //     <div>
 //         <button className="flex gap-2 justify-center
 //          px-4 py-2 text-sm font-medium leading-6 text-white whitespace-nowrap
-//           bg-black rounded-md border border-gray-300 border-solid"
+//           bg-black rounded-lg border border-gray-300 border-solid"
 //           onClick={}>
 //         <img
 //           loading="lazy"

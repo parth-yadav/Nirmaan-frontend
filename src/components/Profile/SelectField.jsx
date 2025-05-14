@@ -1,11 +1,10 @@
-
 import React from "react";
 import FormSection from "./FormSection";
 
 function SelectField({ label, options }) {
   return (
     <FormSection label={label}>
-      <div className="flex gap-5 justify-between py-3 pr-12 pl-2.5 mt-1.5 text-xl text-black rounded-md bg-neutral-100 max-md:pr-5">
+      <div className="flex gap-5 justify-between py-3 pr-12 pl-2.5 mt-1.5 text-xl text-black rounded-lg bg-neutral-100 max-md:pr-5">
         <select className="flex-auto bg-transparent">
           {options.map((option) => (
             <option key={option} value={option}>

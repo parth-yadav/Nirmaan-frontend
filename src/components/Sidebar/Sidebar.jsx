@@ -111,7 +111,6 @@ const sidebarItems = [
   },
 ];
 
-
 const SidebarItem = ({ icon, text, to }) => {
   return (
     <NavLink
@@ -237,7 +236,7 @@ function Sidebar({ isMobile, isOpen, onToggle, className }) {
                   </div>
                   <button
                     onClick={logoutHandler}
-                    className="flex justify-center items-center px-2 w-8 h-8 bg-white rounded-md border border-gray-300 border-solid dark:bg-gray-700 dark:text-white"
+                    className="flex justify-center items-center px-2 w-8 h-8 bg-white rounded-lg border border-gray-300 border-solid dark:bg-gray-700 dark:text-white"
                   >
                     <img
                       loading="lazy"
@@ -338,7 +337,7 @@ export default Sidebar;
 //             </div>
 //             <button
 //               onClick={logoutHandler}
-//               className="flex justify-center items-center px-2 w-8 h-8 bg-white rounded-md border border-gray-300 border-solid dark:bg-gray-700 dark:text-white"
+//               className="flex justify-center items-center px-2 w-8 h-8 bg-white rounded-lg border border-gray-300 border-solid dark:bg-gray-700 dark:text-white"
 //             >
 //               <img
 //                 loading="lazy"

@@ -1,10 +1,9 @@
-
 import React from "react";
 
-function ActionButton({ text, iconSrc, bgColor , width }) {
+function ActionButton({ text, iconSrc, bgColor, width }) {
   return (
     <button
-      className={`flex flex-1 h-30 ${width} justify-center items-center px-4 py-2 rounded-md ${bgColor}`}
+      className={`flex flex-1 h-30 ${width} justify-center items-center px-4 py-2 rounded-lg ${bgColor}`}
     >
       <img
         loading="lazy"

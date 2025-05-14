@@ -1,4 +1,3 @@
-
 import React from "react";
 
 function MarkingScheme() {
@@ -12,7 +11,7 @@ function MarkingScheme() {
           <div className="flex flex-col flex-1 shrink self-stretch my-auto basis-0 text-slate-400">
             <input
               type="text"
-              className="self-stretch py-2 pr-14 pl-3 w-full bg-green-100 rounded-md border border-solid border-slate-300 max-md:pr-5"
+              className="self-stretch py-2 pr-14 pl-3 w-full bg-green-100 rounded-lg border border-solid border-slate-300 max-md:pr-5"
               placeholder="+ve Marks"
             />
           </div>
@@ -21,7 +20,7 @@ function MarkingScheme() {
       <div className="flex flex-col text-slate-400">
         <input
           type="text"
-          className="self-stretch py-2 pr-14 pl-3 w-full bg-red-100 rounded-md border border-solid border-slate-300 max-md:pr-5"
+          className="self-stretch py-2 pr-14 pl-3 w-full bg-red-100 rounded-lg border border-solid border-slate-300 max-md:pr-5"
           placeholder="-ve Marks"
         />
       </div>

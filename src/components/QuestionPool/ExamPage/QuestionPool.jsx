@@ -1,4 +1,3 @@
-
 // import React from "react";
 // import QuestionContent from "./QuestionContent";
 // import ActionButtons from "./ActionButtons";
@@ -13,7 +12,7 @@
 //         </h1>
 //         <div className="flex gap-5 max-w-full w-[223px]">
 //           <div className="grow text-base text-black">Question 12 / 100</div>
-//           <div className="flex gap-1.5 justify-center items-center px-2 py-1.5 text-sm leading-none text-yellow-700 whitespace-nowrap bg-yellow-200 rounded-md">
+//           <div className="flex gap-1.5 justify-center items-center px-2 py-1.5 text-sm leading-none text-yellow-700 whitespace-nowrap bg-yellow-200 rounded-lg">
 //             <img
 //               loading="lazy"
 //               src="https://cdn.builder.io/api/v1/image/assets/TEMP/5f51006b1a9b6f34c27f74e0e23b4ada03996020be4675a38faed8c396da6325?placeholderIfAbsent=true&apiKey=8a82faa9db93454483a68c973b38c7b0"

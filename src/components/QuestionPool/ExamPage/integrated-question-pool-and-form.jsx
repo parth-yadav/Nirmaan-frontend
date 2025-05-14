@@ -14,7 +14,7 @@
 //   // ... (Keep this component as it is)
 // };
 
-// const QuestionContent = ({ question }) => { 
+// const QuestionContent = ({ question }) => {
 //   // ... (Keep this component as it is)
 // };
 
@@ -91,7 +91,7 @@
 //   return (
 //     <div className="flex flex-col mt-7 w-full min-h-[126px] max-md:max-w-full">
 //       <div className="flex flex-col flex-1 w-full max-md:max-w-full">
-//         <div className="flex flex-col flex-1 w-full rounded-md max-md:max-w-full">
+//         <div className="flex flex-col flex-1 w-full rounded-lg max-md:max-w-full">
 //           <label
 //             htmlFor="questionInput"
 //             className="self-start font-medium leading-none text-black"
@@ -100,7 +100,7 @@
 //           </label>
 //           <textarea
 //             id="questionInput"
-//             className="gap-2.5 px-3 pt-2 pb-20 mt-3 leading-none bg-white rounded-md border border-solid border-slate-300 min-h-[101px] text-slate-400 w-[506px] max-md:max-w-full"
+//             className="gap-2.5 px-3 pt-2 pb-20 mt-3 leading-none bg-white rounded-lg border border-solid border-slate-300 min-h-[101px] text-slate-400 w-[506px] max-md:max-w-full"
 //             placeholder="Type your message here"
 //             value={value}
 //             onChange={onChange}
@@ -125,7 +125,7 @@
 //           <input
 //             type="text"
 //             id={id}
-//             className="self-stretch py-2 pr-14 pl-3 w-full bg-white rounded-md border border-solid border-slate-300 max-md:pr-5 max-md:max-w-full"
+//             className="self-stretch py-2 pr-14 pl-3 w-full bg-white rounded-lg border border-solid border-slate-300 max-md:pr-5 max-md:max-w-full"
 //             placeholder="Add value"
 //             value={value}
 //             onChange={onChange}

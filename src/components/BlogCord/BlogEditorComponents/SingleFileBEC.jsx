@@ -1,13 +1,10 @@
-
-
-
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { hideEditor } from "../../../store/blogEditorSlice";
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-function BlogHeader({ isOpen,isPublished ,onClose }) {
+function BlogHeader({ isOpen, isPublished, onClose }) {
   if (!isOpen) return null;
 
   const dispatch = useDispatch();
@@ -18,9 +15,8 @@ function BlogHeader({ isOpen,isPublished ,onClose }) {
 
   return (
     <div className="flex flex-wrap gap-5 justify-between w-full font-medium leading-none text-green-800 whitespace-nowrap max-md:max-w-full">
-   
       {isPublished ? (
-        <div className="flex gap-1.5 justify-center items-center px-2 py-1.5 bg-green-200 rounded-md">
+        <div className="flex gap-1.5 justify-center items-center px-2 py-1.5 bg-green-200 rounded-lg">
           <img
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/64db57426044057a7d6922522ad27ca6bf8269a91714fe31bf7f38da2c1c7b20?placeholderIfAbsent=true&apiKey=8a82faa9db93454483a68c973b38c7b0"
@@ -30,7 +26,7 @@ function BlogHeader({ isOpen,isPublished ,onClose }) {
           <div className="self-stretch my-auto">Published</div>
         </div>
       ) : (
-        <div className="flex gap-1.5 justify-center items-center px-2 py-1.5  rounded-md">
+        <div className="flex gap-1.5 justify-center items-center px-2 py-1.5  rounded-lg">
           <img
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/64db57426044057a7d6922522ad27ca6bf8269a91714fe31bf7f38da2c1c7b20?placeholderIfAbsent=true&apiKey=8a82faa9db93454483a68c973b38c7b0"
@@ -58,7 +54,7 @@ const BlogTitle = ({ title, onChange }) => (
         <input
           id="blogTitle"
           type="text"
-          className="self-stretch py-2 pr-14 pl-3 w-full bg-white rounded-md border border-solid border-slate-300 max-md:pr-5 max-md:max-w-full"
+          className="self-stretch py-2 pr-14 pl-3 w-full bg-white rounded-lg border border-solid border-slate-300 max-md:pr-5 max-md:max-w-full"
           value={title}
           onChange={onChange}
           placeholder="Blog Title"
@@ -71,7 +67,7 @@ const BlogTitle = ({ title, onChange }) => (
 const BlogDescription = ({ description, onChange }) => (
   <div className="flex flex-col mt-5 max-md:max-w-full">
     <div className="flex flex-col w-full max-md:max-w-full">
-      <div className="flex flex-col items-start w-full rounded-md max-md:max-w-full">
+      <div className="flex flex-col items-start w-full rounded-lg max-md:max-w-full">
         <label
           htmlFor="blogDescription"
           className="font-medium leading-none text-black"
@@ -80,7 +76,7 @@ const BlogDescription = ({ description, onChange }) => (
         </label>
         <textarea
           id="blogDescription"
-          className="gap-2.5 self-stretch px-3 pt-2 pb-14 mt-1.5 bg-white rounded-md border border-solid border-slate-300 min-h-[80px] text-slate-400 max-md:max-w-full"
+          className="gap-2.5 self-stretch px-3 pt-2 pb-14 mt-1.5 bg-white rounded-lg border border-solid border-slate-300 min-h-[80px] text-slate-400 max-md:max-w-full"
           placeholder="Blog description goes here"
           value={description}
           onChange={onChange}
@@ -120,7 +116,7 @@ const TagInput = ({ tags, onAddTag, onRemoveTag }) => {
           <input
             id="tagSearch"
             type="text"
-            className="self-stretch py-2 pr-14 pl-3 w-full bg-white rounded-md border border-solid border-slate-300 max-md:pr-5 max-md:max-w-full"
+            className="self-stretch py-2 pr-14 pl-3 w-full bg-white rounded-lg border border-solid border-slate-300 max-md:pr-5 max-md:max-w-full"
             placeholder="Search for tags here"
             value={inputValue}
             onChange={handleInputChange}
@@ -141,7 +137,7 @@ const TagInput = ({ tags, onAddTag, onRemoveTag }) => {
 };
 
 const Tag = ({ text, onRemove }) => (
-  <div className="flex z-10 gap-1.5 justify-center items-center px-2 my-1 py-1.5 leading-none text-blue-800 bg-blue-200 rounded-md">
+  <div className="flex z-10 gap-1.5 justify-center items-center px-2 my-1 py-1.5 leading-none text-blue-800 bg-blue-200 rounded-lg">
     <img
       loading="lazy"
       src="https://cdn.builder.io/api/v1/image/assets/TEMP/9c1719c9429145814a47468ba4b4d639b81c13c719be84ad134e3fc1c64d9fe3?placeholderIfAbsent=true&apiKey=8a82faa9db93454483a68c973b38c7b0"
@@ -157,7 +153,7 @@ const Tag = ({ text, onRemove }) => (
 
 const ActionButton = ({ text, icon, bgColor, textColor, onClick }) => (
   <button
-    className={`flex gap-2 justify-center items-center px-4 py-2 text-${textColor} rounded-md ${bgColor}`}
+    className={`flex gap-2 justify-center items-center px-4 py-2 text-${textColor} rounded-lg ${bgColor}`}
     onClick={onClick}
   >
     <img
@@ -181,8 +177,6 @@ const StatisticItem = ({ icon, text }) => (
     <div className="my-auto">{text}</div>
   </div>
 );
-
-
 
 function BlogEditor({ isOpen, blog, onClose }) {
   const dispatch = useDispatch();
@@ -248,7 +242,7 @@ function BlogEditor({ isOpen, blog, onClose }) {
             </div>
             <div className="flex flex-col px-8 mt-6">
               <button
-                className="px-4 py-2 text-sm font-medium leading-6 text-white bg-slate-900 rounded-md hover:bg-slate-800 transition-colors"
+                className="px-4 py-2 text-sm font-medium leading-6 text-white bg-slate-900 rounded-lg hover:bg-slate-800 transition-colors"
                 onClick={handleSaveChanges}
               >
                 Save changes

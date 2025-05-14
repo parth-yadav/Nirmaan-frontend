@@ -1,4 +1,3 @@
-
 import React from "react";
 
 const CareerPathSelect = () => {
@@ -12,7 +11,7 @@ const CareerPathSelect = () => {
       </label>
       <div className="flex flex-col justify-center mt-1.5 whitespace-nowrap text-slate-900 max-md:max-w-full">
         <div className="flex flex-col justify-center max-md:max-w-full">
-          <div className="flex gap-5 justify-between px-3 py-1.5 bg-white rounded-md border border-solid border-slate-300 max-md:flex-wrap max-md:max-w-full">
+          <div className="flex gap-5 justify-between px-3 py-1.5 bg-white rounded-lg border border-solid border-slate-300 max-md:flex-wrap max-md:max-w-full">
             <select
               id="careerPath"
               className="w-full bg-transparent appearance-none"

@@ -25,7 +25,7 @@ export const ActionButtonGroup: React.FC<ActionButtonGroupProps> = ({
   onRequestChanges,
 }) => {
   return (
-    <div className="flex flex-wrap mt-6 gap-10 text-sm font-medium leading-6 text-white rounded-md">
+    <div className="flex flex-wrap mt-6 gap-10 text-sm font-medium leading-6 text-white rounded-lg">
       <div className="flex gap-5">
         <ActionButton
           icon={actionData[0].icon}

@@ -1,4 +1,3 @@
-
 // import React from "react";
 
 // const QuestionContent = () => {
@@ -29,7 +28,7 @@
 //             option.isCorrect
 //               ? "text-green-900 bg-green-100"
 //               : "text-black bg-gray-100"
-//           } rounded-md max-md:max-w-full`}
+//           } rounded-lg max-md:max-w-full`}
 //         >
 //           {option.text}
 //         </div>

@@ -13,12 +13,11 @@ const actionData = [
     label: "Request changes",
     variant: "secondary" as const,
   },
- 
 ];
 
 export const ActionButtonGroup: React.FC = () => {
   return (
-    <div className="flex flex-wrap mt-6 gap-10 text-sm font-medium leading-6 text-white rounded-md">
+    <div className="flex flex-wrap mt-6 gap-10 text-sm font-medium leading-6 text-white rounded-lg">
       <div className="flex gap-5">
         {actionData.slice(0, 2).map((action, index) => (
           <ActionButton

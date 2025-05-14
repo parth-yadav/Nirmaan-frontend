@@ -6,7 +6,7 @@ interface BadgeProps {
 
 const Badge: React.FC<BadgeProps> = ({ text }) => {
   return (
-    <div className="flex gap-1.5 items-center px-2 py-1.5 text-sm font-medium text-blue-800 bg-blue-200 rounded-md">
+    <div className="flex gap-1.5 items-center px-2 py-1.5 text-sm font-medium text-blue-800 bg-blue-200 rounded-lg">
       <div>
         <svg
           width="14"
@@ -43,6 +43,5 @@ const Badge: React.FC<BadgeProps> = ({ text }) => {
     </div>
   );
 };
-
 
 export default Badge;

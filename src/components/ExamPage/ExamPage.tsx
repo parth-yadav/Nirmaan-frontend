@@ -48,7 +48,7 @@ function ExamPage() {
         <div className="w-[21%] max-md:w-full">
           {/* Hamburger Menu Button for Mobile */}
           <button
-            className="p-2 w-full bg-gray-200 rounded-md max-md:block md:hidden"
+            className="p-2 w-full bg-gray-200 rounded-lg max-md:block md:hidden"
             onClick={() => setIsNavigationOpen(!isNavigationOpen)}
           >
             ☰ Question Navigation
@@ -58,7 +58,7 @@ function ExamPage() {
           {isNavigationOpen && (
             <div className="fixed inset-0 z-50 bg-gray-100 overflow-y-auto">
               <button
-                className="absolute top-4 right-4 p-2 bg-gray-300 rounded-md"
+                className="absolute top-4 right-4 p-2 bg-gray-300 rounded-lg"
                 onClick={() => setIsNavigationOpen(false)}
               >
                 Close

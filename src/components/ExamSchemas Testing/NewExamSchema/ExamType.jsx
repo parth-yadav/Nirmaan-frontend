@@ -1,4 +1,3 @@
-
 import React from "react";
 
 function ExamType() {
@@ -14,7 +13,7 @@ function ExamType() {
         <div className="flex flex-col flex-1 shrink w-full basis-0 min-w-[240px] max-md:max-w-full">
           <select
             id="examType"
-            className="self-stretch py-2 pr-14 pl-3 w-full bg-white rounded-md border border-solid border-slate-300 max-md:pr-5 max-md:max-w-full"
+            className="self-stretch py-2 pr-14 pl-3 w-full bg-white rounded-lg border border-solid border-slate-300 max-md:pr-5 max-md:max-w-full"
           >
             <option>Multiple choice questions</option>
           </select>

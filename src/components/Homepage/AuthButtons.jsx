@@ -1,35 +1,27 @@
-
 import React from "react";
 import { useSelector } from "react-redux";
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 import LogoutBtn from "./LogoutBtn";
 
 import QuizButton from "./QuizButton";
 
-
-
 function AuthButtons() {
-
   const authStatus = useSelector((state) => state.auth?.status || false);
 
- 
-
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const navItems = [
-    
     {
       name: "Login",
       slug: "/login",
       active: !authStatus,
-  },
-  {
+    },
+    {
       name: "SignUp",
       slug: "/signup",
       active: !authStatus,
-  }
-  ]
-
+    },
+  ];
 
   return (
     <>
@@ -71,10 +63,10 @@ function AuthButtons() {
         </ul>
       </nav>
       {/* <div className="flex gap-5 leading-6">
-      <button className="justify-center px-4 py-2 bg-white rounded-md border border-solid border-slate-500 text-slate-900">
+      <button className="justify-center px-4 py-2 bg-white rounded-lg border border-solid border-slate-500 text-slate-900">
         Login
       </button>
-      <button className="justify-center px-4 py-2 text-white rounded-md bg-slate-900">
+      <button className="justify-center px-4 py-2 text-white rounded-lg bg-slate-900">
         Register
       </button>
     </div> */}

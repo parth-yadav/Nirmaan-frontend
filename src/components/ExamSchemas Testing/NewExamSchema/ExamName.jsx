@@ -1,4 +1,3 @@
-
 import React from "react";
 
 function ExamName() {
@@ -15,7 +14,7 @@ function ExamName() {
           <input
             id="examName"
             type="text"
-            className="self-stretch py-2 pr-14 pl-3 w-full bg-white rounded-md border border-solid border-slate-300 max-md:pr-5 max-md:max-w-full"
+            className="self-stretch py-2 pr-14 pl-3 w-full bg-white rounded-lg border border-solid border-slate-300 max-md:pr-5 max-md:max-w-full"
             defaultValue="Small Title - 1"
           />
         </div>

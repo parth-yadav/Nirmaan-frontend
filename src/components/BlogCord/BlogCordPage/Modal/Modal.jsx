@@ -20,7 +20,7 @@ export function Modal({ isOpen, onClose, blog }) {
             {blog.tags.map((tag, index) => (
               <span
                 key={index}
-                className="bg-blue-200 text-blue-800 text-xs px-2 py-1 rounded-md"
+                className="bg-blue-200 text-blue-800 text-xs px-2 py-1 rounded-lg"
               >
                 {tag}
               </span>

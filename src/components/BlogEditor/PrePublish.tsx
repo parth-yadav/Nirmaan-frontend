@@ -141,7 +141,7 @@ export default function StoryPreview({
                 is about
               </p>
 
-              <div className="border rounded-md p-2 mb-2">
+              <div className="border rounded-lg p-2 mb-2">
                 <div className="flex flex-wrap gap-2 mb-2">
                   {topics.map((topic, index) => (
                     <div

@@ -1,10 +1,9 @@
-
 import React from "react";
 
 const QuestionButton = ({ number, bgColor }) => (
   <div className="flex flex-col flex-1 justify-center">
     <div
-      className={`justify-center items-center px-3 w-10 h-10 ${bgColor} rounded-md`}
+      className={`justify-center items-center px-3 w-10 h-10 ${bgColor} rounded-lg`}
     >
       {number.toString().padStart(2, "0")}
     </div>

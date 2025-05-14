@@ -1,4 +1,3 @@
-
 import React from "react";
 
 const InputField = ({ label, type, placeholder }) => {
@@ -12,7 +11,7 @@ const InputField = ({ label, type, placeholder }) => {
           <input
             type={type}
             placeholder={placeholder}
-            className="justify-center items-start px-3 py-2 bg-white rounded-md border border-solid border-slate-300 max-md:pr-5 max-md:max-w-full"
+            className="justify-center items-start px-3 py-2 bg-white rounded-lg border border-solid border-slate-300 max-md:pr-5 max-md:max-w-full"
             aria-label={label}
           />
         </div>

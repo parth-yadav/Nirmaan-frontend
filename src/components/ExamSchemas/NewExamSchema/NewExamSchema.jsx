@@ -11,7 +11,7 @@ function NewExamSchema({data}) {
   return (
     <div className="  w-full max-w-xl overflow-auto z-50 bg-white">
       <main className="flex flex-col max-w-[600px]">
-        <section className="flex  shadow-xl   flex-col pt-8 pb-64 w-full   max-md:pb-24 max-md:max-w-full">
+        <section className="flex  shadow-xl   flex-col  pb-64 w-full   max-md:pb-24 max-md:max-w-full">
           <div className="flex flex-col px-8 mt-5 mb-0 w-full max-md:px-5 max-md:mb-2.5 max-md:max-w-full">
             <ExamType data={data} />
             <ExamName data={data} />

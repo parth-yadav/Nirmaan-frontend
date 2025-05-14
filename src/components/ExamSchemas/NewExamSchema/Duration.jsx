@@ -21,7 +21,7 @@ function Duration({ data }) {
           <input
             id="duration"
             type="number"
-            className="self-stretch py-2 pr-14 pl-3 w-full bg-white rounded-md border border-solid border-slate-300 max-md:pr-5 max-md:max-w-full"
+            className="self-stretch py-2 pr-14 pl-3 w-full bg-white rounded-lg border border-solid border-slate-300 max-md:pr-5 max-md:max-w-full"
             value={duration}
             onChange={(e) => setDuration(e.target.value)} // Update state on input change
           />

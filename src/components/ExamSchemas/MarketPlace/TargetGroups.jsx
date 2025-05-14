@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Search } from "lucide-react";
 
@@ -18,9 +17,8 @@ function TargetGroups() {
             <input
               type="text"
               placeholder="Search groups here"
-              className="pl-4 py-2 pr-14 w-full bg-white rounded-md border border-solid border-slate-300 max-md:pr-5 max-md:max-w-full"
+              className="pl-4 py-2 pr-14 w-full bg-white rounded-lg border border-solid border-slate-300 max-md:pr-5 max-md:max-w-full"
             />
-            
           </div>
         </div>
         <p className="mt-1.5 leading-5 text-slate-500 max-md:max-w-full">

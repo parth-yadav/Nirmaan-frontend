@@ -45,7 +45,7 @@ function Sections({ data }) {
           <div className="leading-6 text-black">Total: {sections.length}</div>
           <Button
             onClick={handleAddNew}
-            className="flex gap-1.5 justify-center items-center px-2 py-1.5 leading-none text-black bg-gray-200 rounded-md"
+            className="flex gap-1.5 justify-center items-center px-2 py-1.5 leading-none text-black bg-gray-200 rounded-lg"
           >
             <img
               loading="lazy"

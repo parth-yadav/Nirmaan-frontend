@@ -40,7 +40,7 @@ function NewExamSchemaCover(props) {
 
         {/* Tabs Navigation */}
         <Tabs defaultValue="account" className="">
-          <TabsList className="items-center p-2 w-full text-sm font-medium leading-none rounded-md bg-slate-100 max-md:max-w-full">
+          <TabsList className="items-center p-2 w-full text-sm font-medium leading-none rounded-lg bg-slate-100 max-md:max-w-full">
             <div className="flex flex-wrap w-full gap-2">
               <TabsTrigger
                 value="account"

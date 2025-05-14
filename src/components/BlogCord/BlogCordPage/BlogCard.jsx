@@ -1,5 +1,3 @@
-
-
 import React from "react";
 
 function BlogCard({
@@ -23,7 +21,7 @@ function BlogCard({
             {tags.map((tag, index) => (
               <div
                 key={index}
-                className="flex gap-1.5 justify-center px-1.5 bg-blue-200 rounded-md"
+                className="flex gap-1.5 justify-center px-1.5 bg-blue-200 rounded-lg"
               >
                 <img
                   loading="lazy"

@@ -1,4 +1,3 @@
-
 import React from "react";
 
 function TagInput() {
@@ -14,7 +13,7 @@ function TagInput() {
         <input
           id="tagInput"
           type="text"
-          className="flex-1 py-2 px-3 w-full bg-white rounded-md border border-solid border-slate-300 max-md:max-w-full"
+          className="flex-1 py-2 px-3 w-full bg-white rounded-lg border border-solid border-slate-300 max-md:max-w-full"
           placeholder="Search for tags here"
         />
       </div>

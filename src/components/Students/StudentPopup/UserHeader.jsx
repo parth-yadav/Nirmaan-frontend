@@ -12,7 +12,7 @@ export function UserHeader({ data, close }) {
       <div className="flex flex-wrap gap-5 justify-between max-md:max-w-full">
         <div className="flex flex-col">
           <div
-            className={`flex gap-1.5 justify-center items-center self-start px-2 py-1.5 text-sm font-medium leading-none whitespace-nowrap rounded-md ${
+            className={`flex gap-1.5 justify-center items-center self-start px-2 py-1.5 text-sm font-medium leading-none whitespace-nowrap rounded-lg ${
               statusStyles[data.status] || "bg-gray-200 text-gray-800"
             }`}
           >
