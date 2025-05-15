@@ -16,7 +16,7 @@ function Tags({data}) {
   // ];
 
   return (
-    <div className="flex z-10 flex-col items-start   w-full  max-md:max-w-full">
+    <div className="flex z-10 flex-col items-start mt-5   w-full  max-md:max-w-full">
       <div className="flex flex-col self-stretch  w-full max-md:max-w-full">
         <label
           htmlFor="tagSearch"
@@ -24,7 +24,7 @@ function Tags({data}) {
         >
           Tags
         </label>
-        <div className="flex gap-2 items-start mt-1.5 w-full mb-4 text-base text-slate-400 max-md:max-w-full">
+        <div className="flex gap-2 items-start mt-1.5 w-full text-base text-slate-400 max-md:max-w-full">
           <div className="relative w-full min-w-[240px] max-md:flex-wrap">
             <input
               type="text"
@@ -35,7 +35,7 @@ function Tags({data}) {
             <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-500" />
           </div>
         </div>
-        <div className="flex flex-wrap gap-3">
+        <div className="flex mt-2 flex-wrap gap-3">
           {data.tags.map((tag, index) => (
             <div
               key={index}

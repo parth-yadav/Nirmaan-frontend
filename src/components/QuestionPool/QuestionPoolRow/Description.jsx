@@ -2,7 +2,7 @@ import React from "react";
 
 function Description({ data }) {
   return (
-    <div className="flex flex-col mt-5 max-md:max-w-full mb-8">
+    <div className="flex flex-col mt-5 max-md:max-w-full">
       <div className="flex flex-col w-full max-md:max-w-full">
         <div className="flex flex-col w-full rounded-lg max-md:max-w-full">
           <label
