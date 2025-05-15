@@ -33,9 +33,10 @@ function Sections({ data }) {
   };
 
   return (
-    <section className="mt-10 max-md:mt-10 ">
+    <section className="mt-10  py-6 max-md:mt-10 ">
       <div className="flex items-center justify-between w-full max-w-[500px] max-md:mr-2.5 max-md:max-w-full">
         {/* Left Section */}
+
         <div className="flex text-black whitespace-nowrap">
           <h2 className="text-lg font-semibold leading-loose">Sections</h2>
         </div>
@@ -72,7 +73,7 @@ function Sections({ data }) {
         onSectionUpdate={handleSectionUpdate}
       />
 
-      <div className="flex flex-wrap gap-5 justify-between mt-3.5 mr-5 ml-5 w-full text-sm font-medium leading-6 text-black max-w-[501px] max-md:mr-2.5 max-md:max-w-full">
+      <div className="flex flex-wrap gap-5 justify-between mt-3.5 px-5 w-full text-sm font-medium leading-6 text-black max-md:px-2.5">
         <div>Total Questio: {data.total_question}</div>
         <div>Maximum Marks: {data.total_max_marks}</div>
       </div>

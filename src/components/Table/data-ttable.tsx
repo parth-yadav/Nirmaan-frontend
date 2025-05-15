@@ -183,7 +183,7 @@ function DataTable<TData, TValue>({
 
       {/* Table */}
       <div className="rounded-lg overflow-x-auto">
-        <Table>
+        <Table className="">
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id} className="bg-muted/50">
@@ -191,7 +191,7 @@ function DataTable<TData, TValue>({
                   <TableHead
                     key={header.id}
                     className="font-bold text-muted-foreground"
-                  >
+                  > 
                     {header.isPlaceholder ? null : (
                       <div className="text-left py-3">
                         {flexRender(
