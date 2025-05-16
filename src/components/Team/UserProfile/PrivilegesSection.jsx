@@ -85,24 +85,31 @@ function PrivilegesSection() {
   return (
     <section className="px-4 md:px-8 mt-6 w-full">
       <div className="flex flex-col md:flex-row gap-5">
-        <div className="w-full ">
-          <div className="w-full  mt-5 md:mt-0">
-            <div className="flex gap-5 text-sm font-medium leading-6 text-white whitespace-nowrap">
+        <div className="w-full">
+          {/* Flex row for heading + buttons */}
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between mt-5">
+            <h2 className="text-xl font-semibold tracking-normal leading-snug text-black mb-3 md:mb-0">
+              Privileges
+            </h2>
+
+            {/* Save + More buttons */}
+            <div className="flex gap-3 text-sm font-medium leading-6 text-white whitespace-nowrap">
               <Button
                 onClick={handleSave}
                 disabled={!isChanged}
-                className="flex gap-2 justify-center items-center px-4 py-2 rounded-lg hover:bg-gray-800 bg-black"
+                className="flex gap-2 justify-center items-center px-4 py-2 rounded-lg bg-black text-white disabled:opacity-100 disabled:text-white disabled:cursor-not-allowed"
               >
                 <Save className="w-4 h-4" />
                 <span className="self-stretch my-auto">Save</span>
               </Button>
+
               <Popover>
                 <PopoverTrigger asChild>
                   <Button
                     variant="outline"
-                    className="bg-black w-10 h-10 p-0 rounded-lg hover:bg-gray-800"
+                    className="bg-white border border-slate-400 w-10 h-10 p-0 rounded-lg "
                   >
-                    <MoreVertical className="h-4 w-4" />
+                    <MoreVertical className="h-4 w-4 text-black" />
                   </Button>
                 </PopoverTrigger>
                 <PopoverContent className="w-56 bg-white">
@@ -113,7 +120,10 @@ function PrivilegesSection() {
                     <Button onClick={() => handleBulkAction("removeAll")}>
                       Remove all privileges
                     </Button>
-                    <Button className ="bg-red-500 rounded-lg text-white"onClick={() => handleBulkAction("banUser")}>
+                    <Button
+                      className="bg-red-500 rounded-lg text-white"
+                      onClick={() => handleBulkAction("banUser")}
+                    >
                       Ban user
                     </Button>
                   </div>
@@ -121,9 +131,8 @@ function PrivilegesSection() {
               </Popover>
             </div>
           </div>
-          <h2 className=" mt-4 text-xl font-semibold tracking-normal leading-snug text-black mb-5">
-            Privileges
-          </h2>
+
+          {/* Privilege categories below */}
           {privilegeCategories.map((category, index) => (
             <PrivilegeCategory
               key={index}
@@ -134,41 +143,6 @@ function PrivilegesSection() {
             />
           ))}
         </div>
-        {/* <div className="w-full  mt-5 md:mt-0">
-          <div className="flex gap-5 text-sm font-medium leading-6 text-white whitespace-nowrap">
-            <Button
-              onClick={handleSave}
-              disabled={!isChanged}
-              className="flex gap-2 justify-center items-center px-4 py-2 rounded-lg hover:bg-gray-800 bg-black"
-            >
-              <Save className="w-4 h-4" />
-              <span className="self-stretch my-auto">Save</span>
-            </Button>
-            <Popover>
-              <PopoverTrigger asChild>
-                <Button
-                  variant="outline"
-                  className="bg-black w-10 h-10 p-0 rounded-lg hover:bg-gray-800"
-                >
-                  <MoreVertical className="h-4 w-4" />
-                </Button>
-              </PopoverTrigger>
-              <PopoverContent className="w-56 bg-white">
-                <div className="grid gap-4">
-                  <Button onClick={() => handleBulkAction("addAll")}>
-                    Add all privileges
-                  </Button>
-                  <Button onClick={() => handleBulkAction("removeAll")}>
-                    Remove all privileges
-                  </Button>
-                  <Button onClick={() => handleBulkAction("banUser")}>
-                    Ban user
-                  </Button>
-                </div>
-              </PopoverContent>
-            </Popover>
-          </div>
-        </div> */}
       </div>
     </section>
   );

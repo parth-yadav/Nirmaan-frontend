@@ -1,7 +1,8 @@
 import React from "react";
 
 export function UserDetails({data}) {
-  
+  //TODO fix mobile view
+  //TODO fix the gap between the two columns
   return (
     <div className="flex gap-5 justify-between mt-8 max-w-full text-base font-medium w-[383px] px-8">
       <div className="flex flex-col items-start text-gray-700 whitespace-nowrap">

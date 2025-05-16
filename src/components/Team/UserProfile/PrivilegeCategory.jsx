@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Button } from "@/components/ui/button";
+
 
 function PrivilegeCategory({
   name,
@@ -24,16 +24,16 @@ function PrivilegeCategory({
       <div className="text-base font-medium text-black mb-2.5">{name}</div>
       <div className="flex flex-wrap gap-2.5 text-sm leading-none text-black">
         {allPermissions.map((permission, index) => (
-          <Button
+          <button
             key={index}
-            variant="outline"
+           
             onClick={() => togglePermission(permission)}
-            className={`px-4 py-2  rounded-lg ${
+            className={`px-2 py-1   rounded-lg ${
               permissions.includes(permission) ? "bg-green-200" : "bg-red-200"
             }`}
           >
             {permission}
-          </Button>
+          </button>
         ))}
       </div>
     </div>
